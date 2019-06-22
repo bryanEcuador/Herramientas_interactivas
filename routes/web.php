@@ -1,5 +1,6 @@
 <?php
-
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,26 +13,42 @@
 */
 
 Route::get('/', function () {
-    return redirect()->action('LoginController@login');
+    return view('welcome');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', 'HomeController@index')->name('home');
+//Route::get('/home', 'informationController@inteligencias')->middleware('auth');;
 
-route::get('/information',function (){
-    return view('actualizacionDatos');
-});
+
+
+Route::get('/information','informationController@index')->middleware('auth');;
+route::post('information/update','informationController@update')->name('information.update')->middleware('auth');;
+
+
+
+route::get('/inteligencias' , 'informationController@inteligencias')->middleware('auth');;
 
 route::get('/inteligencia/matematica', function (){
     return view("logica");
-});
+})->middleware('auth');;
 route::get('/inteligencia/espacial',function() {
     return view("espacial");
-});
-route::get('/inteligencias','informationController@registro');
+})->middleware('auth');;
 
-route::post('information/update','informationController@update')->name('information.update');
+
+
 
 //route::post('/save/informacion','informacionController@')
+
+
+
+Route::get('/uploads/{file}', function ($file) {
+
+    $contador_table = DB::table('table_counter')->where('id', '=',1)->first();
+    $contador = $contador_table->downloads +1;
+    dB::table('table_counter')->where('id',$contador_table->id)->update(['downloads' => $contador]);
+
+    return Storage::download($file);
+})->middleware('auth');;

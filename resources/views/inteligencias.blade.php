@@ -2,11 +2,35 @@
 
 @section('content')
     <div class="container">
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">@</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Hola {{$name}}, te gustaría continuar visualizado el sitio o completar tu información personal.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Continuar</button>
+                        <button type="button" class="btn btn-primary"> <a href="/information" style="color: white "> Actualizar datos</a> </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Dashboard</div>
-
                     <div class="card-body">
                         <h1>Aprende a programar utilizando inteligencias multiples</h1>
                         <p> Uno de los teóricos con más influencia en la actualidad es el Psicólogo Howard Gardner,
@@ -110,4 +134,11 @@
         </div>
     </div>
 
+    <script>
+
+        if(@json($status) < 100) {
+            $('#exampleModal').modal('show')
+        }
+
+    </script>
 @endsection

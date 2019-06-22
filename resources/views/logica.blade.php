@@ -11,9 +11,9 @@
                         <div class="card-body">
 
                             <ul>
-                                <li> Inteligencia Lógica Matemática </li>
-                                <li> Buttons and Scissors </li>
-                                <li> Kodu Game Lab  </li>
+                                <li> Sololearm <a href="/uploads/SoloLearn.apk">Descargar</a></li>
+                                <li> Buttons and Scissors <a href="/uploads/Buttons.apk">Descargar</a></li>
+                                <li> Kodu Game Lab  <a href="/uploads/kodu.msi">Descargar</a> </li>
                             </ul>
 
                             <ul>

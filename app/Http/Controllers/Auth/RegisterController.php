@@ -11,6 +11,8 @@ use App\Http\Controllers\informationController;
 
 class RegisterController extends Controller
 {
+
+
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -29,7 +31,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/inteligencias';
 
     /**
      * Create a new controller instance.
