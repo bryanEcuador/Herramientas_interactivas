@@ -1,4 +1,39 @@
-<!doctype html>
+@extends('layouts.principal')
+
+@section('content')
+    <section class="home_banner_area">
+        <div class="banner_inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="home_left_img">
+                            <img class="img-fluid" src="img/banner/home-left.png" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="banner_content">
+                            <h2>
+                                Inteligencias multiples <br>
+                            </h2>
+                            <p>
+                                Uno de los teóricos con más influencia en la actualidad es el Psicólogo Howard Gardner, quien hizo una gran controversia
+                                con su teoría acerca de las inteligencias múltiples esto debido a que el autor cuestiona que la inteligencia sea vista
+                                desde una forma unilateral y más bien propone la idea de una visión bilateral o global, en el cual la inteligencia
+                                deberá de comprenderse como un conjunto de inteligencias heterogéneas y diferentes. De esta manera Gardner plantea ocho
+                                tipos de inteligencias.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
+
+
+
+
+{{--<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -88,4 +123,4 @@
             </div>
         </div>
     </body>
-</html>
+</html>--}}

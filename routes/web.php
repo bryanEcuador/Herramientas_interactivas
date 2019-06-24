@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
+route::get('/principal',function() {
+   return view('layouts.principal');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,22 +27,55 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-Route::get('/information','informationController@index')->middleware('auth');;
-route::post('information/update','informationController@update')->name('information.update')->middleware('auth');;
+Route::get('/information','informationController@index')->middleware('auth');
+route::post('information/update','informationController@update')->name('information.update')->middleware('auth');
 
 
 
-route::get('/inteligencias' , 'informationController@inteligencias')->middleware('auth');;
+route::get('/inteligencias' , 'informationController@inteligencias')->middleware('auth');
 
-route::get('/inteligencia/matematica', function (){
+route::get('/inteligencia-matematica', function (){
     return view("logica");
-})->middleware('auth');;
-route::get('/inteligencia/espacial',function() {
+})->middleware('auth');
+route::get('/inteligencia-espacial',function() {
     return view("espacial");
-})->middleware('auth');;
+})->middleware('auth');
+
+route::get('/inteligencia-linguistica',function() {
+    return view("linguistica");
+})->middleware('auth');
+
+route::get('/inteligencia-musical',function() {
+    return view("musical");
+})->middleware('auth');
+
+route::get('/inteligencia-ecologica',function() {
+    return view("ecologica");
+})->middleware('auth');
+
+route::get('/inteligencia-interpersonal',function() {
+    return view("interpersonal");
+})->middleware('auth');
+
+route::get('/inteligencia-intrapersonal',function() {
+    return view("intrapersonal");
+})->middleware('auth');
+
+route::get('/inteligencia-kinestica',function() {
+    return view("kinestica");
+})->middleware('auth');
 
 
+/*
+<li> Sololearm <a href="/uploads/SoloLearn.apk">Descargar</a></li>
+                                <li> Buttons and Scissors <a href="/uploads/Buttons.apk">Descargar</a></li>
+                                <li> Kodu Game Lab  <a href="/uploads/kodu.msi">Descargar</a> </li>
+                            </ul>
 
+                            <ul>
+                                <li>ZinjaI</li>
+                                <li>Progranimate</li>
+                                <li>GeoGebra</li>*/
 
 //route::post('/save/informacion','informacionController@')
 
