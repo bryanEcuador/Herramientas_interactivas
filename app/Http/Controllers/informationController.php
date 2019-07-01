@@ -95,8 +95,9 @@ class informationController extends Controller
             $user_information->status = $porcentaje;
             $user_information->save();
 
-            $mensaje = true;
-            return view('actualizacionDatos',compact('user_information','porcentaje','archievements','academic','mensaje'));
+
+            return redirect()->route('information',['mensaje' => true]);
+            //return view('actualizacionDatos',compact('user_information','porcentaje','archievements','academic','mensaje'));
         } catch (Exception $e){
             $mensaje = 'Error  al actualizar los datos';
             return view('actualizacionDatos',compact('mensaje'));
@@ -117,8 +118,8 @@ class informationController extends Controller
         return view("inteligencias");
     }
 
-    public function index() {
-
+    public function index($mensaje = 0) {
+        //dd($mensaje);
         $id = auth()->user()->id;
         $id_information = DB::table('users_information')->where('user_id',$id)->get();
         //  dd($id_information);
@@ -132,7 +133,7 @@ class informationController extends Controller
         $academic = AcademicRecognitions::find($user_information->recognitions_id);
 
         $porcentaje = $this->contador($user_information);
-        return view('actualizacionDatos',compact('user_information','porcentaje','archievements','academic'));
+        return view('actualizacionDatos',compact('user_information','porcentaje','archievements','academic','mensaje'));
     }
 
     public function inteligencias() {
@@ -142,16 +143,19 @@ class informationController extends Controller
         $id_information = DB::table('users_information')->where('user_id',$id)->get();
         if($id_information->isEmpty()){
             if($user->name == 'Admin'){
-                $status = 100;
+                $status = "100";
             }else{
                 $status = 0;
             }
         }else{
-            $status = $id_information[0];
+            $status = $id_information[0]->status;
+
         }
         $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
+
         return view('inteligencias',compact('status','name','estadisticas'));
     }
+
 
     public function contador($user_information) {
 
@@ -165,17 +169,20 @@ class informationController extends Controller
         ($user_information->user_id != null)  ? $contador++ : null ;
         //
 
-        if($user_information->skill_analysis != null and $user_information->skill_logic != null and $user_information->skill_writing != null and $user_information->skill_description != null ){
+       /* if($user_information->skill_analysis != null or $user_information->skill_logic != null or $user_information->skill_writing != null or $user_information->skill_description != null ){
             $contador++;
         }
 
-        if($user_information->language_english != null and $user_information->language_french != null and $user_information->language_italian != null){
+        if($user_information->language_english != null or $user_information->language_french != null or $user_information->language_italian != null){
+            $contador++;
+        }*/
+
+        if($user_information->physical_disability != null or $user_information->mental_disability != null or $user_information->physical_disability == 0 or $user_information->mental_disability == 0){
             $contador++;
         }
 
-        if($user_information->physical_disability != null and $user_information->mental_disability != null){
-            $contador++;
-        }
-        return round( ($contador * 100) / 9,2);
+        return round( ($contador * 100) / 7,2);
     }
+
+
 }

@@ -2,29 +2,25 @@
 
 @section('content')
 
-
-        {{--<!-- Modal -->--}}
-        {{--<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">--}}
-            {{--<div class="modal-dialog" role="document">--}}
-                {{--<div class="modal-content">--}}
-                    {{--<div class="modal-header">--}}
-                        {{--<h5 class="modal-title" id="exampleModalLongTitle">@</h5>--}}
-                        {{--<button type="button" class="close" data-dismiss="modal" aria-label="Close">--}}
-                            {{--<span aria-hidden="true">&times;</span>--}}
-                        {{--</button>--}}
-                    {{--</div>--}}
-                    {{--<div class="modal-body">--}}
-                        {{--Hola {{$name}}, te gustaría continuar visualizado el sitio o completar tu información personal.--}}
-                    {{--</div>--}}
-                    {{--<div class="modal-footer">--}}
-                        {{--<button type="button" class="btn btn-secondary" data-dismiss="modal">Continuar</button>--}}
-                        {{--<button type="button" class="btn btn-primary"> <a href="/information" style="color: white "> Actualizar datos</a> </button>--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-
-
+    <div style="margin-top: 90px;" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Bienvenido</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Hola {{$name}}, te gustaría continuar visualizado el sitio o completar tu información personal.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Continuar</button>
+                    <button type="button" class="btn btn-primary"> <a href="/information" style="color: white "> Actualizar datos</a> </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
         <!--================Home Banner Area =================-->
         <section class="home_banner_area">
@@ -57,7 +53,7 @@
         <!--================End Home Banner Area =================-->
 
 
-
+            <button style="display: none" id="modal" data-toggle="modal" data-target="#exampleModal">modal</button>
         <!--================First Upcoming Games Area =================-->
         <section class="upcoming_games_area">
             <div class="container">
@@ -72,7 +68,7 @@
                 <div class="row text-center">
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="new_games_item">
-                            <img src="img/logica.png" alt="">
+                            <img src="img/logical-mathematical.jpg" alt="">
                             <div class="upcoming_title">
                                 <h3><a href="/inteligencia-matematica">Inteligencia Lógico-matemático</a></h3>
                             </div>
@@ -107,7 +103,7 @@
                 <div class="row text-center">
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="new_games_item">
-                            <img src="img/bombilla-y-naturaleza.png" alt="">
+                            <img src="img/bombilla-y-naturaleza.png" height="220" alt="">
                             <div class="upcoming_title">
                                 <h3><a href="/inteligencia-ecologica">Inteligencia Ecológica</a></h3>
                             </div>
@@ -115,7 +111,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="new_games_item">
-                            <img src="img/portada_fin1.jpg" alt="">
+                            <img src="img/portada_fin1.jpg" height="220" alt="">
                             <div class="upcoming_title">
                                 <h3><a href="/inteligencia-interpersonal">Inteligencia Interpersonal</a></h3>
                             </div>
@@ -123,7 +119,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="new_games_item">
-                            <img src="img/intrapersonal.jpeg" alt="">
+                            <img src="img/1_KrZylznLIKeybLE5TYGjrQ.jpeg" height="220" alt="">
                             <div class="upcoming_title">
                                 <h3><a href="/inteligencia-intrapersonal">Inteligencia Intrapersonal</a></h3>
                             </div>
@@ -131,7 +127,7 @@
                     </div>
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="new_games_item">
-                            <img src="img/curso-baile1.jpg" alt="">
+                            <img src="img/curso-baile1.jpg" alt="" height="220">
                             <div class="upcoming_title">
                                 <h3><a href="/inteligencia-kinestica">Inteligencia Corporal – Kinestésica</a></h3>
                             </div>
@@ -172,11 +168,18 @@
         <!--================End About Us Area =================-->
 
 
-    {{--<script>--}}
+    <script>
 
-        {{--if(@json($status) < 100) {--}}
-            {{--$('#exampleModal').modal('show')--}}
-        {{--}--}}
 
-    {{--</script>--}}
+window.onload=function() {
+
+        if(@json($status) !== "100") {
+            var boton = document.getElementById('modal');
+            boton.click();
+            console.log(@json($status));
+        }
+
+
+}
+    </script>
 @endsection

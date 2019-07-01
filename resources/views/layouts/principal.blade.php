@@ -11,23 +11,23 @@
 
     <title>{{ config('app.name', 'Herramientas interactivas') }}</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="vendors/linericon/style.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
-    <link rel="stylesheet" href="vendors/animate-css/animate.css">
-    <link rel="stylesheet" href="vendors/flaticon/flaticon.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/vendors/linericon/style.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendors/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/magnific-popup.css">
+    <link rel="stylesheet" href="/vendors/nice-select/css/nice-select.css">
+    <link rel="stylesheet" href="/vendors/animate-css/animate.css">
+    <link rel="stylesheet" href="/vendors/flaticon/flaticon.css">
     <!-- main css -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
 
 <!-- ================= modal ================-->
 @auth
-    <div class="modal fade" id="estadisticas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div style="margin-top: 90px;" class="modal fade" id="estadisticas" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -78,7 +78,9 @@
                                         <li class="nav-item active"><a class="nav-link" href="/inteligencias">Inteligencias</a></li>
                                         @if(auth()->user()->name == 'Admin')
                                             <li class="nav-item">
-                                                <button type="button" data-toggle="modal" data-target="#estadisticas">Estadisticas</button>
+                                                <button STYLE=" font-size: 12px; font-family: Roboto; color: #3fcaff; background-color: transparent;  border: none;" type="button" class="nav-link" data-toggle="modal" data-target="#estadisticas">
+                                                    ESTADISTICAS
+                                                </button>
                                             </li>
                                         @endif
                                     </ul>
@@ -97,7 +99,9 @@
                                                     @csrf
                                                 </form>
                                             </li>
-                                            <li class="nav-item"><a class="nav-link" href="single-blog.html">Actuallizar Perfil</a></li>
+                                            @if(auth()->user()->name !== 'Admin')
+                                                <li class="nav-item"><a class="nav-link" href="/information">Actuallizar Perfil</a></li>
+                                            @endif
                                         </ul>
                                         </li>
                                     </ul>
@@ -113,9 +117,7 @@
 
 
 <!--================Footer Area =================-->
-<br>
-<br>
-<br>
+
 <footer class="footer_area">
     <div class="container">
         <div class="row footer_inner">
@@ -137,19 +139,19 @@
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="js/jquery-3.2.1.min.js"></script>
-<script src="js/popper.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/stellar.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
-<script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
-<script src="vendors/isotope/isotope-min.js"></script>
-<script src="vendors/owl-carousel/owl.carousel.min.js"></script>
-<script src="js/jquery.ajaxchimp.min.js"></script>
-<script src="vendors/counter-up/jquery.waypoints.min.js"></script>
-<script src="vendors/counter-up/jquery.counterup.min.js"></script>
-<script src="js/mail-script.js"></script>
+<script src="/js/jquery-3.2.1.min.js"></script>
+<script src="/js/popper.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/stellar.js"></script>
+<script src="/js/jquery.magnific-popup.min.js"></script>
+<script src="/vendors/nice-select/js/jquery.nice-select.min.js"></script>
+<script src="/vendors/isotope/imagesloaded.pkgd.min.js"></script>
+<script src="/vendors/isotope/isotope-min.js"></script>
+<script src="/vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="/js/jquery.ajaxchimp.min.js"></script>
+<script src="/vendors/counter-up/jquery.waypoints.min.js"></script>
+<script src="/vendors/counter-up/jquery.counterup.min.js"></script>
+<script src="/js/mail-script.js"></script>
 <!--gmaps Js-->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 <script src="js/gmaps.min.js"></script>

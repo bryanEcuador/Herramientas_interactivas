@@ -136,16 +136,8 @@
             height: 100% !important;
             z-index: 999;
         }
-        &:after {
-            content: "";
-            position: absolute;
-            height: 100%;
-            width: 20%;
-            top: 0;
-            right: -40px;
-            background: #3e3590;
-            z-index: -1;
-        }
+
+        background: transparent;
     }
     .section_content {
         @include gradient(to right, #3e3590 0%, #231a60 100%);

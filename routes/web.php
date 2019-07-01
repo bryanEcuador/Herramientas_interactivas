@@ -27,7 +27,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-Route::get('/information','informationController@index')->middleware('auth');
+Route::get('/information/{mensaje?}','informationController@index')->middleware('auth')->name('information');
 route::post('information/update','informationController@update')->name('information.update')->middleware('auth');
 
 
@@ -35,47 +35,46 @@ route::post('information/update','informationController@update')->name('informat
 route::get('/inteligencias' , 'informationController@inteligencias')->middleware('auth');
 
 route::get('/inteligencia-matematica', function (){
-    return view("logica");
+    $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
+    return view("logica",compact('estadisticas'));
 })->middleware('auth');
 route::get('/inteligencia-espacial',function() {
-    return view("espacial");
+    $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
+    return view("espacial",compact('estadisticas'));
 })->middleware('auth');
 
 route::get('/inteligencia-linguistica',function() {
-    return view("linguistica");
+    $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
+    return view("linguistica",compact('estadisticas'));
 })->middleware('auth');
 
 route::get('/inteligencia-musical',function() {
-    return view("musical");
+    $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
+    return view("musical",compact('estadisticas'));
 })->middleware('auth');
 
 route::get('/inteligencia-ecologica',function() {
-    return view("ecologica");
+    $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
+    return view("ecologica",compact('estadisticas'));
 })->middleware('auth');
 
 route::get('/inteligencia-interpersonal',function() {
-    return view("interpersonal");
+    $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
+    return view("interpersonal",compact('estadisticas'));
 })->middleware('auth');
 
 route::get('/inteligencia-intrapersonal',function() {
-    return view("intrapersonal");
+    $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
+    return view("intrapersonal",compact('estadisticas'));
 })->middleware('auth');
 
 route::get('/inteligencia-kinestica',function() {
-    return view("kinestica");
+    $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
+    return view("kinestica",compact('estadisticas'));
 })->middleware('auth');
 
 
-/*
-<li> Sololearm <a href="/uploads/SoloLearn.apk">Descargar</a></li>
-                                <li> Buttons and Scissors <a href="/uploads/Buttons.apk">Descargar</a></li>
-                                <li> Kodu Game Lab  <a href="/uploads/kodu.msi">Descargar</a> </li>
-                            </ul>
 
-                            <ul>
-                                <li>ZinjaI</li>
-                                <li>Progranimate</li>
-                                <li>GeoGebra</li>*/
 
 //route::post('/save/informacion','informacionController@')
 

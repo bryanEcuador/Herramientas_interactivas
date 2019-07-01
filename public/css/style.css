@@ -41,6 +41,11 @@ h6 {
   font-family: "Rajdhani", sans-serif;
   font-weight: 600; }
 
+.sub_titulo {
+  margin-top: 28px;
+  margin-left: 15px;
+  text-align: center;
+}
 .list {
   list-style: none;
   margin: 0px;
@@ -2785,7 +2790,7 @@ h6 {
 /* Start Recent Update Area css
 ============================================================================================ */
 .recent_update_area {
-  background: url(../img/recent_up_bg.png) no-repeat center; }
+  background: url(../img/inteligencias-multiples.jpg) no-repeat center; }
   .recent_update_area.made_white {
     background: #fff; }
 

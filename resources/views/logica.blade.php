@@ -39,7 +39,7 @@
     </section>
     <!--================ End Frequently Asked Questions Area ================-->
     <br>
-    <h2>Herramientas interactivas</h2>
+    <h2 class="sub_titulo">Herramientas interactivas</h2>
 
     <section class="recent_update_area section_gap">
         <div class="container">
@@ -80,8 +80,16 @@
                                         Todas las lecciones de SoloLearn: Learn to Code for Free están muy bien explicadas y normalmente acompañadas de su
                                         correspondiente vídeos y ejercicios. La aplicación irá llevando un registro de nuestros progresos en cada uno de los
                                         cursos que hagamos, algo particularmente útil si llevamos varios simultáneamente.
-
+                                        <br>
                                     </p>
+                                    <p style="display: inline; margin-right:0;font-size: 10px; padding: 2px">PAGINA OFICIAL :</p>
+                                    <a style="font-size: 10px; color: #fff;" href="https://www.sololearn.com/">
+                                        www.sololearn.com
+                                    </a>
+                                    <br>
+                                    @if(auth()->user()->name !== 'Admin')
+                                    <a class="primary_btn" href="/uploads/SoloLearn.apk">Descargar</a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -108,8 +116,15 @@
                                         Al principio parecerá sencillo resolver todos los niveles, pero no tardaremos en descubrir que la mecánica de
                                         Buttons
                                         and Scissors tiene sus entresijos.
-
                                     </p>
+                                    {{--<p style="display: inline; margin-right:0;font-size: 10px; padding: 2px">PAGINA OFICIAL :</p>--}}
+                                    {{--<a style="font-size: 10px; color: #fff;" href="https://www.mindomo.com/es/">--}}
+                                        {{--www.mindomo.com--}}
+                                    {{--</a>--}}
+                                    <br>
+                                    @if(auth()->user()->name !== 'Admin')
+                                    <a class="primary_btn" href="/uploads/Buttons.apk">Descargar</a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -120,7 +135,7 @@
     </section>
     <!--================End Recent Update Area =================-->
 
-    <h2>Herramientas de Conocimientos</h2>
+    <h2 class="sub_titulo">Herramientas de Conocimientos</h2>
 
     <section class="recent_update_area section_gap">
         <div class="container">
@@ -161,8 +176,10 @@
                                         Presenta una interfaz inicial muy sencilla con funciones avanzadas permitiendo el desarrollo de proyectos complejos, diseñada para estudiantes en aprendizaje de  programación para C, C++.
                                         Estudiantes/Principiantes: los estudiantes de programación/C++ encontrarán en ZinjaI un entorno amigable y muy fácil de aprender a utilizar, con el cual podrán comenzar a realizar prácticas muy rápidamente y sin preocuparse por detalles relacionados al compilador o la gestión de proyectos. De esta forma podrán centrar su atención exclusivamente en el lenguaje y la lógica, y dejar que el IDE resuelva el resto de los problemas.
                                         Avanzados/Profesionales: los programadores con conocimiento avanzado de C++ encontrarán en ZinjaI la flexibilidad suficiente para desarrollar cualquier tipo de proyecto sin importar su complejidad, y el nivel de personalización adecuado para adaptarlo a sus costumbres y necesidades. Podrán entender y explotar muchas de sus funcionalidades de edición y gestión de proyectos específicas, que los llevarán a desarrollar sus programas muy rápidamente.
-
                                     </p>
+                                    <p style="display: inline; margin-right:0;font-size: 10px; padding: 2px">PAGINA OFICIAL :</p>
+                                    <a style="font-size: 10px; color: #fff;" href="http://zinjai.sourceforge.net/">zinjai.sourceforge.net</a>
+                                    <br>
                                 </div>
                             </div>
                         </div>
@@ -180,13 +197,27 @@
                                     <p>
                                         GeoGebra es un software de matemáticas para todo nivel educativo. Reúne dinámicamente geometría, álgebra, estadística y cálculo en registro gráficos, de análisis y de organización en hojas de cálculo. Dinamiza el estudio. Armoniza lo experimental y lo conceptual para experimentar una organización didáctica y disciplinar que cruza matemáticas, ciencias, ingeniería y tecnología (STEM: Science Technology Engieering & Mathematics)
                                         Datos interesantes
-                                        •	GeoGebra reúne gráfica y dinámicamente algebra y geometría, análisis y hojas de cálculo.
-                                        •	Potentes herramientas en armonía con una interfaz intuitiva y ágil.
-                                        •	Herramienta de autoría para creer materiales de aprendizaje interactivos como páginas web.
-                                        •	Disponibles en todos los idiomas.
-                                        •	Software de código abierto.
-
                                     </p>
+                                    <ul style="color: white">
+                                        <li>
+                                            GeoGebra reúne gráfica y dinámicamente algebra y geometría, análisis y hojas de cálculo.
+                                        </li>
+                                        <li>
+                                            Potentes herramientas en armonía con una interfaz intuitiva y ágil.
+                                        </li>
+                                        <li>
+                                            Herramienta de autoría para creer materiales de aprendizaje interactivos como páginas web.
+                                        </li>
+                                        <li>
+                                            Disponibles en todos los idiomas.
+                                        </li>
+                                        <li>
+                                            Software de código abierto.
+                                        </li>
+                                    </ul>
+                                    <p style="display: inline; margin-right:0;font-size: 10px; padding: 2px">PAGINA OFICIAL :</p>
+                                    <a style="font-size: 10px; color: #fff;" href="https://www.geogebra.org/graphing?lang=es">www.geogebra.org</a>
+
                                 </div>
                             </div>
                         </div>
@@ -195,7 +226,7 @@
                         <div class="row recent_update_text">
                             <div class="col-lg-6">
                                 <div class="chart_img">
-                                    <img class="img-fluid" src="img/Progranimate.png" alt="">
+                                    <img class="img-fluid" src="img/Progranimate.png" alt="" height="660px">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -208,6 +239,9 @@
                                         Para utilizar completamente este sitio, debe tener instalado el tiempo de ejecución Java J2SE 1.5 (o superior). La instalación de Java le permitirá utilizar el entorno de programación Progranimate.
 
                                     </p>
+                                    <p style="display: inline; margin-right:0;font-size: 10px; padding: 2px">PAGINA OFICIAL :</p>
+                                    <a style="font-size: 10px; color: #fff;" href="http://www.progranimate.com/">www.progranimate.com</a>
+
                                 </div>
                             </div>
                         </div>

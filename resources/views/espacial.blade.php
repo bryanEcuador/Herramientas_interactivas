@@ -1,13 +1,9 @@
 @extends('layouts.principal')
 
 @section('content')
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
     <!--================ Start Frequently Asked Questions Area ================-->
-    <section class="frequently_area">
+    <section style="margin-top: 125px" class="frequently_area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -42,7 +38,7 @@
     </section>
     <!--================ End Frequently Asked Questions Area ================-->
     <br>
-    <h2>Herramientas interactivas</h2>
+    <h2 class="sub_titulo">Herramientas interactivas</h2>
 
     <section class="recent_update_area section_gap">
         <div class="container">
@@ -85,6 +81,14 @@
                                         Por supuesto, Mindomo incluye montones de diseños diferentes con los que podremos probar. Desde algo superficial como diferentes tipos de colores para el fondo y las burbujas, hasta el propio diseño de las ramas del esquema. Además, podremos elegir el tipo y el tamaño de fuente que queremos utilizar, o insertar iconos.
 
                                     </p>
+                                    <p style="display: inline; margin-right:0;font-size: 10px; padding: 2px">PAGINA OFICIAL :</p>
+                                    <a style="font-size: 10px; color: #fff;" href="https://www.mindomo.com/es/">www.mindomo.com</a>
+
+                                    <br>
+                                    @if(auth()->user()->name !== 'Admin')
+                                    <a style="margin-right: 2px;" class="primary_btn" href="/uploads/mindomo-3-1-9.apk">Descargar app</a>
+                                    <a style="margin-right: 2px;" class="primary_btn" href="/uploads/Mindomo_v.8.0.42_x64.exe">Descargar exe</a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -106,6 +110,12 @@
 
 
                                     </p>
+                                    <p style="display: inline; margin-right:0;font-size: 10px; padding: 2px">PAGINA OFICIAL :</p>
+                                    <a style="font-size: 10px; color: #fff;" href="https://www.mindmeister.com/es">www.mindmeister.com</a>
+                                    <br>
+                                    @if(auth()->user()->name !== 'Admin')
+                                    <a style="margin-right: 2px;" class="primary_btn" href="/uploads/mindmeister-4-4-1.apk">Descargar app</a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -125,6 +135,12 @@
                                         Tienes multitud de opciones de configuración para tus videojuegos, desde elegir y editar el tipo de terreno sobre el que se desarrolla la acción, hasta el sistema de colisiones y física que quieres implementar. Además, el programa incluye veinte personajes diferentes con sus respectivas habilidades listas para jugar.
 
                                     </p>
+                                    <p style="display: inline; margin-right:0;font-size: 10px; padding: 2px">PAGINA OFICIAL :</p>
+                                    <a style="font-size: 10px; color: #fff;" href="https://www.kodugamelab.com/">www.kodugamelab.com</a>
+                                    <br>
+                                    @if(auth()->user()->name !== 'Admin')
+                                    <a style="margin-right: 2px;" class="primary_btn" href="/uploads/kodu.msi">Descargar</a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -136,7 +152,7 @@
     </section>
     <!--================End Recent Update Area =================-->
 
-    <h2>Herramientas de Conocimientos</h2>
+    <h2 class="sub_titulo"> Herramientas de Conocimientos</h2>
 
     <section class="recent_update_area section_gap">
         <div class="container">
@@ -165,13 +181,27 @@
                                     <p>
                                         GeoGebra es un software de matemáticas para todo nivel educativo. Reúne dinámicamente geometría, álgebra, estadística y cálculo en registro gráficos, de análisis y de organización en hojas de cálculo. Dinamiza el estudio. Armoniza lo experimental y lo conceptual para experimentar una organización didáctica y disciplinar que cruza matemáticas, ciencias, ingeniería y tecnología (STEM: Science Technology Engieering & Mathematics)
                                         Datos interesantes
-                                        •	GeoGebra reúne gráfica y dinámicamente algebra y geometría, análisis y hojas de cálculo.
-                                        •	Potentes herramientas en armonía con una interfaz intuitiva y ágil.
-                                        •	Herramienta de autoría para creer materiales de aprendizaje interactivos como páginas web.
-                                        •	Disponibles en todos los idiomas.
-                                        •	Software de código abierto.
-
                                     </p>
+                                    <ul style="color: white">
+                                        <li>
+                                            GeoGebra reúne gráfica y dinámicamente algebra y geometría, análisis y hojas de cálculo.
+                                        </li>
+                                        <li>
+                                            Potentes herramientas en armonía con una interfaz intuitiva y ágil.
+                                        </li>
+                                        <li>
+                                            Herramienta de autoría para creer materiales de aprendizaje interactivos como páginas web.
+                                        </li>
+                                        <li>
+                                            Disponibles en todos los idiomas.
+                                        </li>
+                                        <li>
+                                            Software de código abierto.
+                                        </li>
+                                    </ul>
+                                    <p style="display: inline; margin-right:0;font-size: 10px; padding: 2px">PAGINA OFICIAL :</p><a style="font-size: 10px; color: #fff;" href="https://www.geogebra.org/graphing?lang=es">www.geogebra.org</a>
+                                </div>
+
                                 </div>
                             </div>
                         </div>
