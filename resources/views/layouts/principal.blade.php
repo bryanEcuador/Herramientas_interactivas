@@ -67,10 +67,10 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                             @guest
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li class="nav-item"><a href="{{ route('login') }}" class="primary_btn">{{ __('Login') }}</a></li>
+                                <ul class="nav navbar-nav menu_nav justify-content-center">
+                                    <li class="nav-item submenu dropdown"><a href="{{ route('login') }}" class="btn_menu">{{ __('Login') }}</a></li>
                                     @if (Route::has('register'))
-                                        <li class="nav-item"><a href="{{ route('register') }}" class="primary_btn">{{ __('Register') }}</a></li>
+                                        <li class="nav-item submenu dropdown"><a class="btn_menu" href="{{ route('register') }}" >{{ __('Register') }}</a></li>
                                     @endif
                                 </ul>
                              @else
