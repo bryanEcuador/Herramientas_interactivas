@@ -1,5 +1,24 @@
 @extends('layouts.principal')
-
+@section('css')
+    <style>
+        .contenedor-mensaje {
+            padding-left: 5%;
+            padding-right: 5%;
+            border-left: 20px;
+            color: white;
+            font-size: 20px;
+            background-color: #342b7f;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            display: flex;
+            align-content: center;
+        }
+        .mensaje {
+            margin-right: 20%;
+            margin-left: 20%;
+        }
+    </style>
+@endsection
 @section('content')
     <br>
     <br>
@@ -253,9 +272,83 @@
     <!--================End Recent Update Area =================-->
 
     <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main_title">
+                    <h2>Test de conocimiento</h2>
+                    <h1>Test de conocimiento</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing_item">
+                    <h1 class="p_price">Nivel 1</h1>
+                    <h3 class="p_title">Conocimientos necesarios</h3>
+                    <div class="p_list">
+                        <ul>
+                            <li>Variables</li>
+                            <li>Tipos de datos</li>
+                            <li>Funciones</li>
+                        </ul>
+                    </div>
+                    <div class="p_btn">
+                        @if($testHabilidado == 1)
+                        <a class="gradient_btn" href="/test/1"><span>Realizar test</span></a>
+                        @else
+                            <a  href="#"><span>Test bloqueado</span></a>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing_item">
+                    <h1 class="p_price">Nivel 2</h1>
+                    <h3 class="p_title">Conocimientos necesarios</h3>
+                    <div class="p_list">
+                        <ul>
+                            <li>Arreglos</li>
+                            <li>Sintaxis del lenguaje</li>
+                            <li>Ciclos</li>
+                        </ul>
+                    </div>
+                    <div class="p_btn">
+                        @if($testHabilidado == 2)
+                        <a class="gradient_btn" href="/test/2"><span>Realizar test</span></a>
+                        @else
+                            <a  href="#"><span>Test bloqueado</span></a>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 hidden-md">
+                <div class="pricing_item">
+                    <h1 class="p_price">Nivel 3</h1>
+                    <h3 class="p_title">Conocimientos necesarios</h3>
+                    <div class="p_list">
+                        <ul>
+                            <li>Alcance de las variables</li>
+                            <li>Operadores</li>
+                            <li>Sintaxis</li>
+                        </ul>
+                    </div>
+                    <div class="p_btn">
+                        @if($testHabilidado == 3)
+                        <a class="gradient_btn" href="/test/3"><span>Realizar test</span></a>
+                         @else
+                                <a  href="#"><span>Test bloqueado</span></a>
+                         @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contenedor-mensaje">
+        <div style="">
+            Recuerda para tomar el test del siguiente nivel, debes terminar el anterior
+        </div>
+    </div>
+
     <br>
-
-
-
-
 @endsection

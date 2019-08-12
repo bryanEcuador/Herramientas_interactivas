@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="/vendors/flaticon/flaticon.css">
     <!-- main css -->
     <link rel="stylesheet" href="/css/style.css">
+    @yield('css')
 </head>
 
 <body>
@@ -76,12 +77,15 @@
                              @else
                                     <ul class="nav navbar-nav menu_nav justify-content-center">
                                         <li class="nav-item active"><a class="nav-link" href="/inteligencias">Inteligencias</a></li>
-                                        @if(auth()->user()->name == 'Admin')
+                                        <li class="nav-item active"><a class="nav-link" href="/recomendaciones">Recomendaciones</a></li>
+
+                                    @if(auth()->user()->name == 'Admin')
                                             <li class="nav-item">
-                                                <button STYLE=" font-size: 12px; font-family: Roboto; color: #3fcaff; background-color: transparent;  border: none;" type="button" class="nav-link" data-toggle="modal" data-target="#estadisticas">
+                                            <button STYLE=" font-size: 12px; font-family: Roboto; color: #3fcaff; background-color: transparent;  border: none;" type="button" class="nav-link" data-toggle="modal" data-target="#estadisticas">
                                                     ESTADISTICAS
                                                 </button>
                                             </li>
+                                            <li class="nav-item active"><a class="nav-link" href="/graficos">Estadisticas</a></li>
                                         @endif
                                     </ul>
                                     <ul class="nav navbar-nav navbar-right">
@@ -154,8 +158,9 @@
 <script src="/js/mail-script.js"></script>
 <!--gmaps Js-->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
-<script src="js/gmaps.min.js"></script>
-<script src="js/theme.js"></script>
+<script src="/js/gmaps.min.js"></script>
+<script src="/js/theme.js"></script>
+@yield('scripts')
 </body>
 
 </html>
