@@ -179,6 +179,13 @@
                             GeoGebra
                         </a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link " id="contact-tab" data-toggle="tab" href="#PSeInt" role="tab" aria-controls="contact"
+                           aria-selected="false">
+                            PSeInt
+                        </a>
+                    </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade" id="ZinjaI" role="tabpanel" aria-labelledby="home-tab">
@@ -261,6 +268,35 @@
                                     <p style="display: inline; margin-right:0;font-size: 10px; padding: 2px">PAGINA OFICIAL :</p>
                                     <a style="font-size: 10px; color: #fff;" href="http://www.progranimate.com/">www.progranimate.com</a>
 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="PSeInt" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row recent_update_text">
+                            <div class="col-lg-6">
+                                <div class="chart_img">
+                                    <img class="img-fluid" src="img/pseint.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="section_content">
+                                    <h6>PSeInt</h6>
+                                    <p>
+                                        PSeInt es un sencillo programa de comprensión asequible para los que no cuentan con conocimientos informáticos avanzados. Cuenta con unos tutoriales en vídeo que resultan sumamente didácticos y muestran cómo trabajar con la aplicación.
+                                        Con la interpretación de los pseudocódigos que te enseña PSeInt aprenderás métodos de programación, y todo de una manera muy sencilla, ya que usa un pseudo-lenguaje limitado, simple e intuitivo orientado en todo momento a la enseñanza. Todo el programa está desarrollado en español, con lo que no tendremos que sufrir la barrera del idioma, tan habitual en estos casos de programación.
+
+                                    </p>
+                                    <h6>Caracteristicas y Funcionalidades de PSeInt:</h6>
+                                    <ul>
+                                        <li style="color: #fff;">Es totalmente libre y gratuito (licencia GPLv2)</li>
+                                        <li style="color: #fff;">Puede interpretar (ejecutar) los algoritmos escritos</li>
+                                        <li style="color: #fff;">Permite la edición simultánea de múltiples algoritmos</li>
+                                        <li style="color: #fff;">Determina y marca claramente los errores</li>
+                                    </ul>
+                                    <p style="display: inline; margin-right:0;font-size: 10px; padding: 2px">PAGINA OFICIAL :</p>
+                                    <a style="font-size: 10px; color: #fff;" href="http://pseint.sourceforge.net//">pseint.sourceforge.net//</a>
+                                    <br>
                                 </div>
                             </div>
                         </div>

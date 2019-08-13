@@ -138,6 +138,39 @@
         </section>
         <!--================End Upcoming Games Area =================-->
 
+
+    <section class="blog_categorie_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="categories_post">
+                        <img src="img/blog/cat-post/cat-post-3.jpg" alt="post">
+                        <div class="categories_details">
+                            <div class="categories_text">
+                                <a href="/test/7"><h5>Encuesta de sastifacción</h5></a>
+                                <div class="border_line"></div>
+                                <p>Por favor calificanos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="categories_post">
+                        <img src="img/blog/cat-post/cat-post-3.jpg" alt="post">
+                        <div class="categories_details">
+                            <div class="categories_text">
+                                <a href="/test/8"><h5>Encuesta de sastifacción</h5></a>
+                                <div class="border_line"></div>
+                                <p>Nos encataria, tener tu opinión</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
         <!--================Start About Us Area =================-->
         <section class="about_us_area section_gap_top">
             <div class="container">
@@ -166,6 +199,7 @@
             </div>
         </section>
         <!--================End About Us Area =================-->
+
 
 
     <script>

@@ -17,6 +17,12 @@ class CreateQuestionTable extends Migration
             $table->increments('id');
             $table->integer('form_id')->unsigned();
             $table->string('question');
+            $table->string('r1');
+            $table->string('r2');
+            $table->string('r3');
+            $table->string('r4');
+            $table->string('r5');
+            $table->string('img')->default('0');
             $table->foreign('form_id')->references('id')->on('tb_form');
             $table->timestamps();
         });

@@ -213,6 +213,79 @@
     <!--================End Recent Update Area =================-->
 
     <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main_title">
+                    <h2>Test de aptitud</h2>
+                    <h1>Test de aptitud</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing_item">
+                    <h1 class="p_price">Nivel 1</h1>
+                    <h3 class="p_title">Conocimientos necesarios</h3>
+                    <div class="p_list">
+                        <ul>
+                            <li>Sin conocimientos especificos previos</li>
+                        </ul>
+                    </div>
+                    <div class="p_btn">
+                        @if($testHabilidado == 4)
+                            <a class="gradient_btn" href="/test/4"><span>Realizar test</span></a>
+                        @else
+                            <a  href="#"><span>Test bloqueado</span></a>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing_item">
+                    <h1 class="p_price">Nivel 2</h1>
+                    <h3 class="p_title">Conocimientos necesarios</h3>
+                    <div class="p_list">
+                        <ul>
+                            <li>Sin conocimientos especificos previos</li>
+                        </ul>
+                    </div>
+                    <div class="p_btn">
+                        @if($testHabilidado == 5)
+                            <a class="gradient_btn" href="/test/5"><span>Realizar test</span></a>
+                        @else
+                            <a  href="#"><span>Test bloqueado</span></a>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 hidden-md">
+                <div class="pricing_item">
+                    <h1 class="p_price">Nivel 3</h1>
+                    <h3 class="p_title">Conocimientos necesarios</h3>
+                    <div class="p_list">
+                        <ul>
+                            <li>Sin conocimientos especificos previos</li>
+                        </ul>
+                    </div>
+                    <div class="p_btn">
+                        @if($testHabilidado == 6)
+                            <a class="gradient_btn" href="/test/6"><span>Realizar test</span></a>
+                        @else
+                            <a  href="#"><span>Test bloqueado</span></a>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contenedor-mensaje">
+        <div style="">
+            Recuerda para tomar el test del siguiente nivel, debes terminar el anterior
+        </div>
+    </div>
+
     <br>
 
 

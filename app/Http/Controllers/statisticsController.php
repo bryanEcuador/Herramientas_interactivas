@@ -34,8 +34,12 @@ class statisticsController extends Controller
                      ['form_id' => $formulario, 'question_id' => $clave , 'option' => $valor , 'user_id' => $user_id ],
                  ]);
         }
-        return redirect()->route(
-            'resultados.test', ['id' => $formulario]);
+        if($formulario == 7 || $formulario == 8){
+            return redirect()->route('inteligencias');
+        }else{
+            return redirect()->route(
+                'resultados.test', ['id' => $formulario]);
+        }
     }
 
     public function graficos($formulario,$pregunta) {
