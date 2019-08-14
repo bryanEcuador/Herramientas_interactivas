@@ -82,10 +82,28 @@
                                     @if(auth()->user()->name == 'Admin')
                                             <li class="nav-item">
                                             <button STYLE=" font-size: 12px; font-family: Roboto; color: #3fcaff; background-color: transparent;  border: none;" type="button" class="nav-link" data-toggle="modal" data-target="#estadisticas">
-                                                    ESTADISTICAS
+                                                    ESTADISTÍCAS
                                                 </button>
                                             </li>
-                                            <li class="nav-item active"><a class="nav-link" href="/graficos">Estadisticas</a></li>
+                                            <li class="nav-item active submenu dropdown">
+                                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                                                aria-expanded="false">Graficos</a>
+                                                <ul class="dropdown-menu">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="/graficos/1">Conocimiento</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="/graficos/2">Aptitud</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="/graficos/3">Satisfacción</a>
+                                                    </li>
+
+
+                                                </ul>
+
+                                            </li>
+
                                         @endif
                                     </ul>
                                     <ul class="nav navbar-nav navbar-right">
