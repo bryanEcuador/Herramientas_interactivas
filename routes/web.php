@@ -157,21 +157,9 @@ Route::get('/libros/{file}', function ($file) {
 /// formularios
 route::get('/formulario/informacion/{id}','statisticsController@formularios')->middleware('auth');
 
-route::get('/test/{id}',function($id) {
-   $test = DB::table('tb_form')->select('type','level')->where('id',$id)->get()->toArray();
 
-   if($test[0]->type != 'sastifaccion') {
-       if ($test[0]->level == 1) {
-           $nombre = 'Test de ' . $test[0]->type . ' basico';
-       } else if ($test[0]->level == 2) {
-           $nombre = 'Test de ' . $test[0]->type . ' medio';
-       } else if ($test[0]->level == 3) {
-           $nombre = 'Test de ' . $test[0]->type . ' avanzado';
-       }
-   }
-    echo $nombre;
-    return view('formularios',compact('id','nombre'));
-});
+
+route::get('/test/{id}','TestController@hacerTest')->middleware('auth');
 
 route::get('/resultados/test/{id}',function($id) {
     $test = DB::table('tb_form')->select('type','level')->where('id',$id)->get()->toArray();
@@ -201,7 +189,13 @@ route::get('recomendaciones',function () {
 
 route::get('resultados-grafico/{form}/{question}','statisticsController@graficos');
 
-route::get('graficos',function (){
-   return view('graficos');
+route::get('graficos/{tipo}',function ($tipo){
+    if($tipo == '1'){
+        return view('graficos.conocimientos');
+    }else if($tipo == 2){
+        return view('graficos.aptitud');
+    }else if($tipo == 3){
+        return view('graficos.sastifaccion');
+    }
 });
 

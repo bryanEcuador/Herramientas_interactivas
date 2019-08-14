@@ -69,6 +69,7 @@
             let contador = 0
             data.forEach(function(element) {
                 console.log(element)
+                debugger
                 ++contador
                 // crear div principal
                 contenedor = document.createElement('div')
@@ -144,7 +145,7 @@
                             '}\n'
                     }
                 }else if(element.form_id ==4){
-                    if(contador == 1 || contador == 2 || contador == 3 || contador == 4)
+                    if(contador == 1 || contador == 2 || contador == 3 || contador == 4 || contador == 10)
                     textFormateado = document.createElement('img')
                     textFormateado.setAttribute('src','/img/preguntas/'+element.form_id+''+element.id+'.PNG')
                 }else if(element.form_id ==5){
@@ -215,8 +216,8 @@
                     opcion3.classList = 'input-style';
                     re3 = document.createElement('label')
                     if(element.r3 == element.correcta){
-                        re1.style.backgroundColor = '#eee'
-                        re1.style.color = 'blue'
+                        re3.style.backgroundColor = '#eee'
+                        re3.style.color = 'blue'
                     }else{
                         if(element.r3 == element.option){
                             re3.style.backgroundColor = '#eee'
@@ -273,7 +274,7 @@
                 contenedorRadio.appendChild(opcion2)
                 contenedorRadio.appendChild(re2)
                 contenedorRadio.appendChild(document.createElement('br'))
-                if(element.r4 != null){
+                if(element.r3 != null){
                     contenedorRadio.appendChild(opcion3)
                     contenedorRadio.appendChild(re3)
                     contenedorRadio.appendChild(document.createElement('br'))
@@ -301,11 +302,11 @@
                         contenedor.appendChild(textFormateado)
                     }
                 }else if(element.form_id == 4){
-                    if (contador == 1 || contador == 2 || contador == 3 || contador == 4) {
+                    if (contador == 1 || contador == 2 || contador == 3 || contador == 4 || contador == 10) {
                         contenedor.appendChild(textFormateado)
                     }
                 }else if(element.form_id == 5){
-                    if (contador == 2 || contador == 4 || contador == 6 || contador == 8 || contador == 9 || contador == 10) {
+                    if (contador == 2 || contador == 4 || contador == 6  || contador == 8 || contador == 9 || contador == 10) {
                         contenedor.appendChild(textFormateado)
                     }
                 }else if(element.form_id ==6){

@@ -141,7 +141,7 @@
                             '}\n'
                     }
                 }else if(element.form_id ==4){
-                    if(contador == 1 || contador == 2 || contador == 3 || contador == 4)
+                    if(contador == 1 || contador == 2 || contador == 3 || contador == 4 || contador == 10)
                     textFormateado = document.createElement('img')
                     textFormateado.setAttribute('src','/img/preguntas/'+element.form_id+''+element.id+'.PNG')
                 }else if(element.form_id ==5){
@@ -162,6 +162,7 @@
                 opcion1.setAttribute('name',element.id)
                 opcion1.setAttribute('type','radio')
                 opcion1.setAttribute('value',element.r1)
+                opcion1.setAttribute('required',element.r1)
                 opcion1.classList = 'input-style';
                 re1 = document.createElement('label')
                 re1.innerText = element.r1
@@ -241,7 +242,7 @@
                         contenedor.appendChild(textFormateado)
                     }
                 }else if(element.form_id == 4){
-                    if (contador == 1 || contador == 2 || contador == 3 || contador == 4) {
+                    if (contador == 1 || contador == 2 || contador == 3 || contador == 4 || contador == 10) {
                         contenedor.appendChild(textFormateado)
                     }
                 }else if(element.form_id == 5){

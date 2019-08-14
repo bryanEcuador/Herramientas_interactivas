@@ -24,22 +24,41 @@ class statisticsController extends Controller
 
     public function store(Request $request){
         $array = $request->all();
+        //dd($array);
         $formulario =$request->input('formulario');
         $user_id = auth()->id();
-        // procesar respuesta
-        foreach ($array as $clave => $valor){
-            if($clave != '_token' and $clave != 'formulario')
-             // guardar datos en tabla
-                 DB::table('tb_statistics')->insert([
-                     ['form_id' => $formulario, 'question_id' => $clave , 'option' => $valor , 'user_id' => $user_id ],
-                 ]);
-        }
-        if($formulario == 7 || $formulario == 8){
-            return redirect()->route('inteligencias');
-        }else{
-            return redirect()->route(
-                'resultados.test', ['id' => $formulario]);
-        }
+
+        // validar que ya no este lleno
+       $resultado = DB::table('tb_statistics')->where([
+            ['form_id',$formulario],
+            ['user_id',$user_id]
+        ])->get();
+
+       if($resultado->isEmpty()){
+           // procesar respuesta
+           foreach ($array as $clave => $valor){
+               if($clave != '_token' and $clave != 'formulario')
+                   // guardar datos en tabla
+                   DB::table('tb_statistics')->insert([
+                       ['form_id' => $formulario, 'question_id' => $clave , 'option' => $valor , 'user_id' => $user_id ],
+                   ]);
+
+                   //echo $clave." ".$valor."<br>";
+           }
+           if($formulario == 7 || $formulario == 8){
+               return redirect()->route('inteligencias');
+           }else{
+               return redirect()->route(
+                   'resultados.test', ['id' => $formulario]);
+           }
+       }else{
+           return redirect()->route('inteligencias');
+       }
+
+
+
+
+      /*  */
     }
 
     public function graficos($formulario,$pregunta) {
@@ -53,6 +72,11 @@ class statisticsController extends Controller
           $total = DB::table('tb_statistics')->where([['form_id',$formulario],['question_id',$pregunta]])->count();
         // array con las opciones
         $datos = DB::table('tb_questions')->where([['form_id',$formulario],['id',$pregunta]])->get()->toArray();
+        $datos_valida = DB::table('tb_questions')->where([['form_id',$formulario],['id',$pregunta]])->get();
+
+        if($datos_valida->isEmpty()){
+            return null;
+        }
 
         // existe una opcion y cuantos elementos de la misma
          if($datos[0]->r1 != null){
@@ -78,6 +102,13 @@ class statisticsController extends Controller
              $cantidad = ($cantidad * 100) / $total;
              array_push($preguntas,$datos[0]->r4);
              array_push($cantidadOpcion,$cantidad);
+        }
+
+        if($datos[0]->r5 != null){
+        $cantidad = DB::table('tb_statistics')->where([['option',$datos[0]->r5] ,['form_id',$formulario],['question_id',$pregunta]])->count();
+        $cantidad = ($cantidad * 100) / $total;
+        array_push($preguntas,$datos[0]->r5);
+        array_push($cantidadOpcion,$cantidad);
         }
 
         $resultados = array($preguntas,$cantidadOpcion,$titulo);
