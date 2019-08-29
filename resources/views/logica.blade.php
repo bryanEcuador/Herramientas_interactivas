@@ -25,6 +25,14 @@
     <br>
     <br>
     <br>
+    <div class="descargas">
+        <p>Descargas:
+            <i>@if(isset($estadisticas))
+                {{$estadisticas[0]->downloads}} </p>
+        @endif
+        </i>
+        </p>
+    </div>
     <!--================ Start Frequently Asked Questions Area ================-->
     <section class="frequently_area">
         <div class="container">
@@ -58,7 +66,8 @@
     </section>
     <!--================ End Frequently Asked Questions Area ================-->
     <br>
-    <h2 class="sub_titulo">Herramientas interactivas</h2>
+    <h2 class="sub_titulo">Conoce las Herramientas Interactivas!!</h2>
+    <h4 class="sub_titulo">Aplicativos Lógica Matemáticas</h4>
 
     <section class="recent_update_area section_gap">
         <div class="container">
@@ -312,7 +321,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="main_title">
-                    <h2>Test de conocimiento</h2>
+                    <h2>Mide tus habilidades de inteligencias de conocimiento con un test!!</h2>
                     <h1>Test de conocimiento</h1>
                 </div>
             </div>
@@ -321,7 +330,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="pricing_item">
                     <h1 class="p_price">Nivel 1</h1>
-                    <h3 class="p_title">Conocimientos necesarios</h3>
+                    <h3 class="p_title">Conocimiento Básico</h3>
                     <div class="p_list">
                         <ul>
                             <li>Variables</li>
@@ -341,7 +350,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="pricing_item">
                     <h1 class="p_price">Nivel 2</h1>
-                    <h3 class="p_title">Conocimientos necesarios</h3>
+                    <h3 class="p_title">Conocimiento Intermedio</h3>
                     <div class="p_list">
                         <ul>
                             <li>Arreglos</li>
@@ -361,7 +370,7 @@
             <div class="col-lg-4 hidden-md">
                 <div class="pricing_item">
                     <h1 class="p_price">Nivel 3</h1>
-                    <h3 class="p_title">Conocimientos necesarios</h3>
+                    <h3 class="p_title">Conocimiento Avanzado</h3>
                     <div class="p_list">
                         <ul>
                             <li>Alcance de las variables</li>

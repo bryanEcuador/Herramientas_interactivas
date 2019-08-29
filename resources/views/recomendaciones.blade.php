@@ -1,6 +1,43 @@
 @extends('layouts.principal')
+@section('css')
+ <style>
+     .descargas {
+
+         border-style: solid;
+         border-color: transparent;
+         padding: 10px;
+         margin: 5px;
+         width: 15%;
+         height: auto;
+         text-align: center;
+         background-color: white;
+         position: fixed;
+         top: 25%;
+         right: 5%;
+
+     }
+
+     .descargas p {
+         letter-spacing: 1px;
+         font-size:1.5vw
+     }
+
+     .descargas p i {
+         font-weight : bold;
+     }
+ </style>
+@endsection
 @section('content')
+
     <div style="margin-top: 70px; padding: 40px;">
+        <div class="descargas">
+            <p>Descargas:
+                <i>@if(isset($estadisticas))
+                   {{$estadisticas[0]->downloads}} </p>
+                @endif
+                </i>
+            </p>
+        </div>
         <div class="section-top-border">
             <h3 class="mb-30 title_color">Libros recomendados</h3>
             <div class="progress-table-wrap" >

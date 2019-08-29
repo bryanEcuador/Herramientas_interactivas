@@ -16,7 +16,7 @@
                                 Inteligencias multiples <br>
                             </h2>
                             <p>
-                                Para entender un poco sobre inteligencia múltiples, varios autores coinciden en decir que la inteligencia ya no puede
+                                Para entender un poco sobre las inteligencia múltiples, varios autores coinciden en decir que la inteligencia ya no puede
                                 ser vista de manera unilateral, si no, bilateral. Esto quieres decir que la inteligencia debe de ser apreciada de manera
                                 heterogénea y singular. Para esto se propone 8 tipos de inteligencias
                             </p>

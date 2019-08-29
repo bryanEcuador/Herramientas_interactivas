@@ -21,6 +21,32 @@
     <link rel="stylesheet" href="/vendors/flaticon/flaticon.css">
     <!-- main css -->
     <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .descargas {
+
+            border-style: solid;
+            /*border-color: transparent;*/
+            padding: 10px;
+            margin: 5px;
+            width: 15%;
+            height: auto;
+            text-align: center;
+            background-color: white;
+            position: fixed;
+            top: 25%;
+            right: 5%;
+
+        }
+
+        .descargas p {
+            letter-spacing: 1px;
+            font-size:1.5vw
+        }
+
+        .descargas p i {
+            font-weight : bold;
+        }
+    </style>
     @yield('css')
 </head>
 
@@ -77,7 +103,7 @@
                              @else
                                     <ul class="nav navbar-nav menu_nav justify-content-center">
                                         <li class="nav-item active"><a class="nav-link" href="/inteligencias">Inteligencias</a></li>
-                                        <li class="nav-item active"><a class="nav-link" href="/recomendaciones">Recomendaciones</a></li>
+                                        <li class="nav-item active"><a class="nav-link" href="/recomendaciones">Libros recomendados de Autores</a></li>
 
                                     @if(auth()->user()->name == 'Admin')
                                             <li class="nav-item">

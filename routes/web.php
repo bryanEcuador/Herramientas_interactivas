@@ -145,8 +145,8 @@ Route::get('/uploads/{file}', function ($file) {
     $contador_table = DB::table('table_counter')->where('id', '=',1)->first();
     $contador = $contador_table->downloads +1;
     dB::table('table_counter')->where('id',$contador_table->id)->update(['downloads' => $contador]);
-
-    return Storage::download($file);
+    
+    //return Storage::download($file);
 })->middleware('auth');;
 
 Route::get('/libros/{file}', function ($file) {
@@ -184,7 +184,8 @@ route::post('formulario/store','statisticsController@store')->name('form')->midd
 //oute::post('information/update','informationController@update')->name('information.update')->middleware('auth');
 
 route::get('recomendaciones',function () {
-   return view('recomendaciones');
+    $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
+   return view('recomendaciones',compact('estadisticas'));
 });
 
 route::get('resultados-grafico/{form}/{question}','statisticsController@graficos');

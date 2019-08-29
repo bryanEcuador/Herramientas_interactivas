@@ -1,4 +1,5 @@
 @extends('layouts.principal')
+@section('css')
 
 @section('content')
 
@@ -15,13 +16,20 @@
                     Hola {{$name}}, te gustaría continuar visualizado el sitio o completar tu información personal.
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Continuar</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Si, continuar</button>
                     <button type="button" class="btn btn-primary"> <a href="/information" style="color: white "> Actualizar datos</a> </button>
                 </div>
             </div>
         </div>
     </div>
-
+    <div class="descargas">
+        <p>Visitas:
+            <i>@if(isset($estadisticas))
+                {{$estadisticas[0]->visit}} </p>
+        @endif
+        </i>
+        </p>
+    </div>
         <!--================Home Banner Area =================-->
         <section class="home_banner_area">
             <div class="banner_inner">
@@ -212,8 +220,6 @@ window.onload=function() {
             boton.click();
             console.log(@json($status));
         }
-
-
 }
     </script>
 @endsection

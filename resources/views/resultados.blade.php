@@ -7,7 +7,24 @@
     </style>
 @endsection
 @section('content')
+
     <div class="container" style="margin-top: 125px; margin-bottom: 25px;">
+        <div style="margin-top: 90px;" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Puntaje</h5>
+                    </div>
+                    <div class="modal-body">
+                       <p id="puntaje"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="cerrar" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -49,9 +66,16 @@
         let id
         let textFormateado
         let contenedorPreguntas = document.querySelector('#preguntas')
+        let cerrar = document.querySelector('#cerrar')
         window.onload = function () {
             crearFormulario()
         }
+
+        cerrar.addEventListener('click',function() {
+            setTimeout(function () {
+                window.location = '/inteligencias'
+            },3000)
+        })
 
         function crearFormulario(){
              id = @json($id);
@@ -67,6 +91,8 @@
             let dato
             let respuesta
             let contador = 0
+            let botonEnviar
+            let puntaje = 10
             data.forEach(function(element) {
                 console.log(element)
                 debugger
@@ -177,6 +203,7 @@
                     if(element.r1 == element.option){
                         re1.style.backgroundColor = '#eee'
                         re1.style.color = 'red'
+                        puntaje--
                     }
                 }
                 re1.innerText = element.r1
@@ -200,6 +227,7 @@
                     if(element.r2 == element.option){
                         re2.style.backgroundColor = '#eee'
                         re2.style.color = 'red'
+                        puntaje--
 
                     }
                 }
@@ -222,6 +250,7 @@
                         if(element.r3 == element.option){
                             re3.style.backgroundColor = '#eee'
                             re3.style.color = 'red'
+                            puntaje--
                         }
                     }
                     re3.innerText = element.r3
@@ -242,6 +271,7 @@
                         if(element.r4 == element.option){
                             re4.style.backgroundColor = '#eee'
                             re4.style.color = 'red'
+                            puntaje--
                         }
                     }
                     re4.innerText = element.r4
@@ -261,6 +291,7 @@
                         if(element.r5 == element.option){
                             re5.style.backgroundColor = '#eee'
                             re5.style.color = 'red'
+                            puntaje--
 
                         }
                     }
@@ -317,9 +348,6 @@
                 contenedorPreguntas.appendChild(contenedor)
                 contenedorPreguntas.appendChild(contenedorRadio)
 
-                    //console.log(respuesta)
-                contenedorPreguntas.appendChild(document.createElement('hr'))
-
 
                 // consultar respuesta
 
@@ -333,7 +361,17 @@
             })
 
             // crear el boton para enviar los datos al formulario
+            //console.log(respuesta)
+            contenedorPreguntas.appendChild(document.createElement('hr'))
+            botonEnviar = document.createElement('button')
+            botonEnviar.innerText = 'Ver puntaje'
+            botonEnviar.setAttribute('type','button')
+            botonEnviar.setAttribute('data-toggle','modal')
+            botonEnviar.setAttribute('data-target','#exampleModal')
+            botonEnviar.classList = 'btn btn-primary'
+            contenedorPreguntas.appendChild(botonEnviar)
 
+            document.getElementById('puntaje').innerText = 'Usted ha alcanzado un puntaje de: '+puntaje+' sobre 10'
 
 
 
