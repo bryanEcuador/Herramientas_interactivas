@@ -11,8 +11,16 @@ class statisticsController extends Controller
     // que se encarga de armar el formulario con sus respectivas preguntas y respuestas
     public function formularios($id){
 
-       $data = DB::table('tb_questions')->where('form_id',$id)->get();
-
+       if($id == 11){
+            // obten todos los registros que sean 1 2 y 3
+           $data = DB::table('tb_questions')->whereIn('form_id',[1,2,3])->get();
+           $data = $data->random(10);
+       } elseif ($id == 12){
+           $data = DB::table('tb_questions')->whereIn('form_id',[4,5,6])->get();
+           $data = $data->random(10);
+       }else{
+           $data = DB::table('tb_questions')->where('form_id',$id)->get();
+       }
         return $data;
     }
 
@@ -23,6 +31,9 @@ class statisticsController extends Controller
     }
 
     public function store(Request $request){
+        if($request->input('formulario') == 11 || $request->input('formulario') == 12){
+            return redirect()->route('inteligencias');
+        }
         $array = $request->all();
         //dd($array);
         $formulario =$request->input('formulario');
@@ -52,13 +63,23 @@ class statisticsController extends Controller
                    'resultados.test', ['id' => $formulario]);
            }
        }else{
-           return redirect()->route('inteligencias');
+           // actualizar los datos
+           foreach ($array as $clave => $valor){
+               if($clave != '_token' and $clave != 'formulario') {
+                   // actualizar datos en tabla
+                   DB::table('tb_statistics')->where([
+                       ['form_id', $formulario],
+                       ['question_id', $clave],
+                       ['user_id', $user_id]
+                   ])->update(
+                       ['option' => $valor]
+                   );
+               }
+           }
+           return redirect()->route(
+               'resultados.test', ['id' => $formulario]);
        }
 
-
-
-
-      /*  */
     }
 
     public function graficos($formulario,$pregunta) {
@@ -128,5 +149,22 @@ class statisticsController extends Controller
 
         return $data;
 
+    }
+
+    public function obtnerResultados(){
+        $datos = [];
+        try {
+            $datos =  db::table('tb_resultados_Test')
+                ->join('users','users.id','=','tb_resultados_Test.usuario_id')
+                ->select('users.name','tb_resultados_Test.*')->get();
+        }catch (\Exception $e) {
+            $error = $e->getMessage();
+        }
+        return $datos;
+    }
+
+    public function mostrarResultados(){
+        $resultados = $this->obtnerResultados();
+        return view('panel-administrativo',compact('resultados')) ;
     }
 }

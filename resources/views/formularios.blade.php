@@ -32,6 +32,8 @@
 
     <script>
         let contenedor;
+        let confirmacion
+        let botonEnviar
         let contenedorRadio
         let contenedorElementos
         let parrafo
@@ -261,19 +263,46 @@
 
 
                 //  espacio
-               console.log(element)
+
             })
 
             // crear el boton para enviar los datos al formulario
-            let botonEnviar
+
             let elementos = document.getElementById('elementos')
             botonEnviar = document.createElement('button')
             botonEnviar.innerText = 'Enviar'
             botonEnviar.setAttribute('type','submit')
+            botonEnviar.setAttribute('disabled','disabled')
             botonEnviar.classList = 'btn btn-primary'
+
+            // crear check
+            confirmacion = document.createElement('input')
+            confirmacion.setAttribute('type','checkbox')
+            confirmacion.setAttribute('id','confirmacion')
+            confirmacion.setAttribute('onchange','confirmar()')
+            let textConfirmacion = document.createElement('i')
+            textConfirmacion.innerText = ' Acepto que use las herramientas interactivas antes de realizar el test.'
+            elementos.insertBefore(confirmacion,document.getElementById('ayuda'));
+            elementos.insertBefore(textConfirmacion,document.getElementById('ayuda'));
+
+            elementos.insertBefore(document.createElement('br'),document.getElementById('ayuda'));
             elementos.insertBefore(botonEnviar,document.getElementById('ayuda'));
 
-            console.log(botonEnviar)
+
+
         }
+
+        function confirmar () {
+            console.log(confirmacion.value)
+            if(confirmacion.value == 'on'){
+                confirmacion.setAttribute('disabled','disabled')
+                botonEnviar.removeAttribute('disabled')
+            }
+        }
+
+
+
+
+
     </script>
 @endsection

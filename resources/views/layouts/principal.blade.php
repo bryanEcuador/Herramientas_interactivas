@@ -106,11 +106,9 @@
                                         <li class="nav-item active"><a class="nav-link" href="/recomendaciones">Libros recomendados de Autores</a></li>
 
                                     @if(auth()->user()->name == 'Admin')
-                                           {{-- <li class="nav-item">
-                                            <button STYLE=" font-size: 12px; font-family: Roboto; color: #3fcaff; background-color: transparent;  border: none;" type="button" class="nav-link" data-toggle="modal" data-target="#estadisticas">
-                                                    ESTADISTÍCAS
-                                                </button>
-                                            </li>--}}
+                                           <li class="nav-item active">
+                                               <a class="nav-link " href="/administracion">Resultados</a>
+                                            </li>
                                             <li class="nav-item active submenu dropdown">
                                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                                                 aria-expanded="false">Graficos</a>

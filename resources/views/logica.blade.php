@@ -25,12 +25,60 @@
     <br>
     <br>
     <br>
+    <div style="margin-top: 90px;" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="exampleModalLongTitle">test de comprobación</h2>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="mensaje" style="display: none">
+                        <p class="text text-danger">Debe constestar todas las preguntas para poder continuar</p>
+                    </div>
+                    <form>
+                        <div class=""><h3 style="display: block;">La definición de una variable se realiza de la siguiente manera:</h3></div>
+                        <div class="radio">
+                            <input name="1" type="radio" class="input-style"><label>int valor1;</label>
+                            <br>
+                            <input name="1" type="radio" class="input-style"><label>const int valor1=25;</label>
+                            <br><input name="1" type="radio"  class="input-style"><label>include valor1;</label>
+                            <br><input name="1" type="radio"  class="input-style"><label>int valor1=25;</label>
+                            <br>
+                        </div>
+                        <hr>
+                        <div class=""><h3 style="display: block;">Un código en C++ debe pasar por los procesos de Compilación y Ejecución</h3></div>
+                        <div class="radio">
+                            <input name="2" type="radio" class="input-style"><label>Verdadero;</label>
+                            <br><input name="2" type="radio"  class="input-style"><label>Falso</label>
+                            <br>
+                        </div>
+                        <hr>
+                        <div class=""><h3 style="display: block;">¿La función return devuelve valores alfanuméricos y caracteres especiales?</h3></div>
+                        <div class="radio">
+                            <input name="3" type="radio" class="input-style"><label>Verdadero;</label>
+                            <br><input name="3" type="radio"  class="input-style"><label>Falso</label>
+                            <br>
+                        </div>
+                        <hr>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="preTest()"> Enviar </button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="descargas">
         <p>Descargas:
-            <i>@if(isset($estadisticas))
+            <i>
+                @if(isset($estadisticas))
                 {{$estadisticas[0]->downloads}} </p>
-        @endif
-        </i>
+                @endif
+            </i>
         </p>
     </div>
     <!--================ Start Frequently Asked Questions Area ================-->
@@ -326,7 +374,21 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div id="pre-test" style="display: none" class="comment-form">
+            <h4>test de comprobación</h4>
+            <p>Antes de avanzar en los diferentes niveles debes completar este test</p>
+            <div>
+                <button class="primary-btn primary_btn"  id="modal" data-toggle="modal" data-target="#exampleModal">Realizar test</button>
+            </div>
+        </div>
+        <div id="final-test" style="display: none" class="comment-form">
+            <h4>test de final</h4>
+            <p>Este es el test final que agrupa todos los conocimientos</p>
+            <div>
+                <a class="gradient_btn" href="/test/11"><span>Realizar test</span></a>
+            </div>
+        </div>
+        <div id="test-iniciales" style="display: none" class="row">
             <div class="col-lg-4 col-md-6">
                 <div class="pricing_item">
                     <h1 class="p_price">Nivel 1</h1>
@@ -396,4 +458,50 @@
     </div>
 
     <br>
+
+    <script>
+        test :'';
+        init();
+
+        function preTest(){
+            debugger
+            hasError = false
+            if(!document.querySelector('input[name="1"]:checked')) {
+                hasError = true;
+            }
+            if(!document.querySelector('input[name="2"]:checked')) {
+                hasError = true;
+            }
+            if(!document.querySelector('input[name="3"]:checked')) {
+                hasError = true;
+            }
+            if(hasError){
+                // muestra mensaje
+                document.querySelector('#mensaje').style.display = 'block';
+            }else{
+                localStorage.setItem("pre-test", true);
+               $('#exampleModal').modal('hide')
+            }
+        }
+
+        function init(){
+            test = @json($testHabilidado);
+            if (test > 1){
+                document.querySelector('#test-iniciales').style.display = 'flex'
+            }else {
+                if(localStorage.getItem("pre-test")){
+                    document.querySelector('#test-iniciales').style.display = 'flex'
+                }else{
+                    document.querySelector('#pre-test').style.display = 'block'
+                }
+            }
+            console.log(test)
+
+            if(test == 4){
+                document.querySelector('#final-test').style.display = 'block'
+                document.querySelector('#test-iniciales').style.display = 'none'
+            }
+
+        }
+    </script>
 @endsection

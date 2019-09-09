@@ -48,6 +48,7 @@
     </div>
 
     <script>
+        let puntaje = 10
         let contenedor;
         let contenedorRadio
         let contenedorElementos
@@ -67,15 +68,51 @@
         let textFormateado
         let contenedorPreguntas = document.querySelector('#preguntas')
         let cerrar = document.querySelector('#cerrar')
+
+
         window.onload = function () {
             crearFormulario()
         }
 
         cerrar.addEventListener('click',function() {
+            enviar()
             setTimeout(function () {
+                // captura el puntaje
                 window.location = '/inteligencias'
-            },3000)
+            },4000)
         })
+
+
+        function enviar(){
+
+            var misCabeceras = new Headers();
+            let id = @json($id);
+            let tipo
+            if(id == 1 || id == 2 || id == 3 || id == 11 ){
+                tipo='logico'
+            }else if(id == 4 || id == 5 || id == 6 || id == 12 ){
+                tipo = 'espacial'
+            }
+
+            let url = '/guardarIntentosTest/'+id+'/'+tipo+'/'+puntaje
+            var miInit = {
+                method: 'GET',
+                headers: misCabeceras,
+                mode: 'cors',
+                cache: 'default'
+            };
+            fetch(url,miInit)
+                .then((response) => {
+                    console.log(response)
+                    return response.json()
+                })
+                .then((myRespond) => {
+                    console.log(myRespond)
+                })
+                .catch( error => {
+                    console.log(error)
+                })
+        }
 
         function crearFormulario(){
              id = @json($id);
@@ -92,10 +129,8 @@
             let respuesta
             let contador = 0
             let botonEnviar
-            let puntaje = 10
+
             data.forEach(function(element) {
-                console.log(element)
-                debugger
                 ++contador
                 // crear div principal
                 contenedor = document.createElement('div')

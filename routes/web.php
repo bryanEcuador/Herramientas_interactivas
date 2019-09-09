@@ -34,34 +34,7 @@ route::post('information/update','informationController@update')->name('informat
 
 route::get('/inteligencias' , 'informationController@inteligencias')->name('inteligencias')->middleware('auth');
 
-route::get('/inteligencia-matematica', function (){
-    $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
-    $testRealizados = DB::table('tb_statistics')->select('form_id')->distinct()
-                        ->where('user_id',auth()->id())->whereIn('form_id',[1,2,3])->get();
-    $filtered = array();
-    $array = array();
-    $testHabilidado = 0;
-    if($testRealizados->isEmpty()){
-        $testHabilidado = 1;
-    }else{
-        $filtered = $testRealizados->filter(function ($value, $key) {
-            return $value;
-        });
-
-        foreach ($filtered as $elementos){
-           array_push($array,$elementos->form_id) ;
-        }
-
-         if(in_array(3,$array)){
-             $testHabilidado = 4;
-         }elseif(in_array(2,$array)){
-             $testHabilidado = 3;
-         }else{
-             $testHabilidado = 2;
-         }
-    }
-    return view("logica",compact('estadisticas','testHabilidado'));
-})->middleware('auth');
+route::get('/inteligencia-matematica', 'TestController@test_logicos')->middleware('auth');
 
 
 route::get('/inteligencia-espacial',function() {
@@ -199,4 +172,11 @@ route::get('graficos/{tipo}',function ($tipo){
         return view('graficos.sastifaccion');
     }
 });
+
+
+route::get('guardarIntentosTest/{test}/{tipo}/{puntaje}','testController@guardarIntentosTest');
+
+route::get('mostrar-resultados','testController@mostrarResultados');
+
+route::get('administracion', 'statisticsController@mostrarResultados');
 
