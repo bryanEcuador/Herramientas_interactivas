@@ -5,6 +5,59 @@
     <!--================ Start Frequently Asked Questions Area ================-->
 
     <section style="margin-top: 125px" class="frequently_area">
+        <div style="margin-top: 90px;" class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title" id="exampleModalLongTitle">test de comprobación</h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="mensaje" style="display: none">
+                            <p class="text text-danger">Debe constestar todas las preguntas para poder continuar</p>
+                        </div>
+                        <form>
+                            <div class=""><h3 style="display: block;">Si una piña cuesta $3. ¿Cuánto costará la docena y media de piñas?</h3></div>
+                            <div class="radio">
+                                <input name="1" type="radio" class="input-style"><label>int valor1;</label>
+                                <br>
+                                <input name="1" type="radio" class="input-style"><label>36</label>
+                                <br><input name="1" type="radio"  class="input-style"><label>27</label>
+                                <br><input name="1" type="radio"  class="input-style"><label>45</label>
+                                <br><input name="1" type="radio"  class="input-style"><label>54</label>
+                                <br>
+                            </div>
+                            <hr>
+                            <div class=""><h3 style="display: block;">¿Cuál es el resultado de multiplicar 5 por su triple?</h3></div>
+                            <div class="radio">
+                                <input name="2" type="radio" class="input-style"><label>15;</label>
+                                <br><input name="2" type="radio" class="input-style"><label>45;</label>
+                                <br><input name="2" type="radio" class="input-style"><label>75;</label>
+                                <br><input name="2" type="radio" class="input-style"><label>55;</label>
+                                <br>
+                            </div>
+                            <hr>
+                            <div class=""><h3 style="display: block;">Calcular el 30% del 40% de 2000</h3></div>
+                            <div class="radio">
+                                <input name="3" type="radio" class="input-style"><label>240;</label>
+                                <br><input name="3" type="radio"  class="input-style"><label>480</label>
+                                <br><input name="3" type="radio"  class="input-style"><label>60</label>
+                                <br><input name="3" type="radio"  class="input-style"><label>180</label>
+                                <br>
+                            </div>
+                            <hr>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="preTest()"> Enviar </button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="descargas">
             <p>Descargas:
                 <i>@if(isset($estadisticas))
@@ -28,8 +81,6 @@
                         <p>
                             Esta se define como la habilidad de imaginar dibujos en tres dimensiones. Quienes poseen esta habilidad tienen mayor facilidad para recordar fotos y objetos que recordar palabras.
                             Esta inteligencia es común en pintores, diseñadores, arquitectos, entre otros.
-
-
                         </p>
                     </div>
                 </div>
@@ -234,7 +285,21 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div id="pre-test" style="display: none" class="comment-form">
+            <h4>Veamos cuanto sabes con este test</h4>
+            <p>Antes de avanzar en los diferentes niveles debes completar este test</p>
+            <div>
+                <button class="primary-btn primary_btn"  id="modal" data-toggle="modal" data-target="#exampleModal">Realizar test</button>
+            </div>
+        </div>
+        <div id="final-test" style="display: none" class="comment-form">
+            <h4>test de final</h4>
+            <p>Este es el test final que agrupa todos los conocimientos</p>
+            <div>
+                <a class="gradient_btn" href="/test/12"><span>Realizar test</span></a>
+            </div>
+        </div>
+        <div id="test-iniciales" style="display: none" class="row">
             <div class="col-lg-4 col-md-6">
                 <div class="pricing_item">
                     <h1 class="p_price">Nivel 1</h1>
@@ -300,6 +365,52 @@
     <br>
 
 
+    <script>
+        test :'';
+        init();
+
+        function preTest(){
+            debugger
+            hasError = false
+            if(!document.querySelector('input[name="1"]:checked')) {
+                hasError = true;
+            }
+            if(!document.querySelector('input[name="2"]:checked')) {
+                hasError = true;
+            }
+            if(!document.querySelector('input[name="3"]:checked')) {
+                hasError = true;
+            }
+            if(hasError){
+                // muestra mensaje
+                document.querySelector('#mensaje').style.display = 'block';
+            }else{
+                localStorage.setItem("pre-test2", true);
+                $('#exampleModal').modal('hide')
+                location.reload()
+            }
+        }
+
+        function init(){
+            test = @json($testHabilidado);
+            console.log(test)
+            if (test > 4 ){
+                document.querySelector('#test-iniciales').style.display = 'flex'
+            }else {
+                if(localStorage.getItem("pre-test2")){
+                    document.querySelector('#test-iniciales').style.display = 'flex'
+                }else{
+                    document.querySelector('#pre-test').style.display = 'block'
+                }
+            }
+
+            if(test == 7){
+                document.querySelector('#final-test').style.display = 'block'
+                document.querySelector('#test-iniciales').style.display = 'none'
+            }
+
+        }
+    </script>
 
 
 @endsection

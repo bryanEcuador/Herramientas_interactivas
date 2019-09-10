@@ -35,16 +35,18 @@ class TestController extends Controller
     }
 
     public  function validarTest($id){
+        $puntajeTest = db::table('tb_puntaje_test')->where('usuario_id',\auth()->id())->get();
+        $puntajeTest = $puntajeTest->first();
+        $testHabilidado = 0;
         if($id >= 1 && $id <= 3 ){
             $testRealizados = DB::table('tb_statistics')->select('form_id')->distinct()
                 ->where('user_id',auth()->id())->whereIn('form_id',[1,2,3])->get();
 
-            $puntajeTest = db::table('tb_puntaje_test')->where('usuario_id',\auth()->id())->get();
-            $puntajeTest = $puntajeTest->first();
+
 
             $filtered = array();
             $array = array();
-            $testHabilidado = 0;
+
             if($testRealizados->isEmpty() || $puntajeTest->test_basico_logico <= 7 ){
                 $testHabilidado = 1;
             }else{
@@ -57,7 +59,12 @@ class TestController extends Controller
                 }
 
                 if(in_array(3,$array)){
-                    $testHabilidado = 4;
+                    if($puntajeTest->test_final_logico <= 7){
+                        $testHabilidado = 3;
+                    }else{
+                        $testHabilidado = 4;
+                    }
+
                 }elseif(in_array(2,$array)){
                     if($puntajeTest->test_intermedio_logico <= 7){
                         $testHabilidado = 2;
@@ -92,11 +99,25 @@ class TestController extends Controller
                 }
 
                 if(in_array(6,$array)){
-                    $testHabilidado = 7;
+
+                    if($puntajeTest->test_final_aptitud <= 7){
+                        $testHabilidado = 6;
+                    }else{
+                        $testHabilidado = 7;
+                    }
                 }elseif(in_array(5,$array)){
-                    $testHabilidado = 6;
+
+                    if($puntajeTest->test_intermedio_aptitud <= 7){
+                        $testHabilidado = 5;
+                    }else{
+                        $testHabilidado = 6;
+                    }
                 }else{
-                    $testHabilidado = 5;
+                    if($puntajeTest->test_basico_aptitud <= 7){
+                        $testHabilidado = 4;
+                    }else{
+                        $testHabilidado = 5;
+                    }
                 }
             }
         }
@@ -212,6 +233,58 @@ class TestController extends Controller
             }
         }
         return view("logica",compact('estadisticas','testHabilidado'));
+    }
+
+    public function test_espacial(){
+        $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
+        $testRealizados = DB::table('tb_statistics')->select('form_id')->distinct()
+            ->where('user_id',auth()->id())->whereIn('form_id',[4,5,6])->get();
+
+        $filtered = array();
+        $array = array();
+        $testHabilidado = 0;
+
+        if($testRealizados->isEmpty()){
+            $testHabilidado = 4;
+        }else{
+            $filtered = $testRealizados->filter(function ($value, $key) {
+                return $value;
+            });
+
+            foreach ($filtered as $elementos){
+                array_push($array,$elementos->form_id) ;
+            }
+
+            if(in_array(6,$array)){
+                $puntaje = db::table('tb_puntaje_test')->select('test_final_aptitud')->get();
+                $puntaje = $puntaje->first();
+
+                if($puntaje->test_final_aptitud > 7){
+                    $testHabilidado = 7;
+                }else{
+                    $testHabilidado = 6;
+                }
+            }elseif(in_array(5,$array)){
+                $puntaje = db::table('tb_puntaje_test')->select('test_intermedio_aptitud')->get();
+                $puntaje = $puntaje->first();
+
+                if($puntaje->test_intermedio_aptitud > 7){
+                    $testHabilidado = 6;
+                }else{
+                    $testHabilidado = 5;
+                }
+            }else{
+                $puntaje = db::table('tb_puntaje_test')->select('test_basico_aptitud')->get();
+                $puntaje = $puntaje->first();
+
+                if($puntaje->test_basico_aptitud > 7){
+                    $testHabilidado = 5;
+                }else{
+                    $testHabilidado = 4;
+                }
+            }
+        }
+        return view("espacial",compact('estadisticas','testHabilidado'));
     }
 
     public function mostrarResultados(){

@@ -37,36 +37,7 @@ route::get('/inteligencias' , 'informationController@inteligencias')->name('inte
 route::get('/inteligencia-matematica', 'TestController@test_logicos')->middleware('auth');
 
 
-route::get('/inteligencia-espacial',function() {
-    $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
-    $testRealizados = DB::table('tb_statistics')->select('form_id')->distinct()
-        ->where('user_id',auth()->id())->whereIn('form_id',[4,5,6])->get();
-
-    $filtered = array();
-    $array = array();
-    $testHabilidado = 0;
-
-    if($testRealizados->isEmpty()){
-        $testHabilidado = 4;
-    }else{
-        $filtered = $testRealizados->filter(function ($value, $key) {
-            return $value;
-        });
-
-        foreach ($filtered as $elementos){
-            array_push($array,$elementos->form_id) ;
-        }
-
-        if(in_array(6,$array)){
-            $testHabilidado = 7;
-        }elseif(in_array(5,$array)){
-            $testHabilidado = 6;
-        }else{
-            $testHabilidado = 5;
-        }
-    }
-    return view("espacial",compact('estadisticas','testHabilidado'));
-})->middleware('auth');
+route::get('/inteligencia-espacial','TestController@test_espacial')->middleware('auth');
 
 
 

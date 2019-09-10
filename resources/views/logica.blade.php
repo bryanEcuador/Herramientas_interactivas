@@ -72,6 +72,7 @@
             </div>
         </div>
     </div>
+
     <div class="descargas">
         <p>Descargas:
             <i>
@@ -82,7 +83,7 @@
         </p>
     </div>
     <!--================ Start Frequently Asked Questions Area ================-->
-    <section class="frequently_area">
+    <section style="margin-top: 125px" class="frequently_area">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -375,7 +376,7 @@
             </div>
         </div>
         <div id="pre-test" style="display: none" class="comment-form">
-            <h4>test de comprobación</h4>
+            <h4>Veamos cuanto sabes con este test</h4>
             <p>Antes de avanzar en los diferentes niveles debes completar este test</p>
             <div>
                 <button class="primary-btn primary_btn"  id="modal" data-toggle="modal" data-target="#exampleModal">Realizar test</button>
@@ -481,6 +482,7 @@
             }else{
                 localStorage.setItem("pre-test", true);
                $('#exampleModal').modal('hide')
+                location.reload()
             }
         }
 

@@ -146,15 +146,20 @@
                     if(contador == 1 || contador == 2 || contador == 3 || contador == 4 || contador == 10)
                     textFormateado = document.createElement('img')
                     textFormateado.setAttribute('src','/img/preguntas/'+element.form_id+''+element.id+'.PNG')
+                    textFormateado.setAttribute('alt','')
                 }else if(element.form_id ==5){
                     if(contador == 2 || contador == 4 || contador == 6 || contador == 8 || contador == 9 || contador == 10) {
                         textFormateado = document.createElement('img')
                         textFormateado.setAttribute('src', '/img/preguntas/' + element.form_id + '' + element.id + '.PNG')
+                        textFormateado.setAttribute('alt','')
+
                     }
                 }else if(element.form_id ==6){
                     if(contador == 2 || contador == 6 || contador == 7 || contador == 8 || contador == 9 || contador == 10) {
                         textFormateado = document.createElement('img')
                         textFormateado.setAttribute('src', '/img/preguntas/' + element.form_id + '' + element.id + '.PNG')
+                        textFormateado.setAttribute('alt','')
+
                     }
                 }
 

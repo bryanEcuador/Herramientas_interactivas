@@ -29,7 +29,7 @@
 @endsection
 @section('content')
 
-    <div style="margin-top: 70px; padding: 40px;">
+    <div style="margin-top: 70px; padding: 40px; margin-bottom: 70px;">
         {{--<div class="descargas">
             <p>Descargas:
                 <i>@if(isset($estadisticas))
@@ -40,52 +40,36 @@
         </div>--}}
         <div class="section-top-border">
             <h3 class="mb-30 title_color">Intentos realizados</h3>
-            <table id="example" class="" style="width:100%">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>USUARIO</th>
-                    <th>LOGICO INICIAL</th>
-                    <th>LOGICO INTERMEDIO</th>
-                    <th>LOGICO FINAL</th>
-                    <th>LOGICO ALEATORIO</th>
-                    <th>APTITUD INICIAL</th>
-                    <th>APTITUD INTERMEDIO</th>
-                    <th>APTITUD FINAL</th>
-                    <th>APTITUD ALEATORIO</th>
-                </tr>
-                </thead>
-                <tbody>
-               @foreach($resultados as $resultado)
-                <tr>
-                    <td>{{$resultado->id}}</td>
-                    <td>{{$resultado->name}}</td>
-                    <td>{{$resultado->test_basico_logico}}</td>
-                    <td>{{$resultado->test_intermedio_logico}}</td>
-                    <td>{{$resultado->test_final_logico}}</td>
-                    <td>{{$resultado->test_aleatorio_logico}}</td>
-                    <td>{{$resultado->test_basico_aptitud}}</td>
-                    <td>{{$resultado->test_intermedio_aptitud}}</td>
-                    <td>{{$resultado->test_final_aptitud}}</td>
-                    <td>{{$resultado->test_aletorio_aptitud}}</td>
-                </tr>
-               @endforeach
-                </tbody>
-                <tfoot>
-                <tr>
-                    <th>ID</th>
-                    <th>USUARIO</th>
-                    <th>LOGICO INICIAL</th>
-                    <th>LOGICO INTERMEDIO</th>
-                    <th>LOGICO FINAL</th>
-                    <th>LOGICO ALEATORIO</th>
-                    <th>APTITUD INICIAL</th>
-                    <th>APTITUD INTERMEDIO</th>
-                    <th>APTITUD FINAL</th>
-                    <th>APTITUD ALEATORIO</th>
-                </tr>
-                </tfoot>
-            </table>
+            <div class="progress-table-wrap" >
+                <div class="progress-table">
+                    <div class="table-head" style="justify-content: space-between;">
+                        <div class="serial">ID</div>
+                        <div class="country">USUARIO</div>
+                        <div class="country">LOGICO INICIAL</div>
+                        <div class="country">LOGICO MEDIO</div>
+                        <div class="country">LOGICO FINAL</div>
+                        <div class="country">LOGICO ALTERNO</div>
+                        <div class="country">APTITUD INICIAL</div>
+                        <div class="country">APTITUD MEDIO</div>
+                        <div class="country">APTITUD FINAL</div>
+                        <div class="country">APTITUD ALTERNO</div>
+                    </div>
+                    <div class="table-row " style="justify-content: space-between;">
+                        @foreach($resultados as $resultado)
+                            <div class="serial">{{$resultado->id}}</div>
+                            <div class="country">{{$resultado->name}}</div>
+                            <div class="country">{{$resultado->test_basico_logico}}</div>
+                            <div class="country">{{$resultado->test_intermedio_logico}}</div>
+                            <div class="country">{{$resultado->test_final_logico}}</div>
+                            <div class="country">{{$resultado->test_aleatorio_logico}}</div>
+                            <div class="country">{{$resultado->test_basico_aptitud}}</div>
+                            <div class="country">{{$resultado->test_intermedio_aptitud}}</div>
+                            <div class="country">{{$resultado->test_final_aptitud}}</div>
+                            <div class="country">{{$resultado->test_aletorio_aptitud}}</div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.js" ></script>

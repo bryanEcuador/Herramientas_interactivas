@@ -4,9 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\TestController;
 
 class statisticsController extends Controller
 {
+    protected  $TestConroller;
+    public function __construct(TestController $testController)
+    {
+        $this->TestConroller = $testController;
+    }
+
+
     // Este metodo se encarga de mostrar la vista principal pasando los datos para usar el componente de VUE
     // que se encarga de armar el formulario con sus respectivas preguntas y respuestas
     public function formularios($id){
@@ -31,13 +39,18 @@ class statisticsController extends Controller
     }
 
     public function store(Request $request){
-        if($request->input('formulario') == 11 || $request->input('formulario') == 12){
+        $formulario =$request->input('formulario');
+        $user_id = auth()->id();
+
+        if($formulario == 11 || $formulario == 12){
+            // guardar intento y calificación
+            $tipo = $formulario == 11 ? 'logico' : 'espacial';
+            $this->TestConroller->guardarIntentosTest($formulario,$tipo,8);
             return redirect()->route('inteligencias');
         }
         $array = $request->all();
         //dd($array);
-        $formulario =$request->input('formulario');
-        $user_id = auth()->id();
+
 
         // validar que ya no este lleno
        $resultado = DB::table('tb_statistics')->where([

@@ -49,6 +49,7 @@
 
     <script>
         let puntaje = 10
+        let maxPuntaje = 0
         let contenedor;
         let contenedorRadio
         let contenedorElementos
@@ -132,6 +133,7 @@
 
             data.forEach(function(element) {
                 ++contador
+                ++maxPuntaje
                 // crear div principal
                 contenedor = document.createElement('div')
                 contenedor.classList = ''
@@ -406,7 +408,7 @@
             botonEnviar.classList = 'btn btn-primary'
             contenedorPreguntas.appendChild(botonEnviar)
 
-            document.getElementById('puntaje').innerText = 'Usted ha alcanzado un puntaje de: '+puntaje+' sobre 10'
+            document.getElementById('puntaje').innerText = 'Usted ha alcanzado un puntaje de: '+puntaje+' sobre '+maxPuntaje
 
 
 
