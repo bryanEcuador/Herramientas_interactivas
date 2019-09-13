@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a93726e-e9ba-4de0-9d4e-75786a56c7d9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,28 +23,28 @@
       <file leaf-file-name="login.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
+            <state relative-caret-position="3874">
               <caret line="149" column="22" lean-forward="false" selection-start-line="149" selection-start-column="22" selection-end-line="149" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="4" column="50" lean-forward="false" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+            <state relative-caret-position="195">
+              <caret line="88" column="17" lean-forward="false" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -56,7 +54,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>graficos</find>
       <find>estadisticas</find>
       <find>continuar</find>
       <find>Continuar</find>
@@ -86,6 +83,7 @@
       <find>store</find>
       <find>result</find>
       <find>puntaje</find>
+      <find>uplo</find>
     </findStrings>
     <replaceStrings>
       <replace>400x400.png</replace>
@@ -148,8 +146,8 @@
         <option value="$PROJECT_DIR$/resources/views/espacial.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/formularios.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
       </list>
     </option>
   </component>
@@ -186,6 +184,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -211,34 +211,18 @@
             <path>
               <item name="HerrameintasInteractivas" type="b2602c69:ProjectViewProjectNode" />
               <item name="HerrameintasInteractivas" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="storage" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="HerrameintasInteractivas" type="b2602c69:ProjectViewProjectNode" />
               <item name="HerrameintasInteractivas" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="auth" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="HerrameintasInteractivas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HerrameintasInteractivas" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="layouts" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="HerrameintasInteractivas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HerrameintasInteractivas" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="routes" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="storage" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -307,18 +291,19 @@
       <workItem from="1567560207644" duration="602000" />
       <workItem from="1567961978849" duration="34975000" />
       <workItem from="1568078286925" duration="8923000" />
-      <workItem from="1568253279393" duration="1062000" />
+      <workItem from="1568253279393" duration="1889000" />
+      <workItem from="1568340742831" duration="2305000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="271430000" />
+    <option name="totallyTimeSpent" value="274562000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28744328" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29198185" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288364" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -635,7 +620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1040">
           <caret line="40" column="0" lean-forward="false" selection-start-line="40" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -643,7 +627,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1066">
           <caret line="41" column="61" lean-forward="false" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -651,14 +634,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2444">
           <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-            <element signature="e#1065#1140#0#PHP" expanded="false" />
-            <element signature="e#3210#5870#0#PHP" expanded="false" />
-            <element signature="e#5876#6301#0#PHP" expanded="false" />
-            <element signature="e#6307#6691#0#PHP" expanded="false" />
-            <element signature="e#6697#6856#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -666,13 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3770">
           <caret line="270" column="52" lean-forward="false" selection-start-line="270" selection-start-column="52" selection-end-line="270" selection-end-column="52" />
-          <folding>
-            <element signature="e#189#1176#0#PHP" expanded="false" />
-            <element signature="e#345#1119#0#PHP" expanded="false" />
-            <element signature="e#1182#4297#0#PHP" expanded="false" />
-            <element signature="e#6317#6723#0#PHP" expanded="false" />
-            <element signature="e#10161#10498#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -680,7 +648,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2366">
           <caret line="91" column="59" lean-forward="false" selection-start-line="91" selection-start-column="59" selection-end-line="91" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -688,7 +655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7748">
           <caret line="298" column="54" lean-forward="false" selection-start-line="298" selection-start-column="54" selection-end-line="298" selection-end-column="54" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -696,7 +662,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="182" column="0" lean-forward="false" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -704,21 +669,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12584">
           <caret line="484" column="23" lean-forward="false" selection-start-line="484" selection-start-column="0" selection-end-line="485" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
+        <state relative-caret-position="3874">
           <caret line="149" column="22" lean-forward="false" selection-start-line="149" selection-start-column="22" selection-end-line="149" selection-end-column="22" />
           <folding />
         </state>
@@ -726,8 +682,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="50" lean-forward="false" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="88" column="17" lean-forward="false" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="17" />
           <folding />
         </state>
       </provider>

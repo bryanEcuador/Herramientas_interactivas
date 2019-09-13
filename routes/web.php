@@ -86,14 +86,15 @@ route::get('/inteligencia-kinestica',function() {
 
 
 
-Route::get('/uploads/{file}', function ($file) {
+Route::get('/uploads/apps/{file}', function ($file) {
 
     $contador_table = DB::table('table_counter')->where('id', '=',1)->first();
+   
     $contador = $contador_table->downloads +1;
-    dB::table('table_counter')->where('id',$contador_table->id)->update(['downloads' => $contador]);
+    DB::table('table_counter')->where('id',$contador_table->id)->update(['downloads' => $contador]);
     
-    //return Storage::download($file);
-})->middleware('auth');;
+    return Storage::download($file);
+})->middleware('auth'); 
 
 Route::get('/libros/{file}', function ($file) {
     return Storage::download($file);

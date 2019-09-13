@@ -148,8 +148,8 @@
 
                                     <br>
                                     @if(auth()->user()->name !== 'Admin')
-                                    <a style="margin-right: 2px;" class="primary_btn" href="/uploads/mindomo-3-1-9.apk">Descargar app</a>
-                                    <a style="margin-right: 2px;" class="primary_btn" href="/uploads/Mindomo_v.8.0.42_x64.exe">Descargar exe</a>
+                                    <a style="margin-right: 2px;" class="primary_btn" href="/uploads/apps/mindomo-3-1-9.apk">Descargar app</a>
+                                    <a style="margin-right: 2px;" class="primary_btn" href="/uploads/apps/Mindomo_v.9.1.3_x64.exe">Descargar exe</a>
                                     @endif
                                 </div>
                             </div>
@@ -176,7 +176,7 @@
                                     <a style="font-size: 10px; color: #fff;" href="https://www.mindmeister.com/es">www.mindmeister.com</a>
                                     <br>
                                     @if(auth()->user()->name !== 'Admin')
-                                    <a style="margin-right: 2px;" class="primary_btn" href="/uploads/mindmeister-4-4-1.apk">Descargar app</a>
+                                    <a style="margin-right: 2px;" class="primary_btn" href="/uploads/apps/mindmeister-4-4-1.apk">Descargar app</a>
                                     @endif
                                 </div>
                             </div>
@@ -201,7 +201,7 @@
                                     <a style="font-size: 10px; color: #fff;" href="https://www.kodugamelab.com/">www.kodugamelab.com</a>
                                     <br>
                                     @if(auth()->user()->name !== 'Admin')
-                                    <a style="margin-right: 2px;" class="primary_btn" href="/uploads/kodu.msi">Descargar</a>
+                                    <a style="margin-right: 2px;" class="primary_btn" href="/kodu.zip">Descargar</a>
                                     @endif
                                 </div>
                             </div>
@@ -427,9 +427,9 @@
 
                     <div class="card-body">
                         <ul>
-                            <li> Mindmeister <a href="/uploads/mindmeister-4-4-1.apk">Descargar</a></li>
-                            <li> Mindomo  <a href="/uploads/mindomo-3-1-9.apk">Descargar apk</a> <a href="/uploads/Mindomo_v.8.0.42_x64.exe">Descargar exe</a></li>
-                            <li> Kodu Game Lab<a href="/uploads/kodu.msi">Descargar</a>  </li>
+                            <li> Mindmeister <a href="/uploads/apps/mindmeister-4-4-1.apk">Descargar</a></li>
+                            <li> Mindomo  <a href="/uploads/apps/mindomo-3-1-9.apk">Descargar apk</a> <a href="/uploads/Mindomo_v.8.0.42_x64.exe">Descargar exe</a></li>
+                            <li> Kodu Game Lab<a href="/uploads/apps/kodu.zip">Descargar</a>  </li>
 
                         </ul>
                     </div>

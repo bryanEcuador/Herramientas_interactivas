@@ -165,7 +165,7 @@
                                     </a>
                                     <br>
                                     @if(auth()->user()->name !== 'Admin')
-                                    <a class="primary_btn" href="/uploads/SoloLearn.apk">Descargar</a>
+                                    <a class="primary_btn" href="/uploads/apps/SoloLearn.apk">Descargar</a>
                                     @endif
                                 </div>
                             </div>
@@ -200,7 +200,7 @@
                                     {{--</a>--}}
                                     <br>
                                     @if(auth()->user()->name !== 'Admin')
-                                    <a class="primary_btn" href="/uploads/Buttons.apk">Descargar</a>
+                                    <a class="primary_btn" href="/uploads/apps/Buttons.apk" target="_blank" >Descargar</a>
                                     @endif
                                 </div>
                             </div>
