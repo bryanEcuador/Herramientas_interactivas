@@ -14,32 +14,32 @@ use Illuminate\Support\Facades\DB;
 
 route::get('/principal',function() {
    return view('layouts.principal');
-});
+})->middleware('verified');
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', function(){
     return redirect()->route('inteligencias');
 })->name('home');
-//Route::get('/home', 'informationController@inteligencias')->middleware('auth');;
+//Route::get('/home', 'informationController@inteligencias')->middleware('verified');;
 
 
 
-Route::get('/information/{mensaje?}','informationController@index')->middleware('auth')->name('information');
-route::post('information/update','informationController@update')->name('information.update')->middleware('auth');
+Route::get('/information/{mensaje?}','informationController@index')->middleware('verified')->name('information');
+route::post('information/update','informationController@update')->name('information.update')->middleware('verified');
 
 
 
-route::get('/inteligencias' , 'informationController@inteligencias')->name('inteligencias')->middleware('auth');
+route::get('/inteligencias' , 'informationController@inteligencias')->name('inteligencias')->middleware('verified');
 
-route::get('/inteligencia-matematica', 'TestController@test_logicos')->middleware('auth');
+route::get('/inteligencia-matematica', 'TestController@test_logicos')->middleware('verified');
 
 
-route::get('/inteligencia-espacial','TestController@test_espacial')->middleware('auth');
+route::get('/inteligencia-espacial','TestController@test_espacial')->middleware('verified');
 
 
 
@@ -52,32 +52,32 @@ route::get('/inteligencia-espacial','TestController@test_espacial')->middleware(
 route::get('/inteligencia-linguistica',function() {
     $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
     return view("linguistica",compact('estadisticas'));
-})->middleware('auth');
+})->middleware('verified');
 
 route::get('/inteligencia-musical',function() {
     $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
     return view("musical",compact('estadisticas'));
-})->middleware('auth');
+})->middleware('verified');
 
 route::get('/inteligencia-ecologica',function() {
     $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
     return view("ecologica",compact('estadisticas'));
-})->middleware('auth');
+})->middleware('verified');
 
 route::get('/inteligencia-interpersonal',function() {
     $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
     return view("interpersonal",compact('estadisticas'));
-})->middleware('auth');
+})->middleware('verified');
 
 route::get('/inteligencia-intrapersonal',function() {
     $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
     return view("intrapersonal",compact('estadisticas'));
-})->middleware('auth');
+})->middleware('verified');
 
 route::get('/inteligencia-kinestica',function() {
     $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
     return view("kinestica",compact('estadisticas'));
-})->middleware('auth');
+})->middleware('verified');
 
 
 
@@ -94,19 +94,19 @@ Route::get('/uploads/apps/{file}', function ($file) {
     DB::table('table_counter')->where('id',$contador_table->id)->update(['downloads' => $contador]);
     
     return Storage::download($file);
-})->middleware('auth'); 
+})->middleware('verified'); 
 
 Route::get('/libros/{file}', function ($file) {
     return Storage::download($file);
-})->middleware('auth');;
+})->middleware('verified');
 
 
 /// formularios
-route::get('/formulario/informacion/{id}','statisticsController@formularios')->middleware('auth');
+route::get('/formulario/informacion/{id}','statisticsController@formularios')->middleware('verified');
 
 
 
-route::get('/test/{id}','TestController@hacerTest')->middleware('auth');
+route::get('/test/{id}','TestController@hacerTest')->middleware('verified');
 
 route::get('/resultados/test/{id}',function($id) {
     $test = DB::table('tb_form')->select('type','level')->where('id',$id)->get()->toArray();
@@ -121,21 +121,21 @@ route::get('/resultados/test/{id}',function($id) {
         }
     }
 
-    $usuario = auth()->id();
+    $usuario = verified()->id();
     return view('resultados',compact('id','nombre','usuario'));
-})->name('resultados.test')->middleware('auth');
+})->name('resultados.test')->middleware('verified');
 
-route::get('resultados/preguntas/{form}','statisticsController@respuestaCorrecta')->middleware('auth');
+route::get('resultados/preguntas/{form}','statisticsController@respuestaCorrecta')->middleware('verified');
 
-route::post('formulario/store','statisticsController@store')->name('form')->middleware('auth');
-//oute::post('information/update','informationController@update')->name('information.update')->middleware('auth');
+route::post('formulario/store','statisticsController@store')->name('form')->middleware('verified');
+//oute::post('information/update','informationController@update')->name('information.update')->middleware('verified');
 
 route::get('recomendaciones',function () {
     $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
    return view('recomendaciones',compact('estadisticas'));
-});
+})->middleware('verified');;
 
-route::get('resultados-grafico/{form}/{question}','statisticsController@graficos');
+route::get('resultados-grafico/{form}/{question}','statisticsController@graficos')->middleware('verified');
 
 route::get('graficos/{tipo}',function ($tipo){
     if($tipo == '1'){
@@ -145,12 +145,16 @@ route::get('graficos/{tipo}',function ($tipo){
     }else if($tipo == 3){
         return view('graficos.sastifaccion');
     }
-});
+})->middleware('verified');
 
 
-route::get('guardarIntentosTest/{test}/{tipo}/{puntaje}','testController@guardarIntentosTest');
+route::get('guardarIntentosTest/{test}/{tipo}/{puntaje}','testController@guardarIntentosTest')->middleware('verified');;
 
-route::get('mostrar-resultados','testController@mostrarResultados');
+route::get('mostrar-resultados','testController@mostrarResultados')->middleware('verified');;
 
-route::get('administracion', 'statisticsController@mostrarResultados');
+route::get('administracion', 'statisticsController@mostrarResultados')->middleware('verified');;
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

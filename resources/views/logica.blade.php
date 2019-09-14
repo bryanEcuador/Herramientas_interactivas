@@ -480,7 +480,7 @@
                 // muestra mensaje
                 document.querySelector('#mensaje').style.display = 'block';
             }else{
-                localStorage.setItem("pre-test", true);
+                sessionStorage.setItem("pre-test", true);
                $('#exampleModal').modal('hide')
                 location.reload()
             }
@@ -491,7 +491,7 @@
             if (test > 1){
                 document.querySelector('#test-iniciales').style.display = 'flex'
             }else {
-                if(localStorage.getItem("pre-test")){
+                if(sessionStorage.getItem("pre-test")){
                     document.querySelector('#test-iniciales').style.display = 'flex'
                 }else{
                     document.querySelector('#pre-test').style.display = 'block'
