@@ -121,7 +121,7 @@ route::get('/resultados/test/{id}',function($id) {
         }
     }
 
-    $usuario = verified()->id();
+    $usuario = auth()->id();
     return view('resultados',compact('id','nombre','usuario'));
 })->name('resultados.test')->middleware('verified');
 
