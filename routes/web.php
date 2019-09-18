@@ -158,3 +158,7 @@ route::get('administracion', 'statisticsController@mostrarResultados')->middlewa
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+route::get('/gestor-preguntas',function() {
+   return view('gestor');
+});
