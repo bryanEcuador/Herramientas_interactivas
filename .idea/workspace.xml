@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a93726e-e9ba-4de0-9d4e-75786a56c7d9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,19 +42,35 @@
       <file leaf-file-name="espacial.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/espacial.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
+            <state relative-caret-position="10374">
               <caret line="399" column="33" lean-forward="false" selection-start-line="399" selection-start-column="33" selection-end-line="399" selection-end-column="33" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3172">
-              <caret line="123" column="21" lean-forward="false" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
+            <state relative-caret-position="114">
+              <caret line="108" column="21" lean-forward="true" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="21" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+              <folding>
+                <element signature="e#4300#6308#0#PHP" expanded="false" />
+                <element signature="e#6314#6720#0#PHP" expanded="false" />
+                <element signature="e#6726#8678#0#PHP" expanded="false" />
+                <element signature="e#8684#10642#0#PHP" expanded="false" />
+                <element signature="e#10648#10985#0#PHP" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,7 +85,6 @@
       <find>resultadosTest</find>
       <find>console</find>
       <find>init</find>
-      <find>logica</find>
       <find>examplemodal</find>
       <find>exampl</find>
       <find>test_iniciales</find>
@@ -78,11 +92,9 @@
       <find>punta</find>
       <find>information</find>
       <find>formularios</find>
-      <find>formulario</find>
       <find>exampleModal</find>
       <find>Realizar</find>
       <find>hacer</find>
-      <find>test</find>
       <find>hacerTest</find>
       <find>console.l</find>
       <find>pre-test</find>
@@ -94,6 +106,9 @@
       <find>localStorage</find>
       <find>verify</find>
       <find>verified</find>
+      <find>formulario</find>
+      <find>test</find>
+      <find>logica</find>
     </findStrings>
     <replaceStrings>
       <replace>400x400.png</replace>
@@ -148,7 +163,6 @@
         <option value="$PROJECT_DIR$/resources/views/panel-administrativo.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/statisticsController.php" />
         <option value="$PROJECT_DIR$/resources/views/resultados.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
         <option value="$PROJECT_DIR$/resources/views/formularios.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/.env" />
@@ -159,6 +173,7 @@
         <option value="$PROJECT_DIR$/resources/views/logica.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/espacial.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
       </list>
     </option>
   </component>
@@ -174,10 +189,11 @@
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="676" />
-    <option name="width" value="697" />
-    <option name="height" value="735" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -196,6 +212,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -262,7 +279,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -335,17 +351,18 @@
       <workItem from="1568340742831" duration="2557000" />
       <workItem from="1568481614147" duration="3249000" />
       <workItem from="1568566730167" duration="1176000" />
+      <workItem from="1568766319969" duration="3179000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="279239000" />
+    <option name="totallyTimeSpent" value="282418000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30030257" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2980333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288364" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -637,13 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3770">
-          <caret line="270" column="52" lean-forward="false" selection-start-line="270" selection-start-column="52" selection-end-line="270" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/resultados.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2366">
@@ -671,7 +681,7 @@
         <state relative-caret-position="390">
           <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
           <folding>
-            <element signature="e#23#63#0#PHP" expanded="true" />
+            <element signature="e#23#63#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -736,7 +746,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/espacial.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
+        <state relative-caret-position="10374">
           <caret line="399" column="33" lean-forward="false" selection-start-line="399" selection-start-column="33" selection-end-line="399" selection-end-column="33" />
           <folding />
         </state>
@@ -744,9 +754,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3172">
-          <caret line="123" column="21" lean-forward="false" selection-start-line="123" selection-start-column="21" selection-end-line="123" selection-end-column="21" />
+        <state relative-caret-position="114">
+          <caret line="108" column="21" lean-forward="true" selection-start-line="108" selection-start-column="21" selection-end-line="108" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+          <folding>
+            <element signature="e#4300#6308#0#PHP" expanded="false" />
+            <element signature="e#6314#6720#0#PHP" expanded="false" />
+            <element signature="e#6726#8678#0#PHP" expanded="false" />
+            <element signature="e#8684#10642#0#PHP" expanded="false" />
+            <element signature="e#10648#10985#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

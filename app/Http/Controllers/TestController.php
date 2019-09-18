@@ -41,13 +41,10 @@ class TestController extends Controller
         if($id >= 1 && $id <= 3 ){
             $testRealizados = DB::table('tb_statistics')->select('form_id')->distinct()
                 ->where('user_id',auth()->id())->whereIn('form_id',[1,2,3])->get();
-
-
-
             $filtered = array();
             $array = array();
 
-            if($testRealizados->isEmpty() || $puntajeTest->test_basico_logico <= 7 ){
+            if($testRealizados->isEmpty() || $puntajeTest->test_basico_logico <= 6 ){
                 $testHabilidado = 1;
             }else{
                 $filtered = $testRealizados->filter(function ($value, $key) {
@@ -59,20 +56,20 @@ class TestController extends Controller
                 }
 
                 if(in_array(3,$array)){
-                    if($puntajeTest->test_final_logico <= 7){
+                    if($puntajeTest->test_final_logico <= 6){
                         $testHabilidado = 3;
                     }else{
                         $testHabilidado = 4;
                     }
 
                 }elseif(in_array(2,$array)){
-                    if($puntajeTest->test_intermedio_logico <= 7){
+                    if($puntajeTest->test_intermedio_logico <= 6){
                         $testHabilidado = 2;
                     }else{
                         $testHabilidado = 3;
                     }
                 }else{
-                    if($puntajeTest->test_basico_logico <= 7){
+                    if($puntajeTest->test_basico_logico <= 6){
                         $testHabilidado = 1;
                     }else{
                         $testHabilidado = 2;
@@ -100,20 +97,20 @@ class TestController extends Controller
 
                 if(in_array(6,$array)){
 
-                    if($puntajeTest->test_final_aptitud <= 7){
+                    if($puntajeTest->test_final_aptitud <= 6){
                         $testHabilidado = 6;
                     }else{
                         $testHabilidado = 7;
                     }
                 }elseif(in_array(5,$array)){
 
-                    if($puntajeTest->test_intermedio_aptitud <= 7){
+                    if($puntajeTest->test_intermedio_aptitud <= 6){
                         $testHabilidado = 5;
                     }else{
                         $testHabilidado = 6;
                     }
                 }else{
-                    if($puntajeTest->test_basico_aptitud <= 7){
+                    if($puntajeTest->test_basico_aptitud <= 6){
                         $testHabilidado = 4;
                     }else{
                         $testHabilidado = 5;
@@ -193,6 +190,7 @@ class TestController extends Controller
     }
 
     public function test_logicos(){
+        $id = auth()->id();
         $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
         $testRealizados = DB::table('tb_statistics')->select('form_id')->distinct()
             ->where('user_id',auth()->id())->whereIn('form_id',[1,2,3])->get();
@@ -211,21 +209,28 @@ class TestController extends Controller
             }
 
             if(in_array(3,$array)){
-                $testHabilidado = 4;
+                $puntaje = db::table('tb_puntaje_test')->select('test_final_logico')->where('usuario_id',$id)->get();
+                $puntaje = $puntaje->first();
+                if($puntaje->test_intermedio_logico > 6){
+                    $testHabilidado = 4;
+                }else{
+                    $testHabilidado = 3;
+                }
+
             }elseif(in_array(2,$array)){
-                $puntaje = db::table('tb_puntaje_test')->select('test_intermedio_logico')->get();
+                $puntaje = db::table('tb_puntaje_test')->select('test_intermedio_logico')->where('usuario_id',$id)->get();
                 $puntaje = $puntaje->first();
 
-                if($puntaje->test_intermedio_logico > 7){
+                if($puntaje->test_intermedio_logico > 6){
                     $testHabilidado = 3;
                 }else{
                     $testHabilidado = 2;
                 }
             }else{
-                $puntaje = db::table('tb_puntaje_test')->select('test_basico_logico')->get();
+                $puntaje = db::table('tb_puntaje_test')->select('test_basico_logico')->where('usuario_id',$id)->get();
                 $puntaje = $puntaje->first();
 
-                if($puntaje->test_basico_logico > 7){
+                if($puntaje->test_basico_logico > 6){
                     $testHabilidado = 2;
                 }else{
                     $testHabilidado = 1;
@@ -236,6 +241,7 @@ class TestController extends Controller
     }
 
     public function test_espacial(){
+        $id = auth()->id();
         $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
         $testRealizados = DB::table('tb_statistics')->select('form_id')->distinct()
             ->where('user_id',auth()->id())->whereIn('form_id',[4,5,6])->get();
@@ -256,28 +262,28 @@ class TestController extends Controller
             }
 
             if(in_array(6,$array)){
-                $puntaje = db::table('tb_puntaje_test')->select('test_final_aptitud')->get();
+                $puntaje = db::table('tb_puntaje_test')->select('test_final_aptitud')->where('usuario_id',$id)->get();
                 $puntaje = $puntaje->first();
 
-                if($puntaje->test_final_aptitud > 7){
+                if($puntaje->test_final_aptitud > 6){
                     $testHabilidado = 7;
                 }else{
                     $testHabilidado = 6;
                 }
             }elseif(in_array(5,$array)){
-                $puntaje = db::table('tb_puntaje_test')->select('test_intermedio_aptitud')->get();
+                $puntaje = db::table('tb_puntaje_test')->select('test_intermedio_aptitud')->where('usuario_id',$id)->get();
                 $puntaje = $puntaje->first();
 
-                if($puntaje->test_intermedio_aptitud > 7){
+                if($puntaje->test_intermedio_aptitud > 6){
                     $testHabilidado = 6;
                 }else{
                     $testHabilidado = 5;
                 }
             }else{
-                $puntaje = db::table('tb_puntaje_test')->select('test_basico_aptitud')->get();
+                $puntaje = db::table('tb_puntaje_test')->select('test_basico_aptitud')->where('usuario_id',$id)->get();
                 $puntaje = $puntaje->first();
 
-                if($puntaje->test_basico_aptitud > 7){
+                if($puntaje->test_basico_aptitud > 6){
                     $testHabilidado = 5;
                 }else{
                     $testHabilidado = 4;
