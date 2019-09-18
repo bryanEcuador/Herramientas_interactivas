@@ -211,7 +211,7 @@ class TestController extends Controller
             if(in_array(3,$array)){
                 $puntaje = db::table('tb_puntaje_test')->select('test_final_logico')->where('usuario_id',$id)->get();
                 $puntaje = $puntaje->first();
-                if($puntaje->test_intermedio_logico > 6){
+                if($puntaje->test_final_logico > 6){
                     $testHabilidado = 4;
                 }else{
                     $testHabilidado = 3;
