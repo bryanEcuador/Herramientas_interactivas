@@ -32,35 +32,36 @@
                     <div class="tab-pane fade show active" id="agregar" role="tabpanel" aria-labelledby="agregar-tab">
                         <div class="row justify-content-md-center">
                             <div class="col-md-10 mt-5">
-                                <select class="form-control" id="tipo_test">
-                                    <option disabled selected> -- Tipo del test --</option>
-                                    <option>Test de aptitud</option>
-                                    <option>Test de logica</option>
+                                <select class="form-control" id="tipo_test" name="tipo_test">
+                                    <option value="0" disabled selected> -- Tipo del test --</option>
+                                    <option value="1">Test de aptitud</option>
+                                    <option value="2">Test de logica</option>
                                 </select>
                                 <br>
-                                <select class="form-control" id="nivel_test">
-                                    <option disabled selected> -- Nivel del test --</option>
-                                    <option>Basico</option>
-                                    <option>Intermedio</option>
-                                    <option>Avanzado</option>
+                                <select class="form-control" id="nivel_test" name="nivel_test">
+                                    <option value="0" disabled selected> -- Nivel del test --</option>
+                                    <option value="1">Basico</option>
+                                    <option value="2">Intermedio</option>
+                                    <option value="3">Avanzado</option>
                                 </select>
                                 <br>
                                 <label class="form-control-label"  for="pregunta">Ingresar pregunta  </label>
                                 <input class="form-control" id="pregunta" placeholder="ingrese su pregunta">
+                                 <label class="form-control-label mt-2" for="imagen">Ingrese la imagen de la pregunta</label>
+                                <input class="form-control" type="file" id="imagen">
                                 <hr>
                                 <label class="form-control-label" for="opcion_test">
-                                    Ingrese sus opciones <span id="total_preguntas" class="badge badge-pill badge-info">5</span>
-                                    <span class="text-warning"> <small>!maximo 5 opciones</small> </span>
+                                    Ingrese sus opciones <span id="opciones_disponibles" title="!maximo 5 opciones" class="badge badge-pill badge-info">5</span>
                                 </label>
                                 <input class="form-control" id="opcion_test" placeholder="Ingrese su opción">
-
-                                <button style="margin-top: 20px;" class="btn btn-primary">Agregar opción</button>
+                                <button style="margin-top: 20px;" class="btn btn-primary" id="agregar_opcion">Agregar opción</button>
                                 <hr>
-                                <label class="form-control-label">Seleccione la pregunta correcta</label>
-                                <fieldset>
-                                    <legend>Seleccione la opción correcta</legend>
-                                    <input type="radio">
+                                <label class="form-control-label">Seleccione la opción correcta para el test</label>
+                                <fieldset id="opciones">
                                 </fieldset>
+                                <hr>
+                                <button style="margin-top: 20px;" class="btn btn-primary" id="agregar_pregunta">Agregar pregunta</button>
+                                
                             </div>
                         </div>
                     </div>
@@ -72,9 +73,7 @@
     </div>
 @endsection
 
-@section('js')
-    <script>
-
-    </script>
+@section('script')
+    <script src="js/creacion-preguntas.js"></script>
 @endsection
 
