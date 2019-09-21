@@ -19,7 +19,7 @@ let contador = 1
 btn_agregar_opcion.addEventListener('click', () => {    
     let opcion_creada = opcion_test.value
     opcion_creada = opcion_creada.trim()
-    opcion_creada.length > 5 ? agregarOpcion(opcion_creada,restarDisponibles) : mensajeError('Debe agregar una opción')  
+    opcion_creada.length >= 1 ? agregarOpcion(opcion_creada,restarDisponibles) : mensajeError('Debe agregar una opción')  
 })
 
 
@@ -67,8 +67,8 @@ function validarForm(){
 function agregarOpcion(opcion,restarDisponibles) {
     opciones.push(opcion)
     html_opcion =  `<div class="form-check" id=${contador}>
-                                    <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" name="elementos" id="elementos" value= ${opcion}> ${opcion} 
+                                    <label class="form-check-label" id=label${contador}>
+                                            <input class="form-check-input" type="radio" name="elementos"  value= ${opcion}> ${opcion} 
                                     </label>
                                     <sup class= "badge badge-pill badge-danger" onClick="eliminarElemento(${contador},sumarDisponibles)">
                                         x
@@ -78,6 +78,7 @@ function agregarOpcion(opcion,restarDisponibles) {
     contenedor_opciones.innerHTML = contenedor_opciones.innerHTML + html_opcion;
     ++contador
     restarDisponibles()
+    console.log(opciones)
 }
 
 function mensajeError(mensaje){
@@ -108,17 +109,59 @@ function sumarDisponibles() {
     }
     opciones_disponibles.innerText = disponibles
     opcion_test.value = ''
-    console.log(disponibles)
 }
 
 function eliminarElemento(elemento,sumarDisponibles){
+    eliminarOpcion(elemento)
     let padre = document.getElementById(elemento).parentNode
     padre.removeChild(document.getElementById(elemento))
-    eliminarOpcion(document.getElementById(elemento))
     sumarDisponibles() 
 }
 
-// IDEA: eliminar del arreglo el elemento eliminado 
 function eliminarOpcion(elemento){
+    debugger
+    let id = 'label'+elemento
+    let etiqueta = document.getElementById(id)
+    let valor = etiqueta.children[0].value
+    let pos = opciones.indexOf(valor)
+    opciones = opciones.slice(pos,1)
+    console.log(opciones)
+
+}
+
+function enviarPregunta(){
+
+    let url = ''
+    let myHeaders = new Headers();
+    let formData = new FormData();
+
+    formData.append('pregunta', pregunta_test.value);
+    formData.append('opciones', opciones);
+    formData.append('tipo', tipo_test.value);
+    formData.append('nivel', nivel_test.value);
+    formData.append('imagen', imagen.files[0]);
+    
+
+    let myInit = {
+        method: 'POST',
+        headers: myHeaders,
+        mode: 'cors',
+        cache: 'default'
+    };
+
+    var myRequest = new Request(url, myInit);
+
+    fetch(myRequest)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (json) {
+            console.log(json)
+        })
+        .catch(function(error){
+            console.log(error)
+        });
+
+
 
 }

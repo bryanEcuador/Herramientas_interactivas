@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\DB;
 |
 */
 
+require_once __DIR__.'/modulos/administracion.php';
+
+
+
 route::get('/principal',function() {
    return view('layouts.principal');
 })->middleware('verified');
