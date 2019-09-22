@@ -61,7 +61,7 @@
                                 </fieldset>
                                 <hr>
                                 <button style="margin-top: 20px;" class="btn btn-primary" id="agregar_pregunta">Agregar pregunta</button>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -74,6 +74,6 @@
 @endsection
 
 @section('script')
-    <script src="js/creacion-preguntas.js"></script>
+    <script src="/js/creacion-preguntas.js"></script>
 @endsection
 

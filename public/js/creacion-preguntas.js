@@ -13,7 +13,8 @@ const imagen = document.querySelector('#imagen')
 let opciones = []
 let html_opcion = ''
 let contador = 1
-
+let checks = []
+let correcta 
 /* eventos */
 
 btn_agregar_opcion.addEventListener('click', () => {    
@@ -24,25 +25,44 @@ btn_agregar_opcion.addEventListener('click', () => {
 
 
 btn_agregar_pregunta.addEventListener('click', () => {
-    let estado = validarForm()
+
+   /*  let estado = validarForm()
 
     if(estado == 0) {
-        alert('enviado formulario')
+        
     }else {
         alert('Ingrese la información correcta')
-    }
+    } */
+    checks = Array.from(document.getElementsByName('elementos'))
+    
+    correcta = checks.filter(function (check) {
+        if (check.checked == true) {
+            return check
+        }
+    })
+   // console.log(correcta)
+   // console.log(correcta.value)
+    guardarPregunta()
 })
 
 
 
 /* Funciones */
 
-function agregarPregunta(){
+/* function agregarPregunta(){
 
-}
+} */
 
 function validarForm(){
     let estado = 0
+    checks = Array.from(document.getElementsByName('elementos'))
+
+    correcta = checks.filter(function (check) {
+        if (check.checked == true) {
+            return check
+        }
+    })
+
     if (tipo_test.value = 0){
         estado = -1
     }
@@ -56,6 +76,10 @@ function validarForm(){
     }
     
     if (Number(opciones_disponibles.innerText) > 2){
+        estado = -1
+    }
+
+    if(correcta.length == 0){
         estado = -1
     }
 
@@ -78,7 +102,6 @@ function agregarOpcion(opcion,restarDisponibles) {
     contenedor_opciones.innerHTML = contenedor_opciones.innerHTML + html_opcion;
     ++contador
     restarDisponibles()
-    console.log(opciones)
 }
 
 function mensajeError(mensaje){
@@ -119,34 +142,39 @@ function eliminarElemento(elemento,sumarDisponibles){
 }
 
 function eliminarOpcion(elemento){
-    debugger
     let id = 'label'+elemento
     let etiqueta = document.getElementById(id)
     let valor = etiqueta.children[0].value
     let pos = opciones.indexOf(valor)
     opciones = opciones.slice(pos,1)
-    console.log(opciones)
 
 }
 
-function enviarPregunta(){
+function guardarPregunta(){
 
-    let url = ''
+    let url = '\guardar_preguntas';
+    let meta = document.getElementsByTagName('meta');
     let myHeaders = new Headers();
     let formData = new FormData();
+    
+    // incluyendo elementos a la cabecera
+    myHeaders.append("X-CSRF-TOKEN", meta[2].content);
 
+    // incluyendo elementos al cuertpo
     formData.append('pregunta', pregunta_test.value);
     formData.append('opciones', opciones);
     formData.append('tipo', tipo_test.value);
     formData.append('nivel', nivel_test.value);
     formData.append('imagen', imagen.files[0]);
+    formData.append('correcta',correcta[0].value)
     
 
     let myInit = {
         method: 'POST',
         headers: myHeaders,
         mode: 'cors',
-        cache: 'default'
+        cache: 'default',
+        body : formData,
     };
 
     var myRequest = new Request(url, myInit);

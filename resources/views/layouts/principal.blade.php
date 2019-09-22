@@ -109,6 +109,9 @@
                                            <li class="nav-item active">
                                                <a class="nav-link " href="/administracion">Resultados</a>
                                             </li>
+                                            <li class="nav-item active">
+                                                <a class="nav-link " href="/administracion/gestion">Gestión</a>
+                                            </li>
                                             <li class="nav-item active submenu dropdown">
                                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                                                 aria-expanded="false">Graficos</a>
