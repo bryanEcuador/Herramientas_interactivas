@@ -20,6 +20,7 @@ class AdministracionController extends Controller
 
     public function gestion(){
 
+
         return view('administracion/gestor');
     }
 
@@ -132,5 +133,9 @@ class AdministracionController extends Controller
             array_push($opciones,$preguntas[0]->r5);
         }
         return view('administracion.edicion-pregunta',compact('preguntas','opciones'));
+    }
+
+    public function preguntas(){
+        return datata-bles(Preguntas::all()->toJson());
     }
 }

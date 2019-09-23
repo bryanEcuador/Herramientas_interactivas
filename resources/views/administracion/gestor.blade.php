@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('css')
+
   <style>
       .contenido {
           background-color: #e6e8e8;
@@ -27,7 +28,22 @@
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     {{-- sección para gestionar preguntas --}}
-                    <div class="tab-pane fade" id="gestionar" role="tabpanel" aria-labelledby="gestionar-tab">...</div>
+                    <div class="tab-pane fade" id="gestionar" role="tabpanel" aria-labelledby="gestionar-tab">
+                        <div class="container">
+                            <table id="task" class="table table-hover table-condensed">
+                                <thead>
+                                <tr>
+                                    <th>Pregunta</th>
+                                    <th>respuesta a</th>
+                                    <th>respuesta b</th>
+                                    <th>respuesta c</th>
+                                    <th>respuesta d</th>
+                                    <th>respuesta e</th>
+                                </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
                     {{-- Sección para agregar preguntas --}}
                     <div class="tab-pane fade show active" id="agregar" role="tabpanel" aria-labelledby="agregar-tab">
                         <div class="row justify-content-md-center">
@@ -106,5 +122,23 @@
 
 @section('script')
     <script src="/js/creacion-preguntas.js"></script>
+
+  {{--  <script type="text/javascript">
+        $(document).ready(function() {
+            oTable = $('#task').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": "{{ route('admin.preguntas') }}",
+                "columns": [
+                    {data: 'nombre', name: 'question'},
+                    {data: 'opcion1', name: 'r1'},
+                    {data: 'opcion2', name: 'r2'},
+                    {data: 'opcion3', name: 'r3'},
+                    {data: 'opcion4', name: 'r4'},
+                    {data: 'opcion5', name: 'r5'},
+                ]
+            });
+        });
+    </script>--}}
 @endsection
 

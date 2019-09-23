@@ -174,7 +174,7 @@
 */
                 // crear imagen
                 img = document.createElement('img')
-                img.setAttribute('src','/storage/test/'+element.id)
+                img.setAttribute('src','/storage/test/'+element.img)
                 img.setAttribute('alt','')
                 img.classList = 'img-style'
                 // crear opciones

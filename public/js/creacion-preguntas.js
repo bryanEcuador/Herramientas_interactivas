@@ -186,7 +186,7 @@ function restart(){
     document.getElementById('error_pregunta').style.display = 'none'
     document.getElementById('error_opciones').style.display = 'none'
     document.getElementById('error_opcion').style.display = 'none'
-    document.getElementById('mensaje2').style.display = 'none'
+    document.getElementById('mensaje1').style.display = 'none'
 }
 
 function limpiar() {
