@@ -24,7 +24,7 @@ class StorageController extends Controller
         $nombre = rand().$caracteres.date_timestamp_get(date_create()).'.'.$extension;
 
         //indicamos que queremos guardar un nuevo archivo en el disco local
-        Storage::disk('local')->put($nombre,  \File::get($file));
+        Storage::disk('public')->put($nombre,  \File::get($file));
 
         return $nombre;
 

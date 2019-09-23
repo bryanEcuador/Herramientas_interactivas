@@ -123,6 +123,7 @@ class TestController extends Controller
 
     }
 
+
     public function  guardarIntentosTest($test,$tipo,$puntaje){
          $id = Auth::id();
         // buscar si existe un registro previo
@@ -173,6 +174,9 @@ class TestController extends Controller
 
         $this->guardarResultado('actualizar',$id,$campo,$puntaje);
 
+        // eliminar registro temporal
+        DB::table('tb_temp_resultados')->where('user_id', '=', auth()->id())->delete();
+
         return true;
 
     }
@@ -211,6 +215,7 @@ class TestController extends Controller
             if(in_array(3,$array)){
                 $puntaje = db::table('tb_puntaje_test')->select('test_final_logico')->where('usuario_id',$id)->get();
                 $puntaje = $puntaje->first();
+
                 if($puntaje->test_final_logico > 6){
                     $testHabilidado = 4;
                 }else{

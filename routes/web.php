@@ -16,6 +16,41 @@ require_once __DIR__.'/modulos/administracion.php';
 
 
 
+/// formularios
+route::get('/formulario/informacion/{id}','statisticsController@formularios')->middleware('verified');
+
+
+
+route::get('/test/{id}','TestController@hacerTest')->middleware('verified');
+
+route::get('/resultados/test/{id}',function($id) {
+    $test = DB::table('tb_form')->select('type','level')->where('id',$id)->get()->toArray();
+
+    if($test[0]->type != 'sastifaccion') {
+        if ($test[0]->level == 1) {
+            $nombre = 'Test de ' . $test[0]->type . ' basico';
+        } else if ($test[0]->level == 2) {
+            $nombre = 'Test de ' . $test[0]->type . ' medio';
+        } else if ($test[0]->level == 3) {
+            $nombre = 'Test de ' . $test[0]->type . ' Avanzado';
+        }
+    }
+
+    $usuario = auth()->id();
+    return view('resultados',compact('id','nombre','usuario'));
+})->name('resultados.test')->middleware('verified');
+
+route::get('resultados/preguntas/{form}','statisticsController@respuestaCorrecta')->middleware('verified');
+
+route::post('formulario/store','statisticsController@store')->name('form')->middleware('verified');
+//oute::post('information/update','informationController@update')->name('information.update')->middleware('verified');
+
+/*
+ *
+ *
+ *
+ */
+
 route::get('/principal',function() {
    return view('layouts.principal');
 })->middleware('verified');
@@ -105,34 +140,6 @@ Route::get('/libros/{file}', function ($file) {
 })->middleware('verified');
 
 
-/// formularios
-route::get('/formulario/informacion/{id}','statisticsController@formularios')->middleware('verified');
-
-
-
-route::get('/test/{id}','TestController@hacerTest')->middleware('verified');
-
-route::get('/resultados/test/{id}',function($id) {
-    $test = DB::table('tb_form')->select('type','level')->where('id',$id)->get()->toArray();
-
-    if($test[0]->type != 'sastifaccion') {
-        if ($test[0]->level == 1) {
-            $nombre = 'Test de ' . $test[0]->type . ' basico';
-        } else if ($test[0]->level == 2) {
-            $nombre = 'Test de ' . $test[0]->type . ' medio';
-        } else if ($test[0]->level == 3) {
-            $nombre = 'Test de ' . $test[0]->type . ' Avanzado';
-        }
-    }
-
-    $usuario = auth()->id();
-    return view('resultados',compact('id','nombre','usuario'));
-})->name('resultados.test')->middleware('verified');
-
-route::get('resultados/preguntas/{form}','statisticsController@respuestaCorrecta')->middleware('verified');
-
-route::post('formulario/store','statisticsController@store')->name('form')->middleware('verified');
-//oute::post('information/update','informationController@update')->name('information.update')->middleware('verified');
 
 route::get('recomendaciones',function () {
     $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
@@ -143,6 +150,7 @@ route::get('resultados-grafico/{form}/{question}','statisticsController@graficos
 
 route::get('graficos/{tipo}',function ($tipo){
     if($tipo == '1'){
+        // retonrar un arreglo con  todos los valaroes para mostrar la grafica
         return view('graficos.conocimientos');
     }else if($tipo == 2){
         return view('graficos.aptitud');

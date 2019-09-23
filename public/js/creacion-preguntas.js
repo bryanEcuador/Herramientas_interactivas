@@ -25,25 +25,28 @@ btn_agregar_opcion.addEventListener('click', () => {
 
 
 btn_agregar_pregunta.addEventListener('click', () => {
-
-   /*  let estado = validarForm()
+     debugger
+     let estado = validarForm()
 
     if(estado == 0) {
-        
+        guardarPregunta()
     }else {
-        alert('Ingrese la información correcta')
-    } */
-    checks = Array.from(document.getElementsByName('elementos'))
-    
-    correcta = checks.filter(function (check) {
-        if (check.checked == true) {
-            return check
-        }
-    })
-   // console.log(correcta)
-   // console.log(correcta.value)
-    guardarPregunta()
+        document.getElementById('errores').classList = 'alert alert-danger alert-dismissible fad show'
+    }
+   
 })
+
+opcion_test.addEventListener('keyup' ,function() {
+    debugger
+    let opcion_creada = opcion_test.value
+    opcion_creada = opcion_creada.trim()
+    if (opcion_creada.length >= 1 && opciones_disponibles.innerText !== '0' ){
+        btn_agregar_opcion.removeAttribute('disabled')       
+    }else{
+        btn_agregar_opcion.setAttribute('disabled', 'disabled')
+    }
+  
+});
 
 
 
@@ -54,6 +57,7 @@ btn_agregar_pregunta.addEventListener('click', () => {
 } */
 
 function validarForm(){
+    restart()
     let estado = 0
     checks = Array.from(document.getElementsByName('elementos'))
 
@@ -63,26 +67,50 @@ function validarForm(){
         }
     })
 
-    if (tipo_test.value = 0){
+    if (tipo_test.value == 0){
         estado = -1
+        document.getElementById('error_tipo').style.display = 'block'
     }
 
-    if (nivel_test.value = 0) {
+    if (nivel_test.value == 0) {
         estado = -1
+        document.getElementById('error_nivel').style.display = 'block'
     }
 
-    if (pregunta_test.value = 0) {
+    let pregunta_valor = pregunta_test.value
+    if (pregunta_valor.trim() == '') {
         estado = -1
+        document.getElementById('error_pregunta').style.display = 'block'
     }
     
-    if (Number(opciones_disponibles.innerText) > 2){
+    if (Number(opciones_disponibles.innerText) > 4){
         estado = -1
+        document.getElementById('error_opciones').style.display = 'block'
     }
 
     if(correcta.length == 0){
         estado = -1
+        document.getElementById('error_opcion').style.display = 'block'
     }
 
+    console.log(imagen.files[0])
+    if (imagen.files[0] !== undefined){
+        tipo = imagen.files[0].type
+        debugger
+        let jpeg = tipo.indexOf('jpeg')
+        let png = tipo.indexOf('png')
+        let jpg = tipo.indexOf('jpg')
+
+        if (jpeg !== -1 || png !== -1 || jpg !== -1) {
+            // 
+            console.log('');
+        } else {
+            estado = -1
+            document.getElementById('error_archivo').style.display = 'block'
+
+        }
+    }
+    document.getElementById('mensajes').style.display = 'block'
     return estado
     
 }
@@ -118,7 +146,7 @@ function restarDisponibles(){
     }
     opciones_disponibles.innerText = disponibles
     opcion_test.value = ''
-    console.log(disponibles)
+
 }
 
 function sumarDisponibles() {
@@ -147,6 +175,32 @@ function eliminarOpcion(elemento){
     let valor = etiqueta.children[0].value
     let pos = opciones.indexOf(valor)
     opciones = opciones.slice(pos,1)
+
+}
+
+function restart(){
+    document.getElementById('mensajes').style.display = 'none'
+    document.getElementById('exito').classList = 'alert alert-primary alert-dismissible fade'
+    document.getElementById('error_tipo').style.display = 'none'
+    document.getElementById('error_nivel').style.display = 'none'
+    document.getElementById('error_pregunta').style.display = 'none'
+    document.getElementById('error_opciones').style.display = 'none'
+    document.getElementById('error_opcion').style.display = 'none'
+    document.getElementById('mensaje2').style.display = 'none'
+}
+
+function limpiar() {
+
+    // opciones
+    html_opcion = ``
+    contenedor_opciones.innerHTML = html_opcion;
+    // valor
+    pregunta_test.value = ''
+    // imagen
+    imagen.value = ''
+    //
+    tipo_test.value = '0'
+    nivel_test.value = '0'
 
 }
 
@@ -184,10 +238,14 @@ function guardarPregunta(){
             return response.json();
         })
         .then(function (json) {
-            console.log(json)
+            document.getElementById('mensaje2').style.display = 'block'
+            document.getElementById('exito').classList = 'alert alert-primary alert-dismissible fade show'
+            limpiar()
         })
         .catch(function(error){
-            console.log(error)
+            document.getElementById('mensajes').style.display = 'block'
+            document.getElementById('errores').classList = 'alert alert-danger alert-dismissible fade show'
+
         });
 
 

@@ -32,6 +32,37 @@
                     <div class="tab-pane fade show active" id="agregar" role="tabpanel" aria-labelledby="agregar-tab">
                         <div class="row justify-content-md-center">
                             <div class="col-md-10 mt-5">
+                                <div id="mensajes" style="display:none">
+                                        <div class="alert alert-danger alert-dismissible fade" id="errores">
+                                            <ul>
+                                                <li id="error_general" style="display:none" id="error_archivo">!!hubo un error.</li>
+                                                <li style="display:none" id="error_tipo">
+                                                    Debe seleccionar el tipo de test.
+                                                </li>
+                                                <li style="display:none" id="error_nivel">
+                                                    Debe seleccionar el nivel del test.
+                                                </li>
+                                                <li style="display:none" id="error_pregunta">
+                                                    Debe Ingresar una pregunta.
+                                                </li>
+                                                <li style="display:none" id="error_opciones">
+                                                    Debe ingresar al menos dos opciones.
+                                                </li>
+                                                <li style="display:none" id="error_opcion">
+                                                Debe selecionar una de las opciones
+                                                </li>
+                                                <li style="display:none" id="error_archivo">
+                                                    El tipo de archivo debe ser una foto
+                                                </li>
+                                            </ul>
+                                        </div>
+                                </div>
+                                
+                                <div id="mensaje1" style="display: none">
+                                    <div id="exito" class="alert alert-primary alert-dismissible fade">
+                                        <p>Exito, la pregunta se a registrado con exito.</p>
+                                    </div>
+                                </div>
                                 <select class="form-control" id="tipo_test" name="tipo_test">
                                     <option value="0" disabled selected> -- Tipo del test --</option>
                                     <option value="1">Test de aptitud</option>
@@ -54,7 +85,7 @@
                                     Ingrese sus opciones <span id="opciones_disponibles" title="!maximo 5 opciones" class="badge badge-pill badge-info">5</span>
                                 </label>
                                 <input class="form-control" id="opcion_test" placeholder="Ingrese su opción">
-                                <button style="margin-top: 20px;" class="btn btn-primary" id="agregar_opcion">Agregar opción</button>
+                                <button style="margin-top: 20px;" class="btn btn-primary" disabled id="agregar_opcion">Agregar opción</button>
                                 <hr>
                                 <label class="form-control-label">Seleccione la opción correcta para el test</label>
                                 <fieldset id="opciones">

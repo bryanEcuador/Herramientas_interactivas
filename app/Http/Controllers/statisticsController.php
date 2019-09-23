@@ -37,21 +37,48 @@ class statisticsController extends Controller
 
         return view('formularios');
     }
-
+    /*
+     * mover  a controlador de test
+     *
+     */
     public function store(Request $request){
         $formulario =$request->input('formulario');
         $user_id = auth()->id();
 
+
+        //MFORMULARIOS ALEATORIOS
         if($formulario == 11 || $formulario == 12){
             // guardar intento y calificación
             $tipo = $formulario == 11 ? 'logico' : 'espacial';
             $this->TestConroller->guardarIntentosTest($formulario,$tipo,8);
             return redirect()->route('inteligencias');
         }
+
         $array = $request->all();
         //dd($array);
+        // recorre el arreglo y guarda ttodos los valores
+        foreach ($array as $clave => $valor) {
+            if ($clave != '_token' and $clave != 'formulario') {
+                // guardar datos en tabla de estadisticas
+                DB::table('tb_statistics')->insert([
+                    ['form_id' => $formulario, 'question_id' => $clave, 'option' => $valor, 'user_id' => $user_id],
+                ]);
 
+            // guardar datoss en la tabla para mostrar los resultados
+                DB::table('tb_temp_resultados')->insert([
+                ['form_id' => $formulario, 'question_id' => $clave, 'option' => $valor, 'user_id' => $user_id],
+                ]);
+            }
+        }
 
+        if($formulario == 7 || $formulario == 8){
+            return redirect()->route('inteligencias');
+        }else{
+            return redirect()->route(
+                'resultados.test', ['id' => $formulario]);
+        }
+
+/*
         // validar que ya no este lleno
        $resultado = DB::table('tb_statistics')->where([
             ['form_id',$formulario],
@@ -66,8 +93,6 @@ class statisticsController extends Controller
                    DB::table('tb_statistics')->insert([
                        ['form_id' => $formulario, 'question_id' => $clave , 'option' => $valor , 'user_id' => $user_id ],
                    ]);
-
-                   //echo $clave." ".$valor."<br>";
            }
            if($formulario == 7 || $formulario == 8){
                return redirect()->route('inteligencias');
@@ -91,7 +116,7 @@ class statisticsController extends Controller
            }
            return redirect()->route(
                'resultados.test', ['id' => $formulario]);
-       }
+       }*/
 
     }
 
@@ -150,14 +175,18 @@ class statisticsController extends Controller
         return $resultados;
     }
 
+
+    /*
+     * mover
+     */
     public  function respuestaCorrecta($formulario){
 
         $data = DB::table('tb_questions')
-            ->join('tb_statistics','tb_questions.id','=','tb_statistics.question_id' )
-            ->select('tb_questions.*','tb_statistics.option')
+            ->join('tb_temp_resultados','tb_questions.id','=','tb_temp_resultados.question_id' )
+            ->select('tb_questions.*','tb_temp_resultados.option')
             ->where([
                 ['tb_questions.form_id',$formulario],
-                ['tb_statistics.user_id',auth()->id()],
+                ['tb_temp_resultados.user_id',auth()->id()],
             ])->get();
 
         return $data;

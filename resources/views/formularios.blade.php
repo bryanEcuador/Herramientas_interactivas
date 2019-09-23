@@ -4,6 +4,11 @@
         .input-style{
             margin-right: 5px;
         }
+
+        .img-style{
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 @endsection
 @section('content')
@@ -50,6 +55,7 @@
         let re5
         let textFormateado
         let contenedorPreguntas = document.querySelector('#preguntas')
+
         window.onload = function () {
             crearFormulario()
         }
@@ -67,6 +73,7 @@
         function crear(data) {
             let dato
             let contador = 0
+            let img
             data.forEach(function(element) {
                 ++contador
                 // crear div principal
@@ -80,6 +87,7 @@
                 pregunta = document.createElement('h3')
                 pregunta.textContent = element.question
                 pregunta.style.display = 'block'
+/*
                 if (element.form_id == 2) {
                     if (contador == 1) {
                         textFormateado = document.createElement('pre');
@@ -162,8 +170,11 @@
 
                     }
                 }
-
-
+*/
+                // crear imagen
+                img = document.createElement('img')
+                img.setAttribute('src','/storage/test/'+element.id)
+                img.classList = 'img-style'
                 // crear opciones
                 opcion1 = document.createElement('input')
                 opcion1.setAttribute('name',element.id)
@@ -238,7 +249,7 @@
                 }
 
                 contenedor.appendChild(pregunta)
-                if(element.form_id == 2){
+           /*     if(element.form_id == 2){
                     if(contador==1 || contador==2 || contador == 10){
                         textFormateado.style.backgroundColor = '#d4d4d4'
                         contenedor.appendChild(textFormateado)
@@ -260,8 +271,9 @@
                     if(contador == 2 || contador == 6 || contador == 7 || contador == 8 || contador == 9 || contador == 10) {
                         contenedor.appendChild(textFormateado)
                     }
-                }
+                }*/
                 contenedorPreguntas.appendChild(contenedor)
+                contenedorPreguntas.appendChild(img)
                 contenedorPreguntas.appendChild(contenedorRadio)
                 contenedorPreguntas.appendChild(document.createElement('hr'))
 

@@ -145,84 +145,12 @@
                 pregunta = document.createElement('h3')
                 pregunta.textContent = element.question
                 pregunta.style.display = 'block'
-                if (element.form_id == 2) {
-                    if (contador == 1) {
-                        textFormateado = document.createElement('pre');
-                        textFormateado.innerText = '#include <stdio.h>\n' +
-                            'main()\n' +
-                            '{\n' +
-                            '  printf ("¿Hola mundo!");\n' +
-                            '  return 0;\n' +
-                            '}'
-                    } else if (contador == 2) {
-                        textFormateado = document.createElement('pre');
-                        textFormateado.innerText = 'int char double float MIVARIABLE[20];'
-                    } else if (contador == 10) {
-                        textFormateado = document.createElement('pre');
-                        textFormateado.innerText = '#include <stdio.h>\n' +
-                            'main()\t\n' +
-                            '{ \n' +
-                            'int i;\tfor ( i=0 ; i<5 ; i++ )\t\n' +
-                            '\t{printf( "Hola\\n" );}\t\n' +
-                            '}\n'
-                    }
-                } else if (element.form_id == 3) {
-                    if (contador == 1) {
-                        textFormateado = document.createElement('pre');
-                        textFormateado.innerText = '#includeint main()\n' +
-                            '{\n' +
-                            'int n1,n2;\n' +
-                            'printf("ingrese un numero entero:");\n' +
-                            'scanf("%d",&n1);\n' +
-                            'printf("ingrese otro número entero:");\n' +
-                            'scanf("%d",&n2);\n' +
-                            'if(n1>n2);\n' +
-                            '{\n' +
-                            'printf("el número mayor es %d",n1);\n' +
-                            '}\n' +
-                            'printf("los números son iguales");\n' +
-                            '{\n' +
-                            'printf(" el número mayor es % d", n2);\n' +
-                            '}\n' +
-                            'return 0;\n' +
-                            '}\n'
-                    } else if (contador == 2) {
-                        textFormateado = document.createElement('pre');
-                        textFormateado.innerText = '#include#includemain ()\n' +
-                            '{\n' +
-                            'int a,b,c;\n' +
-                            'printf ("ingrese los 3#");\n' +
-                            'scanf("%d,%d",a,b,c);\n' +
-                            'i=a+b+c;\n' +
-                            'printf("el resultado es %d,r");\n' +
-                            'getch();\n' +
-                            'return 0;\n' +
-                            '}\n'
-                    } else if (contador == 7) {
-                        textFormateado = document.createElement('pre');
-                        textFormateado.innerText = '#include <stdio.h>\n' +
-                            'main()\t\n' +
-                            '{ \n' +
-                            'int i;\tfor ( i=1 ; i<4 ; i++ )\t\n' +
-                            '\t{printf( "Programación\\n" );}\t\n' +
-                            '}\n'
-                    }
-                }else if(element.form_id ==4){
-                    if(contador == 1 || contador == 2 || contador == 3 || contador == 4 || contador == 10)
-                    textFormateado = document.createElement('img')
-                    textFormateado.setAttribute('src','/img/preguntas/'+element.form_id+''+element.id+'.PNG')
-                }else if(element.form_id ==5){
-                    if(contador == 2 || contador == 4 || contador == 6 || contador == 8 || contador == 9 || contador == 10) {
-                        textFormateado = document.createElement('img')
-                        textFormateado.setAttribute('src', '/img/preguntas/' + element.form_id + '' + element.id + '.PNG')
-                    }
-                }else if(element.form_id ==6){
-                    if(contador == 2 || contador == 6 || contador == 7 || contador == 8 || contador == 9 || contador == 10) {
-                        textFormateado = document.createElement('img')
-                        textFormateado.setAttribute('src', '/img/preguntas/' + element.form_id + '' + element.id + '.PNG')
-                    }
-                }
 
+                // crear imagen
+                img = document.createElement('img')
+                img.setAttribute('src','/storage/test/'+element.id)
+                img.classList = 'img-style'
+                // crear opciones
 
                 // crear opciones
                 opcion1 = document.createElement('input')
@@ -359,7 +287,7 @@
                 }
 
                 contenedor.appendChild(pregunta)
-                if(element.form_id == 2){
+              /*  if(element.form_id == 2){
                     if(contador==1 || contador==2 || contador == 10){
                         textFormateado.style.backgroundColor = '#d4d4d4'
                         contenedor.appendChild(textFormateado)
@@ -381,8 +309,9 @@
                     if(contador == 2 || contador == 6 || contador == 7 || contador == 8 || contador == 9 || contador == 10) {
                         contenedor.appendChild(textFormateado)
                     }
-                }
+                }*/
                 contenedorPreguntas.appendChild(contenedor)
+                contenedorPreguntas.appendChild(img)
                 contenedorPreguntas.appendChild(contenedorRadio)
 
 
