@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7a93726e-e9ba-4de0-9d4e-75786a56c7d9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AdministracionController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdministracionController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/administracion/edicion-pregunta.blade.php" afterPath="$PROJECT_DIR$/resources/views/administracion/edicion-pregunta.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/administracion/gestor.blade.php" afterPath="$PROJECT_DIR$/resources/views/administracion/gestor.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/modulos/administracion.php" afterPath="$PROJECT_DIR$/routes/modulos/administracion.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/creacion-preguntas.js" afterPath="$PROJECT_DIR$/public/js/creacion-preguntas.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -69,11 +66,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdministracionController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AdministracionController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministracionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+            <state relative-caret-position="475">
+              <caret line="141" column="0" lean-forward="true" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
               <folding>
                 <element signature="e#40#64#0#PHP" expanded="true" />
                 <element signature="e#654#1907#0#PHP" expanded="false" />
@@ -107,15 +104,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="creacion-preguntas.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="creacion-preguntas.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/creacion-preguntas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="248" column="11" lean-forward="true" selection-start-line="236" selection-start-column="7" selection-end-line="248" selection-end-column="11" />
+            <state relative-caret-position="234">
+              <caret line="243" column="12" lean-forward="true" selection-start-line="243" selection-start-column="12" selection-end-line="243" selection-end-column="12" />
               <folding>
-                <marker date="1569214338994" expanded="true" signature="3460:3993" ph="..." />
-                <marker date="1569214338994" expanded="true" signature="3549:3730" ph="..." />
-                <marker date="1569214338994" expanded="true" signature="3868:3953" ph="..." />
+                <marker date="1569217233168" expanded="true" signature="3447:3980" ph="..." />
+                <marker date="1569217233168" expanded="true" signature="3536:3717" ph="..." />
+                <marker date="1569217233168" expanded="true" signature="3855:3940" ph="..." />
               </folding>
             </state>
           </provider>
@@ -173,8 +170,8 @@
       <find>respuestaC</find>
       <find>test</find>
       <find>img</find>
-      <find>mensaje2</find>
       <find>mensajes</find>
+      <find>mensaje2</find>
     </findStrings>
     <replaceStrings>
       <replace>400x400.png</replace>
@@ -235,11 +232,11 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/statisticsController.php" />
         <option value="$PROJECT_DIR$/resources/views/formularios.blade.php" />
         <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/public/js/creacion-preguntas.js" />
         <option value="$PROJECT_DIR$/resources/views/administracion/gestor.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdministracionController.php" />
         <option value="$PROJECT_DIR$/routes/modulos/administracion.php" />
         <option value="$PROJECT_DIR$/resources/views/administracion/edicion-pregunta.blade.php" />
+        <option value="$PROJECT_DIR$/public/js/creacion-preguntas.js" />
       </list>
     </option>
   </component>
@@ -476,12 +473,12 @@
       <workItem from="1569089435077" duration="6072000" />
       <workItem from="1569108097211" duration="5885000" />
       <workItem from="1569172153573" duration="15711000" />
-      <workItem from="1569209279205" duration="7184000" />
+      <workItem from="1569209279205" duration="7932000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="321451000" />
+    <option name="totallyTimeSpent" value="322199000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -881,18 +878,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/creacion-preguntas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="248" column="11" lean-forward="true" selection-start-line="236" selection-start-column="7" selection-end-line="248" selection-end-column="11" />
-          <folding>
-            <marker date="1569214338994" expanded="true" signature="3460:3993" ph="..." />
-            <marker date="1569214338994" expanded="true" signature="3549:3730" ph="..." />
-            <marker date="1569214338994" expanded="true" signature="3868:3953" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/administracion/gestor.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="94">
@@ -913,14 +898,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministracionController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="116" column="0" lean-forward="false" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+        <state relative-caret-position="475">
+          <caret line="141" column="0" lean-forward="true" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
           <folding>
             <element signature="e#40#64#0#PHP" expanded="true" />
             <element signature="e#654#1907#0#PHP" expanded="false" />
             <element signature="e#1968#2380#0#PHP" expanded="false" />
             <element signature="e#2386#2639#0#PHP" expanded="false" />
             <element signature="e#2645#3297#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/creacion-preguntas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="243" column="12" lean-forward="true" selection-start-line="243" selection-start-column="12" selection-end-line="243" selection-end-column="12" />
+          <folding>
+            <marker date="1569217233168" expanded="true" signature="3447:3980" ph="..." />
+            <marker date="1569217233168" expanded="true" signature="3536:3717" ph="..." />
+            <marker date="1569217233168" expanded="true" signature="3855:3940" ph="..." />
           </folding>
         </state>
       </provider>

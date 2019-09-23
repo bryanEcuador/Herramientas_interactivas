@@ -25,7 +25,7 @@ btn_agregar_opcion.addEventListener('click', () => {
 
 
 btn_agregar_pregunta.addEventListener('click', () => {
-     debugger
+
      let estado = validarForm()
 
     if(estado == 0) {
@@ -235,16 +235,19 @@ function guardarPregunta(){
 
     fetch(myRequest)
         .then(function (response) {
-            return response.json();
+            console.log(response.json)
+            return response.json()
         })
         .then(function (json) {
-            document.getElementById('mensaje2').style.display = 'block'
+            console.log(json)
+            document.getElementById('mensaje1').style.display = 'block'
             document.getElementById('exito').classList = 'alert alert-primary alert-dismissible fade show'
             limpiar()
         })
         .catch(function(error){
+            console.log(error)
             document.getElementById('mensajes').style.display = 'block'
-            document.getElementById('errores').classList = 'alert alert-danger alert-dismissible fade show'
+            //document.getElementById('errores').classList = 'alert alert-danger alert-dismissible fade show'
 
         });
 
