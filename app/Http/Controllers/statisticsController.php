@@ -26,10 +26,29 @@ class statisticsController extends Controller
        } elseif ($id == 12){
            $data = DB::table('tb_questions')->whereIn('form_id',[4,5,6])->get();
            $data = $data->random(10);
+       }elseif ($id == 1){
+           $data = DB::table('tb_questions')->whereIn('form_id',[1])->get();
+           $data = $data->random(10);
+
+       }elseif ($id == 2){
+           $data = DB::table('tb_questions')->whereIn('form_id',[2])->get();
+           $data = $data->random(10);
+       }elseif ($id == 3){
+           $data = DB::table('tb_questions')->whereIn('form_id',[3])->get();
+           $data = $data->random(10);
+       }elseif ($id == 4){
+           $data = DB::table('tb_questions')->whereIn('form_id',[4])->get();
+           $data = $data->random(10);
+       }elseif ($id == 5){
+           $data = DB::table('tb_questions')->whereIn('form_id',[5])->get();
+           $data = $data->random(10);
+       }elseif ($id == 6){
+           $data = DB::table('tb_questions')->whereIn('form_id',[6])->get();
+           $data = $data->random(10);
        }else{
            $data = DB::table('tb_questions')->where('form_id',$id)->get();
        }
-        return $data;
+       return $data;
     }
 
     public function estadisticas(){

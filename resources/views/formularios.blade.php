@@ -65,6 +65,7 @@
             let url = '/formulario/informacion/'+id
             $.get(url, { crossDomain : true} , (data) =>  {
                 this.crear(data)
+
             }).fail( function() {
                 console.log("fallo la peticion");
             });
@@ -174,6 +175,7 @@
                 // crear imagen
                 img = document.createElement('img')
                 img.setAttribute('src','/storage/test/'+element.id)
+                img.setAttribute('alt','')
                 img.classList = 'img-style'
                 // crear opciones
                 opcion1 = document.createElement('input')
