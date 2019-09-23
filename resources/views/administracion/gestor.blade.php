@@ -14,7 +14,7 @@
 @section('content')
     <div class="container contenido">
         <div class="row justify-content-md-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link " id="tap-gestionar" data-toggle="tab" href="#gestionar" role="tab" aria-controls="gestionar" aria-selected="true">Gestionar preguntas</a>
@@ -39,8 +39,24 @@
                                     <th>respuesta c</th>
                                     <th>respuesta d</th>
                                     <th>respuesta e</th>
+                                    <th>Acción</th>
                                 </tr>
                                 </thead>
+                                <tbody>
+                                    @foreach($preguntas as $pregunta)
+                                        <tr>
+                                            <td>{{$pregunta->question}}</td>
+                                            <td>{{$pregunta->r1}}</td>
+                                            <td>{{$pregunta->r2}}</td>
+                                            <td>{{$pregunta->r3}}</td>
+                                            <td>{{$pregunta->r4}}</td>
+                                            <td>{{$pregunta->r5}}</td>
+                                            <td>
+                                                <a href="preguntas/edit/{{$pregunta->id}}">Actualizar</a>
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
                             </table>
                         </div>
                     </div>

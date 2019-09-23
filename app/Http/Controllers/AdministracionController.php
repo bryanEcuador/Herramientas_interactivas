@@ -20,8 +20,8 @@ class AdministracionController extends Controller
 
     public function gestion(){
 
-
-        return view('administracion/gestor');
+        $preguntas = Preguntas::all();
+        return view('administracion/gestor',compact('preguntas'));
     }
 
     // insertar las nuevas preguntas al formulario
@@ -136,6 +136,6 @@ class AdministracionController extends Controller
     }
 
     public function preguntas(){
-        return datata-bles(Preguntas::all()->toJson());
+       dd (Preguntas::all()->toJson());
     }
 }

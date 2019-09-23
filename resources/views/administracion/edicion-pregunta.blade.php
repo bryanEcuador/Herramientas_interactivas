@@ -16,35 +16,37 @@
 
                 <div class="col-md-8">
                     <form method="put" action="update_preguntas/{{$preguntas[0]->id}}">
-                    <div class="form-group">
+                    @foreach($preguntas as $pregunta)
+                        <div class="form-group">
                         <label class="form-control-label">Pregunta</label>
-                        <input class="form-control" required name="pregunta" value=@php echo $preguntas[0]->question @endphp>
+                        <input class="form-control" required name="pregunta" value= "{{$pregunta->question }}">
                     </div>
                     <div class="form-group">
                         <label class="form-control-label">Primera respuesta</label>
-                        <input class="form-control" required name="r1" value=@php echo $preguntas[0]->r1 @endphp>
+                        <input class="form-control" required name="r1" value= "{{$pregunta->r1}}"">
                     </div>
                     <div class="form-group">
                         <label class="form-control-label">Segunda respuesta</label>
-                        <input class="form-control" name="r2" required value=@php echo $preguntas[0]->r2 @endphp>
+                        <input class="form-control" name="r2" required value="{{$pregunta->r1}}">
                     </div>
                     <div class="form-group">
                         <label class="form-control-label">Tercera respuesta</label>
-                        <input class="form-control" name="r3" value=@php echo $preguntas[0]->r3 @endphp >
+                        <input class="form-control" name="r3" value="@php echo $pregunta->r3 @endphp" >
                     </div>
                     <div class="form-group">
                         <label class="form-control-label">Cuarta respuesta</label>
-                        <input class="form-control" name="r4" value=@php echo $preguntas[0]->r4 @endphp>
+                        <input class="form-control" name="r4" value="@php echo $pregunta->r4 @endphp">
                     </div>
                     <div class="form-group">
                         <label class="form-control-label">Quinta respuesta</label>
-                        <input class="form-control" name="r5" value=@php echo $preguntas[0]->r5 @endphp>
+                        <input class="form-control" name="r5" value="@php echo $pregunta->r5 @endphp">
                     </div>
+                     @endforeach
                     <div class="form-group">
                         <label class="form-control-label">Seleccione la respuesta correcta</label>
                         <select name="opcion_correcta" class="form-control" required>
                             @foreach($opciones as $opcion)
-                                <option value={{$opcion}}> {{$opcion}}</option>
+                                <option value="{{$opcion}}">    {{$opcion}}</option>
                             @endforeach
                         </select>
                     </div>
@@ -86,8 +88,17 @@
             body : form
         };
 
+        let url = 'update_preguntas/'
         var myRequest = new Request(url, myInit);
+    .then(function (response) {
+            return response.json();
+        })
+            .then(function (json) {
+               alert('exito')
+            })
+            .catch(function(error){
+               alert('error')
 
-        fetch()
+            });
     }
 </script>
