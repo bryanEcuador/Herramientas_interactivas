@@ -97,22 +97,8 @@ class AdministracionController extends Controller
     }
 
     public function updatePregunta($id,Request $request){
-        dd($request->file());
         if($request->file()){
-            Preguntas::where('id',$id)
-                ->update(
-                    [
-                        'question' => $request->input('pregunta'),
-                        'r1' => $request->input('r1'),
-                        'r2' => $request->input('r2'),
-                        'r3' => $request->input('r3'),
-                        'r4' => $request->input('r4'),
-                        'r5' => $request->input('r5'),
-                        'correcta' => $request->input('opcion_correcta')
-                    ]);
-        }else{
-
-               $file = $this->storeController->guardarImagen($request);
+            $file = $this->storeController->guardarImagen($request);
             Preguntas::where('id',$id)
                 ->update(
                     [
@@ -123,20 +109,30 @@ class AdministracionController extends Controller
                         'r4' => $request->input('r4'),
                         'r5' => $request->input('r5'),
                         'correcta' => $request->input('opcion_correcta'),
-                        'img' => $file
+                        'estado' => $request->input('estado'),
+                    'img' => $file,
+                    ]);
+        }else{
+
+             
+            Preguntas::where('id',$id)
+                ->update(
+                    [
+                        'question' => $request->input('pregunta'),
+                        'r1' => $request->input('r1'),
+                        'r2' => $request->input('r2'),
+                        'r3' => $request->input('r3'),
+                        'r4' => $request->input('r4'),
+                        'r5' => $request->input('r5'),
+                        'correcta' => $request->input('opcion_correcta'),
+                      
+                         'estado' => $request->input('estado'),
                     ]);
 
         }
 
         return 1;
-        //dd($request->input());
-
-        //if($request->file()){
-         //   $file = $this->storeController->guardarImagen($request);
-        //}
-
-        //dd($preguntas);
-        //$preguntas->save();
+      
     }
 
     public function editPregunta($id){

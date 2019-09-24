@@ -30,7 +30,7 @@
                     {{-- sección para gestionar preguntas --}}
                     <div class="tab-pane fade" id="gestionar" role="tabpanel" aria-labelledby="gestionar-tab">
                         <div class="container">
-                            <table id="task" class="table table-hover table-condensed">
+                            <table id="task" class="table table-striped">
                                 <thead>
                                 <tr>
                                     <th>Pregunta</th>

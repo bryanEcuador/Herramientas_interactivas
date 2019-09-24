@@ -7,7 +7,7 @@ Route::middleware(['auth','administracion'])->group(function () {
         route::post('guardar_preguntas','AdministracionController@guardarPreguntas');
         //route::put('actualizar_estado','AdministracionController@updatePregunta');
         route::get('preguntas/edit/{id}','AdministracionController@editPregunta');
-        route::post('update_preguntas/{id?}','AdministracionController@updatePregunta');
+        route::post('update_preguntas/{id}','AdministracionController@updatePregunta');
         route::get('preguntas','AdministracionController@preguntas')->name('preguntas');
     });
 });
