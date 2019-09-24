@@ -60,6 +60,19 @@
             crearFormulario()
         }
 
+        document.getElementById('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            let formu = document.getElementsByName('formulario').value
+            if(formu == 13){
+                sessionStorage.setItem("pre-test", true);
+            }else if(formu == 14){
+                sessionStorage.setItem("pre-test2", true);
+            }
+
+            document.getElementById('form').submit()
+
+        })
+
         function crearFormulario(){
             let id = @json($id);
             let url = '/formulario/informacion/'+id

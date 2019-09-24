@@ -18,36 +18,9 @@
                         <div id="mensaje" style="display: none">
                             <p class="text text-danger">Debe constestar todas las preguntas para poder continuar</p>
                         </div>
+                        {{-- todo --}}
                         <form>
-                            <div class=""><h3 style="display: block;">Si una piña cuesta $3. ¿Cuánto costará la docena y media de piñas?</h3></div>
-                            <div class="radio">
-                                <input name="1" type="radio" class="input-style"><label>int valor1;</label>
-                                <br>
-                                <input name="1" type="radio" class="input-style"><label>36</label>
-                                <br><input name="1" type="radio"  class="input-style"><label>27</label>
-                                <br><input name="1" type="radio"  class="input-style"><label>45</label>
-                                <br><input name="1" type="radio"  class="input-style"><label>54</label>
-                                <br>
-                            </div>
-                            <hr>
-                            <div class=""><h3 style="display: block;">¿Cuál es el resultado de multiplicar 5 por su triple?</h3></div>
-                            <div class="radio">
-                                <input name="2" type="radio" class="input-style"><label>15;</label>
-                                <br><input name="2" type="radio" class="input-style"><label>45;</label>
-                                <br><input name="2" type="radio" class="input-style"><label>75;</label>
-                                <br><input name="2" type="radio" class="input-style"><label>55;</label>
-                                <br>
-                            </div>
-                            <hr>
-                            <div class=""><h3 style="display: block;">Calcular el 30% del 40% de 2000</h3></div>
-                            <div class="radio">
-                                <input name="3" type="radio" class="input-style"><label>240;</label>
-                                <br><input name="3" type="radio"  class="input-style"><label>480</label>
-                                <br><input name="3" type="radio"  class="input-style"><label>60</label>
-                                <br><input name="3" type="radio"  class="input-style"><label>180</label>
-                                <br>
-                            </div>
-                            <hr>
+                            
                         </form>
                     </div>
                     <div class="modal-footer">
@@ -289,7 +262,7 @@
             <h4>Veamos cuanto sabes con este test</h4>
             <p>Antes de avanzar en los diferentes niveles debes completar este test</p>
             <div>
-                <button class="primary-btn primary_btn"  id="modal" data-toggle="modal" data-target="#exampleModal">Realizar test</button>
+                <a class="primary-btn primary_btn" href="/formulario/iniciales/14">Realizar test</a>
             </div>
         </div>
         <div id="final-test" style="display: none" class="comment-form">
@@ -385,7 +358,7 @@
                 // muestra mensaje
                 document.querySelector('#mensaje').style.display = 'block';
             }else{
-                sessionStorage.setItem("pre-test2", true);
+                //sessionStorage.setItem("pre-test2", true);
                 $('#exampleModal').modal('hide')
                 location.reload()
             }

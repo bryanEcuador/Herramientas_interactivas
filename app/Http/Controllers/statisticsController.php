@@ -21,29 +21,34 @@ class statisticsController extends Controller
 
        if($id == 11){
             // obten todos los registros que sean 1 2 y 3
-           $data = DB::table('tb_questions')->whereIn('form_id',[1,2,3])->get();
+           $data = DB::table('tb_questions')->whereIn('form_id',[1,2,3])->where('estado',1)->get();
            $data = $data->random(10);
        } elseif ($id == 12){
-           $data = DB::table('tb_questions')->whereIn('form_id',[4,5,6])->get();
+           $data = DB::table('tb_questions')->whereIn('form_id',[4,5,6])->where('estado', 1)->get();
            $data = $data->random(10);
-       }elseif ($id == 1){
-           $data = DB::table('tb_questions')->whereIn('form_id',[1])->get();
+       } elseif ($id == 13) {
+            $data = DB::table('tb_questions')->whereIn('form_id', [1])->where('estado', 1)->get();
+            $data = $data->random(10);
+        }elseif ($id == 1){
+           $data = DB::table('tb_questions')->whereIn('form_id',[1])->where('estado', 1)->get();
            $data = $data->random(10);
-
        }elseif ($id == 2){
-           $data = DB::table('tb_questions')->whereIn('form_id',[2])->get();
+           $data = DB::table('tb_questions')->whereIn('form_id',[2])->where('estado', 1)->get();
            $data = $data->random(10);
        }elseif ($id == 3){
-           $data = DB::table('tb_questions')->whereIn('form_id',[3])->get();
+           $data = DB::table('tb_questions')->whereIn('form_id',[3])->where('estado', 1)->get();
            $data = $data->random(10);
-       }elseif ($id == 4){
-           $data = DB::table('tb_questions')->whereIn('form_id',[4])->get();
+       } elseif ($id == 14) {
+            $data = DB::table('tb_questions')->whereIn('form_id', [4])->where('estado', 1)->get();
+            $data = $data->random(10);
+        }elseif ($id == 4){
+           $data = DB::table('tb_questions')->whereIn('form_id',[4])->where('estado', 1)->get();
            $data = $data->random(10);
        }elseif ($id == 5){
-           $data = DB::table('tb_questions')->whereIn('form_id',[5])->get();
+           $data = DB::table('tb_questions')->whereIn('form_id',[5])->where('estado', 1)->get();
            $data = $data->random(10);
        }elseif ($id == 6){
-           $data = DB::table('tb_questions')->whereIn('form_id',[6])->get();
+           $data = DB::table('tb_questions')->whereIn('form_id',[6])->where('estado', 1)->get();
            $data = $data->random(10);
        }else{
            $data = DB::table('tb_questions')->where('form_id',$id)->get();
@@ -64,7 +69,7 @@ class statisticsController extends Controller
         $formulario =$request->input('formulario');
         $user_id = auth()->id();
 
-
+        
         //MFORMULARIOS ALEATORIOS
         if($formulario == 11 || $formulario == 12){
             // guardar intento y calificación
@@ -199,7 +204,7 @@ class statisticsController extends Controller
      * mover
      */
     public  function respuestaCorrecta($formulario){
-
+        
         $data = DB::table('tb_questions')
             ->join('tb_temp_resultados','tb_questions.id','=','tb_temp_resultados.question_id' )
             ->select('tb_questions.*','tb_temp_resultados.option')

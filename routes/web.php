@@ -19,6 +19,7 @@ require_once __DIR__.'/modulos/administracion.php';
 /// formularios
 route::get('/formulario/informacion/{id}','statisticsController@formularios')->middleware('verified');
 
+route::get('/formulario/iniciales/{id}', 'TestController@testIniciales')->middleware('verified');
 
 
 route::get('/test/{id}','TestController@hacerTest')->middleware('verified');
@@ -33,6 +34,8 @@ route::get('/resultados/test/{id}',function($id) {
             $nombre = 'Test de ' . $test[0]->type . ' medio';
         } else if ($test[0]->level == 3) {
             $nombre = 'Test de ' . $test[0]->type . ' Avanzado';
+        } else if ($test[0]->level == 0) {
+            $nombre = 'Test de ' . $test[0]->type . ' inicial';
         }
     }
 

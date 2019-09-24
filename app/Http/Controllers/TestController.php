@@ -9,6 +9,12 @@ class TestController extends Controller
 {
 
 
+    public function testIniciales($id){
+        $id == 13 ? $nombre = 'Test logico inicial' : $nombre = 'Test aptitud inicial';
+        return view('formularios', compact('id', 'nombre'));
+    }
+
+
     public function hacerTest($id){
 
         $id == 7 || $id == 8 || $id == 11 || $id == 12 ? $respuesta = $id : $respuesta = $this->validarTest($id);
@@ -27,7 +33,9 @@ class TestController extends Controller
                  $nombre = 'Test de ' . $test[0]->type . ' medio';
              } else if ($test[0]->level == 3) {
                  $nombre = 'Test de ' . $test[0]->type . ' avanzado';
-             }
+            } else if ($test[0]->level == 0) {
+                    $nombre = 'Test de ' . $test[0]->type . ' inicial';
+            }
          }
          return view('formularios', compact('id', 'nombre'));
      }
@@ -135,7 +143,8 @@ class TestController extends Controller
            DB::table('tb_resultados_Test')->insert([
                 ['usuario_id' => $id , 'test_basico_logico' => 0 , 'test_intermedio_logico' => 0, 'test_final_logico' => 0 ,
                     'test_basico_aptitud' => 0 , 'test_intermedio_aptitud' => 0 , 'test_final_aptitud' => 0 ,
-                    'test_aleatorio_logico' => 0 , 'test_aletorio_aptitud' => 0]
+                    'test_aleatorio_logico' => 0 , 'test_aletorio_aptitud' => 0, 'test_inicial_aptitud' => 0,
+                    'test_inicial_logico' => 0   ]
             ]);
 
            $this->guardarResultado('crear',$id,null,null);
@@ -151,6 +160,8 @@ class TestController extends Controller
                 $campo = 'test_final_logico';
             }elseif ($test ==11){
                 $campo = 'test_aleatorio_logico';
+            } elseif ($test == 13) {
+                $campo = 'test_inicial_logico';
             }
         }elseif ($tipo == 'espacial'){
             if($test == 4){
@@ -161,6 +172,8 @@ class TestController extends Controller
                 $campo = 'test_final_aptitud';
             }elseif ($test == 12){
                 $campo = 'test_aletorio_aptitud';
+            } elseif ($test == 14) {
+                $campo = 'test_inicial_aptitud';
             }
         }
         // obtener valor del campo
@@ -244,10 +257,22 @@ class TestController extends Controller
         }
         return view("logica",compact('estadisticas','testHabilidado'));
     }
+    /*
+      Se encarga de mostrar la vista de inteliencia espacial,
 
+
+
+
+    */
     public function test_espacial(){
+
+       
+        // obtengo id del usuario
         $id = auth()->id();
+        // paso la infromación sobre el número de visitas en la pagina
         $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
+
+        // obtengo los test que fueron realizados por el usuario
         $testRealizados = DB::table('tb_statistics')->select('form_id')->distinct()
             ->where('user_id',auth()->id())->whereIn('form_id',[4,5,6])->get();
 
@@ -266,6 +291,7 @@ class TestController extends Controller
                 array_push($array,$elementos->form_id) ;
             }
 
+            // determino que test debe realizar en base al puntaje
             if(in_array(6,$array)){
                 $puntaje = db::table('tb_puntaje_test')->select('test_final_aptitud')->where('usuario_id',$id)->get();
                 $puntaje = $puntaje->first();
