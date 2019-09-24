@@ -379,7 +379,7 @@
             <h4>Veamos cuanto sabes con este test</h4>
             <p>Antes de avanzar en los diferentes niveles debes completar este test</p>
             <div>
-                <button class="primary-btn primary_btn"  id="modal" data-toggle="modal" data-target="#exampleModal">Realizar test</button>
+                  <a class="primary-btn primary_btn" href="/formulario/iniciales/13">Realizar test</a>
             </div>
         </div>
         <div id="final-test" style="display: none" class="comment-form">

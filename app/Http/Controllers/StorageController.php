@@ -19,7 +19,7 @@ class StorageController extends Controller
         $extension = $file->extension();
 
         //obtenemos el nombre del archivo
-        $caracteres='123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-.#!';
+        $caracteres='123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
         $caracteres = substr(str_shuffle($caracteres),0,10);
         $nombre = rand().$caracteres.date_timestamp_get(date_create()).'.'.$extension;
 
