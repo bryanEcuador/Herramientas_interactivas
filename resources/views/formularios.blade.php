@@ -24,7 +24,7 @@
                                 <div id="preguntas" >
                                 </div>
 
-                                <input type="text" value="{{$id}}" name="formulario" hidden>
+                                <input type="text" value="{{$id}}" id="identificador" name="formulario" hidden>
                                 <span id="ayuda"></span>
                             </div>
                         </form>
@@ -62,10 +62,11 @@
 
         document.getElementById('form').addEventListener('submit', (e) => {
             e.preventDefault();
-            let formu = document.getElementsByName('formulario').value
-            if(formu == 13){
+
+        let formu = document.getElementById('identificador').value
+        if(formu == '13'){
                 sessionStorage.setItem("pre-test", true);
-            }else if(formu == 14){
+            }else if(formu == '14'){
                 sessionStorage.setItem("pre-test2", true);
             }
 

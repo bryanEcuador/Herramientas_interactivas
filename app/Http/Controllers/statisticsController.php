@@ -61,6 +61,46 @@ class statisticsController extends Controller
 
         return view('formularios');
     }
+
+    public function  formularioInicial(Request $request){
+        $id = \Auth::id();
+        $array = $request->all();
+        $puntaje= 0;
+
+        if($request->input('formulario') == 13) {
+          $campo = 'test_inicial_logico';
+        }else{
+            $campo = 'test_inicial_aptitud';
+        }
+        // recorre el arreglo y guarda ttodos los valores
+        foreach ($array as $clave => $valor) {
+            if ($clave != '_token' and $clave != 'formulario') {
+               $correcta = DB::table('tb_questions')->select('correcta')->where('id',$clave)->get();
+               $correcta = $correcta->first();
+               if($correcta->correcta== $valor){
+                   $puntaje +=1;
+               }
+            }
+        }
+
+        // buscar si existe un registro previo
+
+        $existe = DB::table('tb_resultados_Test')->select('id')->where('usuario_id',$id)->get();
+
+        if($existe->isEmpty()){
+            // crear registro
+            DB::table('tb_resultados_Test')->insert([
+                ['usuario_id' => $id , 'test_basico_logico' => 0 , 'test_intermedio_logico' => 0, 'test_final_logico' => 0 ,
+                    'test_basico_aptitud' => 0 , 'test_intermedio_aptitud' => 0 , 'test_final_aptitud' => 0 ,
+                    'test_aleatorio_logico' => 0 , 'test_aletorio_aptitud' => 0, 'test_inicial_aptitud' => 1,
+                    'test_inicial_logico' => 1   ]
+            ]);
+
+            $this->TestConroller->guardarResultado('crear',$id,null,null);
+        }
+        $this->TestConroller->guardarResultado('update',$id,$campo,$puntaje);
+
+    }
     /*
      * mover  a controlador de test
      *
@@ -75,6 +115,11 @@ class statisticsController extends Controller
             // guardar intento y calificación
             $tipo = $formulario == 11 ? 'logico' : 'espacial';
             $this->TestConroller->guardarIntentosTest($formulario,$tipo,8);
+            return redirect()->route('inteligencias');
+        }
+
+        if($formulario == 13 || $formulario == 14 ){
+            $this->formularioInicial($request);
             return redirect()->route('inteligencias');
         }
 

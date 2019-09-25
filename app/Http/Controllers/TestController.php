@@ -143,8 +143,8 @@ class TestController extends Controller
            DB::table('tb_resultados_Test')->insert([
                 ['usuario_id' => $id , 'test_basico_logico' => 0 , 'test_intermedio_logico' => 0, 'test_final_logico' => 0 ,
                     'test_basico_aptitud' => 0 , 'test_intermedio_aptitud' => 0 , 'test_final_aptitud' => 0 ,
-                    'test_aleatorio_logico' => 0 , 'test_aletorio_aptitud' => 0, 'test_inicial_aptitud' => 0,
-                    'test_inicial_logico' => 0   ]
+                    'test_aleatorio_logico' => 0 , 'test_aletorio_aptitud' => 0, 'test_inicial_aptitud' => 1,
+                    'test_inicial_logico' => 1   ]
             ]);
 
            $this->guardarResultado('crear',$id,null,null);
