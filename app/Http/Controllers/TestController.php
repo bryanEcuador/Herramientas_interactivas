@@ -260,9 +260,6 @@ class TestController extends Controller
     /*
       Se encarga de mostrar la vista de inteliencia espacial,
 
-
-
-
     */
     public function test_espacial(){
 

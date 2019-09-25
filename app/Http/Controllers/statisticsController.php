@@ -101,6 +101,22 @@ class statisticsController extends Controller
         $this->TestConroller->guardarResultado('update',$id,$campo,$puntaje);
 
     }
+
+    public function calcularPuntaje(Request $request){
+        $array = [];
+        $puntaje = 0;
+        foreach ($array as $clave => $valor) {
+            if ($clave != '_token' and $clave != 'formulario') {
+                $correcta = DB::table('tb_questions')->select('correcta')->where('id',$clave)->get();
+                $correcta = $correcta->first();
+                if($correcta->correcta== $valor){
+                    $puntaje +=1;
+                }
+            }
+        }
+
+        return $puntaje;
+    }
     /*
      * mover  a controlador de test
      *
@@ -114,6 +130,8 @@ class statisticsController extends Controller
         if($formulario == 11 || $formulario == 12){
             // guardar intento y calificación
             $tipo = $formulario == 11 ? 'logico' : 'espacial';
+            //metodo que me devuelva el puntaje
+            $puntaje = $this->calcularPuntaje($request);
             $this->TestConroller->guardarIntentosTest($formulario,$tipo,8);
             return redirect()->route('inteligencias');
         }

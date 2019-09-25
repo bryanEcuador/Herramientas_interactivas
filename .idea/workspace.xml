@@ -8,7 +8,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/statisticsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/statisticsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/formularios.blade.php" afterPath="$PROJECT_DIR$/resources/views/formularios.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,29 +21,63 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="statisticsController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="statisticsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/statisticsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="94" column="108" lean-forward="false" selection-start-line="94" selection-start-column="108" selection-end-line="94" selection-end-column="108" />
+            <state relative-caret-position="345">
+              <caret line="134" column="53" lean-forward="false" selection-start-line="134" selection-start-column="34" selection-end-line="134" selection-end-column="53" />
               <folding>
-                <element signature="e#7298#9958#0#PHP" expanded="false" />
-                <element signature="e#9993#10446#0#PHP" expanded="false" />
-                <element signature="e#10452#10836#0#PHP" expanded="false" />
+                <element signature="e#552#2407#0#PHP" expanded="false" />
+                <element signature="e#7922#10582#0#PHP" expanded="false" />
+                <element signature="e#10617#11070#0#PHP" expanded="false" />
+                <element signature="e#11076#11460#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inteligencias.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/inteligencias.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="498">
+              <caret line="48" column="15" lean-forward="false" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="logica.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/logica.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="386" column="41" lean-forward="false" selection-start-line="386" selection-start-column="31" selection-end-line="386" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="446">
-              <caret line="213" column="28" lean-forward="true" selection-start-line="213" selection-start-column="28" selection-end-line="213" selection-end-column="28" />
+              <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
               <folding>
+                <element signature="e#386#1491#0#PHP" expanded="false" />
                 <element signature="e#1497#4609#0#PHP" expanded="false" />
-                <element signature="e#9453#11658#0#PHP" expanded="false" />
-                <element signature="e#11664#12001#0#PHP" expanded="false" />
+                <element signature="e#7008#7414#0#PHP" expanded="false" />
+                <element signature="e#7420#9368#0#PHP" expanded="false" />
+                <element signature="e#9450#11655#0#PHP" expanded="false" />
+                <element signature="e#11661#11998#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -84,7 +117,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>form</find>
       <find>punta</find>
       <find>information</find>
       <find>formularios</find>
@@ -113,6 +145,7 @@
       <find>updatePregunta</find>
       <find>formulario/sor</find>
       <find>store</find>
+      <find>final que</find>
       <find>crear</find>
     </findStrings>
     <replaceStrings>
@@ -176,8 +209,8 @@
         <option value="$PROJECT_DIR$/routes/modulos/administracion.php" />
         <option value="$PROJECT_DIR$/resources/views/administracion/edicion-pregunta.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdministracionController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
         <option value="$PROJECT_DIR$/resources/views/formularios.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/statisticsController.php" />
       </list>
     </option>
@@ -416,18 +449,18 @@
       <workItem from="1569108097211" duration="5885000" />
       <workItem from="1569172153573" duration="15711000" />
       <workItem from="1569209279205" duration="10035000" />
-      <workItem from="1569372691756" duration="5026000" />
+      <workItem from="1569372691756" duration="7921000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="329328000" />
+    <option name="totallyTimeSpent" value="332223000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19213313" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19213313" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3288364" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -509,13 +542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/inteligencias.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1248">
-          <caret line="48" column="15" lean-forward="false" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/recomendaciones.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1040">
@@ -528,13 +554,6 @@
         <state relative-caret-position="3874">
           <caret line="149" column="22" lean-forward="false" selection-start-line="149" selection-start-column="22" selection-end-line="149" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -563,13 +582,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="371">
           <caret line="27" column="43" lean-forward="false" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/logica.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12818">
-          <caret line="493" column="33" lean-forward="false" selection-start-line="493" selection-start-column="33" selection-end-line="493" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -619,6 +631,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
           <caret line="50" column="17" lean-forward="true" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -861,26 +874,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
+    <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="213" column="28" lean-forward="true" selection-start-line="213" selection-start-column="28" selection-end-line="213" selection-end-column="28" />
-          <folding>
-            <element signature="e#1497#4609#0#PHP" expanded="false" />
-            <element signature="e#9453#11658#0#PHP" expanded="false" />
-            <element signature="e#11664#12001#0#PHP" expanded="false" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/inteligencias.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="48" column="15" lean-forward="false" selection-start-line="48" selection-start-column="15" selection-end-line="48" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/logica.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="386" column="41" lean-forward="false" selection-start-line="386" selection-start-column="31" selection-end-line="386" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/statisticsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="94" column="108" lean-forward="false" selection-start-line="94" selection-start-column="108" selection-end-line="94" selection-end-column="108" />
+        <state relative-caret-position="345">
+          <caret line="134" column="53" lean-forward="false" selection-start-line="134" selection-start-column="34" selection-end-line="134" selection-end-column="53" />
           <folding>
-            <element signature="e#7298#9958#0#PHP" expanded="false" />
-            <element signature="e#9993#10446#0#PHP" expanded="false" />
-            <element signature="e#10452#10836#0#PHP" expanded="false" />
+            <element signature="e#552#2407#0#PHP" expanded="false" />
+            <element signature="e#7922#10582#0#PHP" expanded="false" />
+            <element signature="e#10617#11070#0#PHP" expanded="false" />
+            <element signature="e#11076#11460#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+          <folding>
+            <element signature="e#386#1491#0#PHP" expanded="false" />
+            <element signature="e#1497#4609#0#PHP" expanded="false" />
+            <element signature="e#7008#7414#0#PHP" expanded="false" />
+            <element signature="e#7420#9368#0#PHP" expanded="false" />
+            <element signature="e#9450#11655#0#PHP" expanded="false" />
+            <element signature="e#11661#11998#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
