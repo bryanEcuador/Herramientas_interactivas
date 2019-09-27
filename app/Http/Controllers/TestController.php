@@ -207,6 +207,7 @@ class TestController extends Controller
     }
 
     public function test_logicos(){
+        $puntaje_final = 0;
         $id = auth()->id();
         $estadisticas = DB::table('table_counter')->where('id','=',1)->get();
         $testRealizados = DB::table('tb_statistics')->select('form_id')->distinct()
@@ -230,7 +231,14 @@ class TestController extends Controller
                 $puntaje = $puntaje->first();
 
                 if($puntaje->test_final_logico > 6){
-                    $testHabilidado = 4;
+                   $puntaje = DB::table('tb_puntaje_test')->select('test_aleatorio_logico')->where('usuario_id',$id)->get();
+                    $puntaje = $puntaje->first();
+                    if($puntaje->test_aleatorio_logico > 0){
+                        $testHabilidado = 99;
+                        $puntaje_final = $puntaje->test_aleatorio_logico;
+                    }else{
+                        $testHabilidado = 4;
+                    }
                 }else{
                     $testHabilidado = 3;
                 }
@@ -255,7 +263,7 @@ class TestController extends Controller
                 }
             }
         }
-        return view("logica",compact('estadisticas','testHabilidado'));
+        return view("logica",compact('estadisticas','testHabilidado','puntaje_final'));
     }
     /*
       Se encarga de mostrar la vista de inteliencia espacial,
@@ -294,7 +302,14 @@ class TestController extends Controller
                 $puntaje = $puntaje->first();
 
                 if($puntaje->test_final_aptitud > 6){
-                    $testHabilidado = 7;
+                    $puntaje = DB::table('tb_puntaje_test')->select('test_aleatorio_espacial')->where('usuario_id',$id)->get();
+                    $puntaje = $puntaje->first();
+                    if($puntaje->test_aleatorio_espacial > 0){
+                        $testHabilidado = 99;
+                        $puntaje_final = $puntaje->test_aleatorio_espacial;
+                    }else{
+                        $testHabilidado = 7;
+                    }
                 }else{
                     $testHabilidado = 6;
                 }
@@ -318,7 +333,7 @@ class TestController extends Controller
                 }
             }
         }
-        return view("espacial",compact('estadisticas','testHabilidado'));
+        return view("espacial",compact('estadisticas','testHabilidado','$puntaje_final'));
     }
 
     public function mostrarResultados(){

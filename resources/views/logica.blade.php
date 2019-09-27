@@ -382,6 +382,16 @@
                   <a class="primary-btn primary_btn" href="/formulario/iniciales/13">Realizar test</a>
             </div>
         </div>
+        @if($testHabilidado == 99)
+            <div id="Terminado" style="display: block" class="comment-form">
+                <h4>Felicitaciones</h4>
+                <p>Has completo todos los test, tu puntaje del ultimo test es:</p>
+                <div>
+                    <h3 id="puntaje_final_test" >{{$puntaje_final}}/10 </h3>
+                </div>
+            </div>
+        @endif
+
         <div id="final-test" style="display: none" class="comment-form">
             <h4>test de final</h4>
             <p>Este es el test final que agrupa todos los conocimientos</p>
@@ -462,6 +472,8 @@
 
     <script>
         test :'';
+
+
         init();
 
         function preTest(){
@@ -501,6 +513,10 @@
 
             if(test == 4){
                 document.querySelector('#final-test').style.display = 'block'
+                document.querySelector('#test-iniciales').style.display = 'none'
+            }
+
+            if(test == 99){
                 document.querySelector('#test-iniciales').style.display = 'none'
             }
 

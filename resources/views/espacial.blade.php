@@ -258,6 +258,16 @@
                 </div>
             </div>
         </div>
+
+        @if($testHabilidado == 99)
+            <div id="Terminado" style="display: block" class="comment-form">
+                <h4>Felicitaciones</h4>
+                <p>Has completo todos los test, tu puntaje del ultimo test es:</p>
+                <div>
+                    <h3 id="puntaje_final_test" >{{$puntaje_final}}/10 </h3>
+                </div>
+            </div>
+        @endif
         <div id="pre-test" style="display: none" class="comment-form">
             <h4>Veamos cuanto sabes con este test</h4>
             <p>Antes de avanzar en los diferentes niveles debes completar este test</p>
@@ -379,6 +389,10 @@
 
             if(test == 7){
                 document.querySelector('#final-test').style.display = 'block'
+                document.querySelector('#test-iniciales').style.display = 'none'
+            }
+
+            if(test == 99){
                 document.querySelector('#test-iniciales').style.display = 'none'
             }
 

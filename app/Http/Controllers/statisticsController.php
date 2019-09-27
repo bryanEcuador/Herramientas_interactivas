@@ -132,7 +132,7 @@ class statisticsController extends Controller
             $tipo = $formulario == 11 ? 'logico' : 'espacial';
             //metodo que me devuelva el puntaje
             $puntaje = $this->calcularPuntaje($request);
-            $this->TestConroller->guardarIntentosTest($formulario,$tipo,8);
+            $this->TestConroller->guardarIntentosTest($formulario,$tipo,$puntaje);
             return redirect()->route('inteligencias');
         }
 
