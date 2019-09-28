@@ -152,22 +152,52 @@ route::get('recomendaciones',function () {
 route::get('resultados-grafico/{form}/{question}','statisticsController@graficos')->middleware('verified');
 
 route::get('graficos/{tipo}',function ($tipo){
+
+    $valores = [];
+    $valores2 = [];
+    $valores3 = [];
     if($tipo == '1'){
         // retonrar un arreglo con  todos los valaroes para mostrar la grafica
-        return view('graficos.conocimientos');
+        $datos = DB::table('tb_questions')->select('id')->whereIn('form_id',[1])->get();
+        $datos2 = DB::table('tb_questions')->select('id')->whereIn('form_id',[2])->get();
+        $datos3 = DB::table('tb_questions')->select('id')->whereIn('form_id',[3])->get();
+
+        foreach ($datos as $dato){
+            array_push($valores,$dato->id);
+        }
+        foreach ($datos2 as $dato){
+            array_push($valores2,$dato->id);
+        }
+        foreach ($datos3 as $dato){
+            array_push($valores3,$dato->id);
+        }
+        return view('graficos.conocimientos',compact('valores','valores2','valores3'));
     }else if($tipo == 2){
-        return view('graficos.aptitud');
+        $datos = DB::table('tb_questions')->select('id')->whereIn('form_id',[4])->get();
+        $datos2 = DB::table('tb_questions')->select('id')->whereIn('form_id',[5])->get();
+        $datos3 = DB::table('tb_questions')->select('id')->whereIn('form_id',[6])->get();
+
+        foreach ($datos as $dato){
+            array_push($valores,$dato->id);
+        }
+        foreach ($datos2 as $dato){
+            array_push($valores2,$dato->id);
+        }
+        foreach ($datos3 as $dato){
+            array_push($valores3,$dato->id);
+        }
+        return view('graficos.aptitud',compact('valores','valores2','valores3'));
     }else if($tipo == 3){
-        return view('graficos.sastifaccion');
+        return view('graficos.sastifaccion',compact('valores'));
     }
 })->middleware('verified');
 
 
-route::get('guardarIntentosTest/{test}/{tipo}/{puntaje}','testController@guardarIntentosTest')->middleware('verified');;
+route::get('guardarIntentosTest/{test}/{tipo}/{puntaje}','testController@guardarIntentosTest')->middleware('verified');
 
-route::get('mostrar-resultados','testController@mostrarResultados')->middleware('verified');;
+route::get('mostrar-resultados','testController@mostrarResultados')->middleware('verified');
 
-route::get('administracion', 'statisticsController@mostrarResultados')->middleware('verified');;
+route::get('administracion', 'statisticsController@mostrarResultados')->middleware('verified');
 
 
 Auth::routes();
@@ -176,4 +206,33 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 route::get('/gestor-preguntas',function() {
    return view('gestor');
+});
+
+route::get('/resultados-test/mejora',function (){
+    return view('graficos.mejora');
+});
+
+route::get('/resultados-test-mejora',function(){
+    $total = DB::table('tb_puntaje_test')->where('id','!=',null)->count();
+    $mejora = DB::table('tb_puntaje_test')->where('test_inicial_logico', '<','test_aleatorio_logico')->count();
+
+    if($total !== null and $mejora !== null){
+        if($mejora > 0){
+            $mejoraron = ($total * 100) / $mejora;
+            $no_mejoraron = 100 - $mejoraron;
+        }else{
+            $mejoraron = 0;
+            $no_mejoraron = 100;
+        }
+
+    }else{
+        $mejoraron = 0;
+        $no_mejoraron = 0;
+    }
+
+    $array = [];
+    array_push($array,$mejoraron);
+    array_push($array,$no_mejoraron);
+
+    return $array;
 });

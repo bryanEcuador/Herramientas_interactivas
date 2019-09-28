@@ -125,6 +125,9 @@
                                                     <li class="nav-item">
                                                         <a class="nav-link" href="/graficos/3">Satisfacción</a>
                                                     </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="/resultados-test/mejora">Resultados test</a>
+                                                    </li>
 
 
                                                 </ul>

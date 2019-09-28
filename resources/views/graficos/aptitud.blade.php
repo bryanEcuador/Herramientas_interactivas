@@ -21,58 +21,28 @@
     <div style="margin-top: 70px; padding: 40px;" id="aplicacion">
          <div class="section-top-border" style="background-color: #E5E5E5"  >
              <div class="container">
-                 <h1>Resultados test inicial de aptitud</h1>
-                 <div class="row">
-                     <graficos formulario="4" pregunta="46"></graficos>
-                     <graficos formulario="4" pregunta="47"></graficos>
-                     <graficos formulario="4" pregunta="48"></graficos>
-                     <graficos formulario="4" pregunta="49"></graficos>
-                     <graficos formulario="4" pregunta="50"></graficos>
-                     <graficos formulario="4" pregunta="51"></graficos>
-                     <graficos formulario="4" pregunta="52"></graficos>
-                     <graficos formulario="4" pregunta="53"></graficos>
-                     <graficos formulario="4" pregunta="54"></graficos>
+                 <div class="row justify-content-md-center">
+                     <h1>Resultados test de aptitud basico</h1>
+                     @foreach($valores as $valor)
+                         <graficos formulario="4" pregunta= {{$valor}}></graficos>
+                     @endforeach
                  </div>
-
-             </div>
-         </div>
-
-
-         <div class="section-top-border" style="background-color: #E5E5E5"  >
-             <div class="container">
-                 <h1>Resultados test medio de aptitud</h1>
-                 <div class="row">
-                     <graficos formulario="5" pregunta="55"></graficos>
-                     <graficos formulario="5" pregunta="56"></graficos>
-                     <graficos formulario="5" pregunta="57"></graficos>
-                     <graficos formulario="5" pregunta="58"></graficos>
-                     <graficos formulario="5" pregunta="59"></graficos>
-                     <graficos formulario="5" pregunta="60"></graficos>
-                     <graficos formulario="5" pregunta="61"></graficos>
-                     <graficos formulario="5" pregunta="62"></graficos>
-                     <graficos formulario="5" pregunta="63"></graficos>
-                     <graficos formulario="5" pregunta="64"></graficos>
+                 <div class="row justify-content-md-center">
+                     <h1>Resultados test de aptitud intermedio</h1>
+                     @foreach($valores2 as $valor)
+                         <graficos formulario="5" pregunta= {{$valor}}></graficos>
+                     @endforeach
+                 </div>
+                 <div class="row justify-content-md-center">
+                     <h1>Resultados test de aptitud avanzado</h1>
+                     @foreach($valores3 as $valor)
+                         <graficos formulario="6" pregunta= {{$valor}}></graficos>
+                     @endforeach
                  </div>
              </div>
          </div>
 
-         <div class="section-top-border" style="background-color: #E5E5E5"  >
-             <div class="container">
-                 <h1>Resultados test final de aptitud</h1>
-                 <div class="row">
-                     <graficos formulario="6" pregunta="65"></graficos>
-                     <graficos formulario="6" pregunta="66"></graficos>
-                     <graficos formulario="6" pregunta="67"></graficos>
-                     <graficos formulario="6" pregunta="68"></graficos>
-                     <graficos formulario="6" pregunta="69"></graficos>
-                     <graficos formulario="6" pregunta="70"></graficos>
-                     <graficos formulario="6" pregunta="71"></graficos>
-                     <graficos formulario="6" pregunta="72"></graficos>
-                     <graficos formulario="6" pregunta="73"></graficos>
-                     <graficos formulario="6" pregunta="74"></graficos>
-                 </div>
-             </div>
-         </div>
+
 
         {{-- <div class="section-top-border" style="background-color: #E5E5E5"  >
              <div class="container">
@@ -115,7 +85,7 @@
     <script>
         Vue.component('graficos', {
             props: ['formulario','pregunta'],
-            template: `<div class="grafico col-md-5" >
+            template: `<div class="grafico grafico col-md-8" >
                  <h4>@{{titulo}}</h4>
                   <canvas :id=id width="400" height="400"></canvas>
               </div>`,

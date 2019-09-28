@@ -21,23 +21,29 @@
     <div style="margin-top: 70px; padding: 40px;" id="aplicacion">
         <div class="section-top-border" style="background-color: #E5E5E5"  >
             <div class="container">
-                <h1>Resultados test inicial de conocimiento</h1>
-                <div class="row">
-                    <graficos formulario="1" pregunta="1"></graficos>
-                    <graficos formulario="1" pregunta="2"></graficos>
-                    <graficos formulario="1" pregunta="3"></graficos>
-                    <graficos formulario="1" pregunta="4"></graficos>
-                    <graficos formulario="1" pregunta="5"></graficos>
-                    <graficos formulario="1" pregunta="6"></graficos>
-                    <graficos formulario="1" pregunta="7"></graficos>
-                    <graficos formulario="1" pregunta="8"></graficos>
-                    <graficos formulario="1" pregunta="9"></graficos>
-                    <graficos formulario="1" pregunta="10"></graficos>
+                <div class="row justify-content-md-center">
+                    <h1>Resultados test de conocimiento basico</h1>
+                    @foreach($valores as $valor)
+                        <graficos formulario="1" pregunta= {{$valor}}></graficos>
+                    @endforeach
+                </div>
+                <div class="row justify-content-md-center">
+                    <h1>Resultados test de conocimiento intermedio</h1>
+                    @foreach($valores2 as $valor)
+                        <graficos formulario="1" pregunta= {{$valor}}></graficos>
+                    @endforeach
+                </div>
+                <div class="row justify-content-md-center">
+                    <h1>Resultados test de conocimiento avanzado</h1>
+                    @foreach($valores3 as $valor)
+                        <graficos formulario="1" pregunta= {{$valor}}></graficos>
+                    @endforeach
                 </div>
             </div>
         </div>
 
-        <div class="section-top-border" style="background-color: #E5E5E5"  >
+
+    {{--    <div class="section-top-border" style="background-color: #E5E5E5"  >
             <div class="container">
                 <h1>Resultados test medio de conocimiento</h1>
                 <div class="row">
@@ -72,7 +78,7 @@
                 </div>
             </div>
         </div>
-
+--}}
         {{-- <div class="section-top-border" style="background-color: #E5E5E5"  >
              <div class="container">
                  <h1>Resultados test inicial de aptitud</h1>
@@ -169,7 +175,7 @@
     <script>
         Vue.component('graficos', {
             props: ['formulario','pregunta'],
-            template: `<div class="grafico col-md-5" >
+            template: `<div class="grafico col-md-8" >
                  <h4>@{{titulo}}</h4>
                   <canvas :id=id width="400" height="400"></canvas>
               </div>`,
@@ -180,7 +186,8 @@
                     labels :[],
                     valores : [],
                     id : this.formulario+''+this.pregunta,
-                    errores : 0
+                    errores : 0,
+                    form1 : [1,2,3,4,5]
 
                 }
             },
@@ -267,7 +274,7 @@
         });
 
         var app=new Vue({
-            el: '#aplicacion'
+            el: '#aplicacion',
         });
     </script>
 

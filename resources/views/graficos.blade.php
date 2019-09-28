@@ -23,8 +23,9 @@
             <div class="container">
                 <h1>Resultados test inicial de conocimiento</h1>
                 <div class="row">
-                    <graficos formulario="1" pregunta="1"></graficos>
-                    <graficos formulario="1" pregunta="2"></graficos>
+
+                    <graficos v-form="valor in form1" formulario="1" pregunta=@{{valor}}></graficos>
+                   {{-- <graficos formulario="1" pregunta="2"></graficos>
                     <graficos formulario="1" pregunta="3"></graficos>
                     <graficos formulario="1" pregunta="4"></graficos>
                     <graficos formulario="1" pregunta="5"></graficos>
@@ -32,10 +33,11 @@
                     <graficos formulario="1" pregunta="7"></graficos>
                     <graficos formulario="1" pregunta="8"></graficos>
                     <graficos formulario="1" pregunta="9"></graficos>
-                    <graficos formulario="1" pregunta="10"></graficos>
+                    <graficos formulario="1" pregunta="10"></graficos>--}}
                 </div>
             </div>
         </div>
+{{--
 
         <div class="section-top-border" style="background-color: #E5E5E5"  >
             <div class="container">
@@ -72,94 +74,8 @@
                 </div>
             </div>
         </div>
-
-       {{-- <div class="section-top-border" style="background-color: #E5E5E5"  >
-            <div class="container">
-                <h1>Resultados test inicial de aptitud</h1>
-                <div class="row">
-                    <graficos formulario="4" pregunta="46"></graficos>
-                    <graficos formulario="4" pregunta="47"></graficos>
-                    <graficos formulario="4" pregunta="48"></graficos>
-                    <graficos formulario="4" pregunta="49"></graficos>
-                    <graficos formulario="4" pregunta="50"></graficos>
-                    <graficos formulario="4" pregunta="51"></graficos>
-                    <graficos formulario="4" pregunta="52"></graficos>
-                    <graficos formulario="4" pregunta="53"></graficos>
-                    <graficos formulario="4" pregunta="54"></graficos>
-                    <graficos formulario="4" pregunta="64"></graficos>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="section-top-border" style="background-color: #E5E5E5"  >
-            <div class="container">
-                <h1>Resultados test medio de aptitud</h1>
-                <div class="row">
-                    <graficos formulario="5" pregunta="55"></graficos>
-                    <graficos formulario="5" pregunta="56"></graficos>
-                    <graficos formulario="5" pregunta="57"></graficos>
-                    <graficos formulario="5" pregunta="58"></graficos>
-                    <graficos formulario="5" pregunta="59"></graficos>
-                    <graficos formulario="5" pregunta="60"></graficos>
-                    <graficos formulario="5" pregunta="51"></graficos>
-                    <graficos formulario="5" pregunta="62"></graficos>
-                    <graficos formulario="5" pregunta="63"></graficos>
-                    <graficos formulario="5" pregunta="64"></graficos>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-top-border" style="background-color: #E5E5E5"  >
-            <div class="container">
-                <h1>Resultados test final de aptitud</h1>
-                <div class="row">
-                    <graficos formulario="6" pregunta="65"></graficos>
-                    <graficos formulario="6" pregunta="66"></graficos>
-                    <graficos formulario="6" pregunta="67"></graficos>
-                    <graficos formulario="6" pregunta="68"></graficos>
-                    <graficos formulario="6" pregunta="69"></graficos>
-                    <graficos formulario="6" pregunta="70"></graficos>
-                    <graficos formulario="6" pregunta="71"></graficos>
-                    <graficos formulario="6" pregunta="72"></graficos>
-                    <graficos formulario="6" pregunta="73"></graficos>
-                    <graficos formulario="6" pregunta="74"></graficos>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-top-border" style="background-color: #E5E5E5"  >
-            <div class="container">
-                <h1>Resultados encuesta sastifacción inicial</h1>
-                <div class="row">
-                    <graficos formulario="7" pregunta="31"></graficos>
-                    <graficos formulario="7" pregunta="32"></graficos>
-                    <graficos formulario="7" pregunta="33"></graficos>
-                    <graficos formulario="7" pregunta="34"></graficos>
-                    <graficos formulario="7" pregunta="35"></graficos>
-                    <graficos formulario="7" pregunta="36"></graficos>
-                    <graficos formulario="7" pregunta="37"></graficos>
-                </div>
-            </div>
-        </div>
-
-        <div class="section-top-border" style="background-color: #E5E5E5"  >
-            <div class="container">
-                <h1>Resultados encuesta sastifacción final</h1>
-                <div class="row">
-                    <graficos formulario="8" pregunta="38"></graficos>
-                    <graficos formulario="8" pregunta="39"></graficos>
-                    <graficos formulario="8" pregunta="40"></graficos>
-                    <graficos formulario="8" pregunta="41"></graficos>
-                    <graficos formulario="8" pregunta="42"></graficos>
-                    <graficos formulario="8" pregunta="43"></graficos>
-                    <graficos formulario="8" pregunta="44"></graficos>
-                    <graficos formulario="8" pregunta="45"></graficos>
-                </div>
-            </div>
-        </div>
-
 --}}
+
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
@@ -181,13 +97,29 @@
                     valores : [],
                     id : this.formulario+''+this.pregunta,
                     errores : 0
+                    form1 : [1,2,3,4,5]
 
                 }
             },
             created : function(){
+              this.graficosDibujar()
               this.consultar();
             },
             methods: {
+
+                graficosDibujar : function(){
+                    var that = this;
+                    var url = '/resultados-grafico/'+this.formulario+'/'+this.pregunta;
+                    axios.get(url)
+                        .then(function (response) {
+                            console.log(response);
+
+                        })
+                        .catch(function (error) {
+
+                        });
+                },
+
                 consultar: function() {
                     let body = document.getElementsByName('body')
                     var that = this;
