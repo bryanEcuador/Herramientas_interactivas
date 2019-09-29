@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a93726e-e9ba-4de0-9d4e-75786a56c7d9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/statisticsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/statisticsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/graficos/conocimientos.blade.php" afterPath="$PROJECT_DIR$/resources/views/graficos/conocimientos.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/resultados.blade.php" afterPath="$PROJECT_DIR$/resources/views/resultados.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,21 +19,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="web.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="153" column="18" lean-forward="true" selection-start-line="153" selection-start-column="18" selection-end-line="153" selection-end-column="18" />
+            <state relative-caret-position="348">
+              <caret line="137" column="37" lean-forward="false" selection-start-line="137" selection-start-column="37" selection-end-line="137" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resultados.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="resultados.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/resultados.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="182">
               <caret line="150" column="67" lean-forward="false" selection-start-line="150" selection-start-column="67" selection-end-line="150" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="filesystems.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/filesystems.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="46" column="19" lean-forward="false" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -199,7 +206,6 @@
         <option value="$PROJECT_DIR$/resources/views/graficos/aptitud.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/graficos/mejoraraResultadosTest.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/graficos/mejora.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/panel-administrativo.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/principal.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/administracion/gestor.blade.php" />
@@ -211,6 +217,7 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/statisticsController.php" />
         <option value="$PROJECT_DIR$/resources/views/graficos/conocimientos.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/resultados.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
       </list>
     </option>
   </component>
@@ -258,20 +265,7 @@
             <path>
               <item name="HerrameintasInteractivas" type="b2602c69:ProjectViewProjectNode" />
               <item name="HerrameintasInteractivas" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="HerrameintasInteractivas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HerrameintasInteractivas" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="HerrameintasInteractivas" type="b2602c69:ProjectViewProjectNode" />
-              <item name="HerrameintasInteractivas" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="HerrameintasInteractivas" type="b2602c69:ProjectViewProjectNode" />
@@ -347,7 +341,7 @@
               <item name="HerrameintasInteractivas" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="storage" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="apps" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="test" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -366,15 +360,16 @@
     <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/resources/views/resultados.blade.php" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\laragon\www\HerrameintasInteractivas\resources\views" />
-      <recent name="C:\laragon\www\HerrameintasInteractivas\resources\views\administracion" />
-      <recent name="C:\laragon\www\HerrameintasInteractivas\storage\app" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\laragon\www\HerrameintasInteractivas\storage\app\public" />
       <recent name="C:\laragon\www\HerrameintasInteractivas\resources\views" />
       <recent name="C:\laragon\www\HerrameintasInteractivas\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\laragon\www\HerrameintasInteractivas\storage\app\test" />
+      <recent name="C:\laragon\www\HerrameintasInteractivas\resources\views" />
+      <recent name="C:\laragon\www\HerrameintasInteractivas\resources\views\administracion" />
+      <recent name="C:\laragon\www\HerrameintasInteractivas\storage\app" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -440,12 +435,12 @@
       <workItem from="1569554358018" duration="3845000" />
       <workItem from="1569639085832" duration="9365000" />
       <workItem from="1569721618428" duration="4644000" />
-      <workItem from="1569784990694" duration="4017000" />
+      <workItem from="1569784990694" duration="5464000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="354687000" />
+    <option name="totallyTimeSpent" value="356134000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -642,14 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
           <caret line="20" column="35" lean-forward="false" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/filesystems.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="53" column="45" lean-forward="false" selection-start-line="53" selection-start-column="45" selection-end-line="53" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -866,18 +853,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="153" column="18" lean-forward="true" selection-start-line="153" selection-start-column="18" selection-end-line="153" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/resultados.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="150" column="67" lean-forward="false" selection-start-line="150" selection-start-column="67" selection-end-line="150" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/filesystems.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="46" column="19" lean-forward="false" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="137" column="37" lean-forward="false" selection-start-line="137" selection-start-column="37" selection-end-line="137" selection-end-column="37" />
           <folding />
         </state>
       </provider>

@@ -135,7 +135,7 @@ Route::get('/uploads/apps/{file}', function ($file) {
     $contador = $contador_table->downloads +1;
     DB::table('table_counter')->where('id',$contador_table->id)->update(['downloads' => $contador]);
     
-    return Storage::download($file);
+    return Storage::download('apps/'.$file);
 })->middleware('verified'); 
 
 Route::get('/libros/{file}', function ($file) {
