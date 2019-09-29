@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a93726e-e9ba-4de0-9d4e-75786a56c7d9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/creacion-preguntas.js" afterPath="$PROJECT_DIR$/public/js/creacion-preguntas.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/administracion/gestor.blade.php" afterPath="$PROJECT_DIR$/resources/views/administracion/gestor.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/espacial.blade.php" afterPath="$PROJECT_DIR$/resources/views/espacial.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/resultados.blade.php" afterPath="$PROJECT_DIR$/resources/views/resultados.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/inteligencias.blade.php" afterPath="$PROJECT_DIR$/resources/views/inteligencias.blade.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,6 +24,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="217" column="0" lean-forward="false" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inteligencias.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/inteligencias.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="157" column="85" lean-forward="false" selection-start-line="157" selection-start-column="85" selection-end-line="157" selection-end-column="85" />
               <folding />
             </state>
           </provider>
@@ -70,7 +75,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TestController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="475">
@@ -176,7 +181,6 @@
         <option value="$PROJECT_DIR$/resources/views/graficos/mejora.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/panel-administrativo.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/inteligencias.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/principal.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/administracion/gestor.blade.php" />
         <option value="$PROJECT_DIR$/public/js/creacion-preguntas.js" />
@@ -184,6 +188,7 @@
         <option value="$PROJECT_DIR$/resources/views/resultados.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/espacial.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TestController.php" />
+        <option value="$PROJECT_DIR$/resources/views/inteligencias.blade.php" />
       </list>
     </option>
   </component>
@@ -431,12 +436,12 @@
       <workItem from="1569372691756" duration="8514000" />
       <workItem from="1569554358018" duration="3845000" />
       <workItem from="1569639085832" duration="9365000" />
-      <workItem from="1569721618428" duration="3954000" />
+      <workItem from="1569721618428" duration="4586000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="349980000" />
+    <option name="totallyTimeSpent" value="350612000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -774,14 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/inteligencias.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="171" column="59" lean-forward="false" selection-start-line="171" selection-start-column="59" selection-end-line="171" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -866,6 +863,14 @@
             <element signature="e#7008#7414#0#PHP" expanded="false" />
             <element signature="e#12544#12881#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/inteligencias.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="157" column="85" lean-forward="false" selection-start-line="157" selection-start-column="85" selection-end-line="157" selection-end-column="85" />
+          <folding />
         </state>
       </provider>
     </entry>
