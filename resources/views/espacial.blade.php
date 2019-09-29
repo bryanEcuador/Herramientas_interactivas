@@ -396,6 +396,8 @@
                 document.querySelector('#test-iniciales').style.display = 'none'
             }
 
+            console.log(test)
+
         }
     </script>
 

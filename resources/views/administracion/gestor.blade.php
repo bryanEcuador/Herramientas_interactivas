@@ -22,9 +22,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" id="tap-agregar" data-toggle="tab" href="#agregar" role="tab" aria-controls="agregar" aria-selected="false">Agregar preguntas</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="tap-consultar" data-toggle="tab" href="#consultar" role="tab" aria-controls="consultar" aria-selected="false">Intentos por test</a>
-                    </li>
+                    
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     {{-- sección para gestionar preguntas --}}

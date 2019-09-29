@@ -94,11 +94,7 @@
                                     </form>
                                 </div>
                             </li>
-                                @if(auth()->user()->name == 'Admin')
-                                    <li class="nav-item">
-                                        <button type="button" data-toggle="modal" data-target="#estadisticas">Estadisticas</button>
-                                    </li>
-                                @endif
+
                         @endguest
                     </ul>
                 </div>

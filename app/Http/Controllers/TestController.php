@@ -233,7 +233,7 @@ class TestController extends Controller
                 if($puntaje->test_final_logico > 6){
                    $puntaje = DB::table('tb_puntaje_test')->select('test_aleatorio_logico')->where('usuario_id',$id)->get();
                     $puntaje = $puntaje->first();
-                    if($puntaje->test_aleatorio_logico > 0){
+                    if($puntaje->test_aleatorio_logico >= 0){
                         $testHabilidado = 99;
                         $puntaje_final = $puntaje->test_aleatorio_logico;
                     }else{
@@ -302,11 +302,11 @@ class TestController extends Controller
                 $puntaje = $puntaje->first();
 
                 if($puntaje->test_final_aptitud > 6){
-                    $puntaje = DB::table('tb_puntaje_test')->select('test_aleatorio_espacial')->where('usuario_id',$id)->get();
+                    $puntaje = DB::table('tb_puntaje_test')->select('test_aletorio_aptitud')->where('usuario_id',$id)->get();
                     $puntaje = $puntaje->first();
-                    if($puntaje->test_aleatorio_espacial > 0){
+                    if($puntaje->test_aletorio_aptitud >=  0){
                         $testHabilidado = 99;
-                        $puntaje_final = $puntaje->test_aleatorio_espacial;
+                        $puntaje_final = $puntaje->test_aletorio_aptitud;
                     }else{
                         $testHabilidado = 7;
                     }
@@ -333,7 +333,8 @@ class TestController extends Controller
                 }
             }
         }
-        return view("espacial",compact('estadisticas','testHabilidado','$puntaje_final'));
+
+        return view("espacial",compact('estadisticas','testHabilidado','puntaje_final'));
     }
 
     public function mostrarResultados(){

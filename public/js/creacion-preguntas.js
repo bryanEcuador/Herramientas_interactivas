@@ -37,7 +37,6 @@ btn_agregar_pregunta.addEventListener('click', () => {
 })
 
 opcion_test.addEventListener('keyup' ,function() {
-    debugger
     let opcion_creada = opcion_test.value
     opcion_creada = opcion_creada.trim()
     if (opcion_creada.length >= 1 && opciones_disponibles.innerText !== '0' ){
