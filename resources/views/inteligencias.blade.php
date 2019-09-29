@@ -155,9 +155,9 @@
                         <img src="img/blog/cat-post/cat-post-3.jpg" alt="post">
                         <div class="categories_details">
                             <div class="categories_text">
-                                <a href="/test/7"><h5>Encuesta de sastifacción</h5></a>
+                                <a href="/test/7"><h5>Por favor califícanos</h5></a>
                                 <div class="border_line"></div>
-                                <p>Por favor calificanos</p>
+                                <p>Encuesta de sastifacción</p>
                             </div>
                         </div>
                     </div>
@@ -167,9 +167,9 @@
                         <img src="img/blog/cat-post/cat-post-3.jpg" alt="post">
                         <div class="categories_details">
                             <div class="categories_text">
-                                <a href="/test/8"><h5>Encuesta de sastifacción</h5></a>
+                                <a href="/test/8"><h5>Nos encataria, tener tu opinión</h5></a>
                                 <div class="border_line"></div>
-                                <p>Nos encataria, tener tu opinión</p>
+                                <p>Encuesta de sastifacción</p>
                             </div>
                         </div>
                     </div>

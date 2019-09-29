@@ -48,11 +48,9 @@
                         <div class="country">LOGICO INICIAL</div>
                         <div class="country">LOGICO MEDIO</div>
                         <div class="country">LOGICO FINAL</div>
-                        <div class="country">LOGICO ALTERNO</div>
                         <div class="country">APTITUD INICIAL</div>
                         <div class="country">APTITUD MEDIO</div>
                         <div class="country">APTITUD FINAL</div>
-                        <div class="country">APTITUD ALTERNO</div>
                     </div>
                     <div class="table-row " style="justify-content: space-between;">
                         @foreach($resultados as $resultado)
@@ -61,11 +59,9 @@
                             <div class="country">{{$resultado->test_basico_logico}}</div>
                             <div class="country">{{$resultado->test_intermedio_logico}}</div>
                             <div class="country">{{$resultado->test_final_logico}}</div>
-                            <div class="country">{{$resultado->test_aleatorio_logico}}</div>
                             <div class="country">{{$resultado->test_basico_aptitud}}</div>
                             <div class="country">{{$resultado->test_intermedio_aptitud}}</div>
                             <div class="country">{{$resultado->test_final_aptitud}}</div>
-                            <div class="country">{{$resultado->test_aletorio_aptitud}}</div>
                         @endforeach
                     </div>
                 </div>
