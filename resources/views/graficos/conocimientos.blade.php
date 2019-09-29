@@ -30,13 +30,13 @@
                 <div class="row justify-content-md-center">
                     <h1>Resultados test de conocimiento intermedio</h1>
                     @foreach($valores2 as $valor)
-                        <graficos formulario="1" pregunta= {{$valor}}></graficos>
+                        <graficos formulario="2" pregunta= {{$valor}}></graficos>
                     @endforeach
                 </div>
                 <div class="row justify-content-md-center">
                     <h1>Resultados test de conocimiento avanzado</h1>
                     @foreach($valores3 as $valor)
-                        <graficos formulario="1" pregunta= {{$valor}}></graficos>
+                        <graficos formulario="3" pregunta= {{$valor}}></graficos>
                     @endforeach
                 </div>
             </div>

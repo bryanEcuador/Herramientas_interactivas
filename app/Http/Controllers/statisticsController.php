@@ -105,6 +105,8 @@ class statisticsController extends Controller
     public function calcularPuntaje(Request $request){
         $array = [];
         $puntaje = 0;
+
+        $array = $request->all();
         foreach ($array as $clave => $valor) {
             if ($clave != '_token' and $clave != 'formulario') {
                 $correcta = DB::table('tb_questions')->select('correcta')->where('id',$clave)->get();
@@ -132,6 +134,7 @@ class statisticsController extends Controller
             $tipo = $formulario == 11 ? 'logico' : 'espacial';
             //metodo que me devuelva el puntaje
             $puntaje = $this->calcularPuntaje($request);
+
             $this->TestConroller->guardarIntentosTest($formulario,$tipo,$puntaje);
             return redirect()->route('inteligencias');
         }
@@ -227,32 +230,32 @@ class statisticsController extends Controller
         // existe una opcion y cuantos elementos de la misma
          if($datos[0]->r1 != null){
              $cantidad = DB::table('tb_statistics')->where([['option',$datos[0]->r1] ,['form_id',$formulario],['question_id',$pregunta]])->count();
-             $cantidad = ($cantidad * 100) / $total;
+             $cantidad = $cantidad == 0 ? 0 : ($cantidad * 100) / $total;
              array_push($preguntas,$datos[0]->r1);
              array_push($cantidadOpcion,$cantidad);
          }
         if($datos[0]->r2 != null){
             $cantidad = DB::table('tb_statistics')->where([['option',$datos[0]->r2] ,['form_id',$formulario],['question_id',$pregunta]])->count();
-             $cantidad = ($cantidad * 100) / $total;
+            $cantidad = $cantidad == 0 ? 0 : ($cantidad * 100) / $total;
              array_push($preguntas,$datos[0]->r2);
              array_push($cantidadOpcion,$cantidad);
         }
         if($datos[0]->r3 != null){
             $cantidad = DB::table('tb_statistics')->where([['option',$datos[0]->r3] ,['form_id',$formulario],['question_id',$pregunta]])->count();
-             $cantidad = ($cantidad * 100) / $total;
+            $cantidad = $cantidad == 0 ? 0 : ($cantidad * 100) / $total;
              array_push($preguntas,$datos[0]->r3);
              array_push($cantidadOpcion,$cantidad);
         }
         if($datos[0]->r4 != null){
             $cantidad = DB::table('tb_statistics')->where([['option',$datos[0]->r4] ,['form_id',$formulario],['question_id',$pregunta]])->count();
-             $cantidad = ($cantidad * 100) / $total;
+            $cantidad = $cantidad == 0 ? 0 : ($cantidad * 100) / $total;
              array_push($preguntas,$datos[0]->r4);
              array_push($cantidadOpcion,$cantidad);
         }
 
         if($datos[0]->r5 != null){
         $cantidad = DB::table('tb_statistics')->where([['option',$datos[0]->r5] ,['form_id',$formulario],['question_id',$pregunta]])->count();
-        $cantidad = ($cantidad * 100) / $total;
+            $cantidad = $cantidad == 0 ? 0 : ($cantidad * 100) / $total;
         array_push($preguntas,$datos[0]->r5);
         array_push($cantidadOpcion,$cantidad);
         }
