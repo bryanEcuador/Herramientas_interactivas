@@ -174,7 +174,7 @@
                                     <a style="font-size: 10px; color: #fff;" href="https://www.kodugamelab.com/">www.kodugamelab.com</a>
                                     <br>
                                     @if(auth()->user()->name !== 'Admin')
-                                    <a style="margin-right: 2px;" class="primary_btn" href="/kodu.zip">Descargar</a>
+                                    <a style="margin-right: 2px;" class="primary_btn" href="/uploads/apps/kodu.zip">Descargar</a>
                                     @endif
                                 </div>
                             </div>
