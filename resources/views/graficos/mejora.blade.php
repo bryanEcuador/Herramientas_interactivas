@@ -23,7 +23,15 @@
             <div class="container">
                 <div class="row justify-content-md-center">
                     <div class="grafico grafico col-md-8" >
+                        <h1>Inteligencia lógico-mamtemático</h1>
                         <canvas id='grafico' width="400" height="400"></canvas>
+                    </div>
+                </div>
+
+                <div class="row justify-content-md-center">
+                    <div class="grafico grafico col-md-8" >
+                        <h1>Inteligencia espacial</h1>
+                        <canvas id='grafico2' width="400" height="400"></canvas>
                     </div>
                 </div>
             </div>
@@ -37,6 +45,7 @@
     <script>
 
         consultar();
+        consultar2();
 
         function consultar(){
             var that = this;
@@ -53,7 +62,53 @@
                 });
         }
 
+        function consultar2(){
+            var that = this;
+            var url = '/resultados-test-mejora-espacial';
+            axios.get(url)
+                .then(function (response) {
+                    console.log(response);
+                    that.graficar2(response)
+                })
+                .catch(function (error) {
+                    ++that.errores
+                    if(that.errores <= 3)
+                        that.consultar2()
+                });
+        }
+
         function graficar(response) {
+            this.titulo = 'Mejora en test'
+            var ctx = document.getElementById('grafico2').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'polarArea',
+                data: {
+                    labels: ['Mejoraron','No mejoraron'],
+                    datasets: [{
+                        data: [response.data[0], response.data[1]],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(14, 112, 215, 0.2)',
+                            'rgba(74, 172, 90, 0.2)',
+
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(14, 112, 215, 1)',
+                            'rgba(74, 172, 90, 1)',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+
+                }
+            });
+        }
+
+        function graficar2(response) {
             this.titulo = 'Mejora en test'
             var ctx = document.getElementById('grafico').getContext('2d');
             var myChart = new Chart(ctx, {

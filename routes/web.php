@@ -207,15 +207,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 route::get('/gestor-preguntas',function() {
    return view('gestor');
 });
-
+/////
 route::get('/resultados-test/mejora',function (){
     return view('graficos.mejora');
 });
 
 route::get('/resultados-test-mejora',function(){
     $total = DB::table('tb_puntaje_test')->where('id','!=',null)->count();
-    $mejora = DB::table('tb_puntaje_test')->where('test_inicial_logico', '<','test_aleatorio_logico')->count();
-
+    $mejora = DB::table('tb_puntaje_test')->whereRaw('test_inicial_logico < test_aleatorio_logico   ')->count();
     if($total !== null and $mejora !== null){
         if($mejora > 0){
             $mejoraron = ($total * 100) / $mejora;
@@ -236,3 +235,29 @@ route::get('/resultados-test-mejora',function(){
 
     return $array;
 });
+
+route::get('/resultados-test-mejora-espacial',function(){
+    $total = DB::table('tb_puntaje_test')->where('id','!=',null)->count();
+    $mejora = DB::table('tb_puntaje_test')->whereRaw('test_inicial_aptitud < test_aletorio_aptitud   ')->count();
+    if($total !== null and $mejora !== null){
+        if($mejora > 0){
+            $mejoraron = ($total * 100) / $mejora;
+            $no_mejoraron = 100 - $mejoraron;
+        }else{
+            $mejoraron = 0;
+            $no_mejoraron = 100;
+        }
+
+    }else{
+        $mejoraron = 0;
+        $no_mejoraron = 0;
+    }
+
+    $array = [];
+    array_push($array,$mejoraron);
+    array_push($array,$no_mejoraron);
+
+    return $array;
+});
+
+//////////////////////////

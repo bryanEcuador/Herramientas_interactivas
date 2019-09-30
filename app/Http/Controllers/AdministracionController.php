@@ -29,6 +29,7 @@ class AdministracionController extends Controller
     // insertar las nuevas preguntas al formulario
     public function guardarPreguntas(Request $request){
         try{
+            dd($request->input());
             $pregunta = $request->input('pregunta');
             $respuesta = $request->input('correcta');
             $opciones = $request->input('opciones');

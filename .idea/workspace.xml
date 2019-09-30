@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7a93726e-e9ba-4de0-9d4e-75786a56c7d9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AdministracionController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdministracionController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/panel-administrativo.blade.php" afterPath="$PROJECT_DIR$/resources/views/panel-administrativo.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/creacion-preguntas.js" afterPath="$PROJECT_DIR$/public/js/creacion-preguntas.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/graficos/mejora.blade.php" afterPath="$PROJECT_DIR$/resources/views/graficos/mejora.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,8 +25,8 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="80" column="83" lean-forward="false" selection-start-line="80" selection-start-column="83" selection-end-line="80" selection-end-column="83" />
+            <state relative-caret-position="104">
+              <caret line="238" column="12" lean-forward="false" selection-start-line="238" selection-start-column="12" selection-end-line="238" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -33,11 +35,11 @@
       <file leaf-file-name="AdministracionController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministracionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="78">
+              <caret line="31" column="34" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
               <folding>
-                <element signature="e#1970#2382#0#PHP" expanded="false" />
-                <element signature="e#2388#2641#0#PHP" expanded="false" />
+                <element signature="e#2005#2417#0#PHP" expanded="false" />
+                <element signature="e#2423#2676#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -56,13 +58,23 @@
       <file leaf-file-name="creacion-preguntas.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/creacion-preguntas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="446">
+              <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
               <folding>
-                <marker date="1569804423895" expanded="true" signature="3429:3963" ph="..." />
-                <marker date="1569804423895" expanded="true" signature="3518:3700" ph="..." />
-                <marker date="1569804423895" expanded="true" signature="3838:3923" ph="..." />
+                <marker date="1569809076769" expanded="true" signature="3429:3963" ph="..." />
+                <marker date="1569809076769" expanded="true" signature="3518:3700" ph="..." />
+                <marker date="1569809076769" expanded="true" signature="3838:3923" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mejora.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/graficos/mejora.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="32" column="41" lean-forward="false" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -70,7 +82,7 @@
       <file leaf-file-name="statisticsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/statisticsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
+            <state relative-caret-position="1336">
               <caret line="147" column="32" lean-forward="true" selection-start-line="147" selection-start-column="32" selection-end-line="147" selection-end-column="32" />
               <folding>
                 <element signature="e#552#2407#0#PHP" expanded="false" />
@@ -83,7 +95,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="panel-administrativo.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="panel-administrativo.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/panel-administrativo.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
@@ -97,8 +109,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>auth</find>
-      <find>localStorage</find>
       <find>verify</find>
       <find>verified</find>
       <find>formulario</find>
@@ -127,6 +137,8 @@
       <find>correcta</find>
       <find>opciones</find>
       <find>dd</find>
+      <find>limpiar</find>
+      <find>mejora</find>
     </findStrings>
     <replaceStrings>
       <replace>400x400.png</replace>
@@ -178,7 +190,6 @@
         <option value="$PROJECT_DIR$/resources/views/graficos.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/graficos/aptitud.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/graficos/mejoraraResultadosTest.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/graficos/mejora.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/principal.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/administracion/gestor.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
@@ -187,11 +198,12 @@
         <option value="$PROJECT_DIR$/resources/views/graficos/conocimientos.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/resultados.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/espacial.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/statisticsController.php" />
+        <option value="$PROJECT_DIR$/resources/views/panel-administrativo.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/AdministracionController.php" />
         <option value="$PROJECT_DIR$/public/js/creacion-preguntas.js" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/statisticsController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/AdministracionController.php" />
-        <option value="$PROJECT_DIR$/resources/views/panel-administrativo.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/graficos/mejora.blade.php" />
       </list>
     </option>
   </component>
@@ -409,12 +421,12 @@
       <workItem from="1569554358018" duration="3845000" />
       <workItem from="1569639085832" duration="9365000" />
       <workItem from="1569721618428" duration="4644000" />
-      <workItem from="1569784990694" duration="12452000" />
+      <workItem from="1569784990694" duration="15011000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="363122000" />
+    <option name="totallyTimeSpent" value="365681000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -686,13 +698,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/graficos/mejoraraResultadosTest.blade.php" />
-    <entry file="file://$PROJECT_DIR$/resources/views/graficos/mejora.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="45" column="40" lean-forward="false" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/principal.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -795,6 +800,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/panel-administrativo.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="65" column="23" lean-forward="false" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministracionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="31" column="34" lean-forward="false" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
+          <folding>
+            <element signature="e#2005#2417#0#PHP" expanded="false" />
+            <element signature="e#2423#2676#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/administracion/gestor.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
@@ -805,27 +829,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/creacion-preguntas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="446">
+          <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
           <folding>
-            <marker date="1569804423895" expanded="true" signature="3429:3963" ph="..." />
-            <marker date="1569804423895" expanded="true" signature="3518:3700" ph="..." />
-            <marker date="1569804423895" expanded="true" signature="3838:3923" ph="..." />
+            <marker date="1569809076769" expanded="true" signature="3429:3963" ph="..." />
+            <marker date="1569809076769" expanded="true" signature="3518:3700" ph="..." />
+            <marker date="1569809076769" expanded="true" signature="3838:3923" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="80" column="83" lean-forward="false" selection-start-line="80" selection-start-column="83" selection-end-line="80" selection-end-column="83" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/statisticsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
+        <state relative-caret-position="1336">
           <caret line="147" column="32" lean-forward="true" selection-start-line="147" selection-start-column="32" selection-end-line="147" selection-end-column="32" />
           <folding>
             <element signature="e#552#2407#0#PHP" expanded="false" />
@@ -837,21 +853,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdministracionController.php">
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#1970#2382#0#PHP" expanded="false" />
-            <element signature="e#2388#2641#0#PHP" expanded="false" />
-          </folding>
+        <state relative-caret-position="104">
+          <caret line="238" column="12" lean-forward="false" selection-start-line="238" selection-start-column="12" selection-end-line="238" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/panel-administrativo.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/graficos/mejora.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="65" column="23" lean-forward="false" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+        <state relative-caret-position="312">
+          <caret line="32" column="41" lean-forward="false" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
           <folding />
         </state>
       </provider>

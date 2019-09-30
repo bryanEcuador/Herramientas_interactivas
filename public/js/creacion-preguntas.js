@@ -191,7 +191,8 @@ function limpiar() {
     // opciones
     html_opcion = ``
     contenedor_opciones.innerHTML = html_opcion;
-    // valor
+    opciones = []
+     // valor
     pregunta_test.value = ''
     // imagen
     imagen.value = ''
