@@ -25,15 +25,12 @@ btn_agregar_opcion.addEventListener('click', () => {
 
 
 btn_agregar_pregunta.addEventListener('click', () => {
-
      let estado = validarForm()
-
     if(estado == 0) {
         guardarPregunta()
     }else {
-        document.getElementById('errores').classList = 'alert alert-danger alert-dismissible fad show'
+        document.getElementById('errores').classList = 'alert alert-danger alert-dismissible fade show'
     }
-   
 })
 
 opcion_test.addEventListener('keyup' ,function() {
@@ -119,7 +116,7 @@ function agregarOpcion(opcion,restarDisponibles) {
     opciones.push(opcion)
     html_opcion =  `<div class="form-check" id=${contador}>
                                     <label class="form-check-label" id=label${contador}>
-                                            <input class="form-check-input" type="radio" name="elementos"  value= ${opcion}> ${opcion} 
+                                            <input class="form-check-input" type="radio" name="elementos"  value="${opcion}"> ${opcion} 
                                     </label>
                                     <sup class= "badge badge-pill badge-danger" onClick="eliminarElemento(${contador},sumarDisponibles)">
                                         x
@@ -169,11 +166,12 @@ function eliminarElemento(elemento,sumarDisponibles){
 }
 
 function eliminarOpcion(elemento){
+    debugger
     let id = 'label'+elemento
     let etiqueta = document.getElementById(id)
     let valor = etiqueta.children[0].value
     let pos = opciones.indexOf(valor)
-    opciones = opciones.slice(pos,1)
+    let elementoEliminado = opciones.splice(pos,1)
 
 }
 
@@ -200,7 +198,7 @@ function limpiar() {
     //
     tipo_test.value = '0'
     nivel_test.value = '0'
-
+    opciones_disponibles.innerText = 5
 }
 
 function guardarPregunta(){

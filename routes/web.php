@@ -78,10 +78,10 @@ route::post('information/update','informationController@update')->name('informat
 
 route::get('/inteligencias' , 'informationController@inteligencias')->name('inteligencias')->middleware('verified');
 
-route::get('/inteligencia-matematica', 'TestController@test_logicos')->middleware('verified');
+route::get('/inteligencia-matematica', 'TestController@test_logicos')->name('matematica')->middleware('verified');
 
 
-route::get('/inteligencia-espacial','TestController@test_espacial')->middleware('verified');
+route::get('/inteligencia-espacial','TestController@test_espacial')->name('espacial')->middleware('verified');
 
 
 

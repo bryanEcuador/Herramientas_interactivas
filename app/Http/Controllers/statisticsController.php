@@ -136,12 +136,21 @@ class statisticsController extends Controller
             $puntaje = $this->calcularPuntaje($request);
 
             $this->TestConroller->guardarIntentosTest($formulario,$tipo,$puntaje);
-            return redirect()->route('inteligencias');
+            if($tipo == 'logico'){
+                return redirect()->route('matematica');
+            }else{
+                return redirect()->route('espacial');
+            }
         }
 
         if($formulario == 13 || $formulario == 14 ){
             $this->formularioInicial($request);
-            return redirect()->route('inteligencias');
+            //return redirect()->route('inteligencias');
+            if($formulario == 13){
+                return redirect()->route('matematica');
+            }else{
+                return redirect()->route('espacial');
+            }
         }
 
         $array = $request->all();
