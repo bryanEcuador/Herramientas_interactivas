@@ -8,6 +8,7 @@ use App\Http\Controllers\StorageController;
 
 
 
+
 class AdministracionController extends Controller
 {
     protected $storeController;
@@ -28,7 +29,6 @@ class AdministracionController extends Controller
     // insertar las nuevas preguntas al formulario
     public function guardarPreguntas(Request $request){
         try{
-            dd($request);
             $pregunta = $request->input('pregunta');
             $respuesta = $request->input('correcta');
             $opciones = $request->input('opciones');

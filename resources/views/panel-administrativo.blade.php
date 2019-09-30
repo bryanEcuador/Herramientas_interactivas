@@ -52,8 +52,8 @@
                         <div class="country">APTITUD MEDIO</div>
                         <div class="country">APTITUD FINAL</div>
                     </div>
+                    @foreach($resultados as $resultado)
                     <div class="table-row " style="justify-content: space-between;">
-                        @foreach($resultados as $resultado)
                             <div class="serial">{{$resultado->id}}</div>
                             <div class="country">{{$resultado->name}}</div>
                             <div class="country">{{$resultado->test_basico_logico}}</div>
@@ -62,8 +62,8 @@
                             <div class="country">{{$resultado->test_basico_aptitud}}</div>
                             <div class="country">{{$resultado->test_intermedio_aptitud}}</div>
                             <div class="country">{{$resultado->test_final_aptitud}}</div>
-                        @endforeach
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>
