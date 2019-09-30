@@ -79,7 +79,7 @@
 
         function graficar(response) {
             this.titulo = 'Mejora en test'
-            var ctx = document.getElementById('grafico2').getContext('2d');
+            var ctx = document.getElementById('grafico').getContext('2d');
             var myChart = new Chart(ctx, {
                 type: 'polarArea',
                 data: {
@@ -110,7 +110,7 @@
 
         function graficar2(response) {
             this.titulo = 'Mejora en test'
-            var ctx = document.getElementById('grafico').getContext('2d');
+            var ctx = document.getElementById('grafico2').getContext('2d');
             var myChart = new Chart(ctx, {
                 type: 'polarArea',
                 data: {
